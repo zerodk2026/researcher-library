@@ -1,11 +1,24 @@
 /**
  * GitHub 同步配置
  *
- * Token 需要在页面打开后通过"设置"按钮手动输入一次（之后保存在 localStorage）
- * 这是出于安全考虑：GitHub 会扫描公开仓库中的 token 并自动撤销
+ * Token 不写在代码里（公开仓库会被 GitHub 安全扫描拦截）。
+ * 首次访问时通过 URL 参数传入，例如：
+ *   https://zerodk2026.github.io/researcher-library/?token=github_pat_xxx
+ *
+ * 传入后自动保存到 localStorage，之后访问无需再带参数。
+ * 你可以把带 token 的完整链接收藏起来，换设备时打开即可。
  */
 (function (window) {
   "use strict";
-  // 不再预置 token — 用户首次使用时通过页面右上角"设置"按钮输入
-  // Token 只存在浏览器 localStorage 中，不会出现在代码里
+  try {
+    // 1. 检查 URL 中是否携带 token 参数
+    var params = new URLSearchParams(window.location.search);
+    var urlToken = params.get("token");
+    if (urlToken && urlToken.startsWith("github_pat_")) {
+      localStorage.setItem("gh_sync_token", urlToken);
+      // 清除 URL 中的 token 参数（防止泄露到浏览历史/分享链接）
+      var cleanUrl = window.location.origin + window.location.pathname;
+      window.history.replaceState({}, document.title, cleanUrl);
+    }
+  } catch (e) {}
 })(window);
