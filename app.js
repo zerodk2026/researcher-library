@@ -27,6 +27,16 @@
           loadJSON("data/index.json", function (data) {
             DATA = data;
             onLoaded();
+            // Token 可能已失效，给出醒目提示（延迟弹出，避免初始加载时阻塞）
+            if (err && (err.indexOf("401") >= 0 || err.indexOf("403") >= 0)) {
+              setTimeout(function () {
+                showSyncError("Token 已失效", "你的 GitHub Token 已过期或被撤销，云同步无法工作。\\n\\n当前显示的是本地缓存数据，编辑不会同步到云端。\\n\\n请生成一个新 Token，点击「设置」重新输入。");
+                updateSyncStatus("已失效");
+              }, 1000);
+            } else {
+              showToast("云同步失败，使用本地数据：" + (err || ""), "error");
+              updateSyncStatus("同步失败");
+            }
           }, function () {
             showErrorState();
           });
@@ -42,6 +52,14 @@
     }
 
     bindEvents();
+  }
+
+  // 更新同步状态栏的文字
+  function updateSyncStatus(text) {
+    var el = document.getElementById("sync-status-text");
+    if (el) el.textContent = text;
+    var timeEl = document.getElementById("sync-last-time");
+    if (timeEl && text !== "已连接") timeEl.textContent = text;
   }
 
   function showErrorState() {
@@ -1216,22 +1234,69 @@
   // 手动立即同步（先拉后推）
   window._syncNow = function () {
     if (!window.GitHubSync || !GitHubSync.hasToken()) {
-      showToast("请先在设置中配置 GitHub Token", "error");
+      showSyncError("未配置 Token", "你还没有配置 GitHub Token。\\n\\n点击下方「设置」按钮输入 Token，或使用带 ?token= 参数的链接打开页面。");
       return;
     }
-    showLoading("正在同步...");
+    var btn = document.getElementById("sync-now-btn");
+    if (btn) { btn.disabled = true; btn.textContent = "同步中..."; }
+    showLoading("正在从云端拉取数据...");
     GitHubSync.pull(function (ghData, err) {
+      hideLoading();
+      if (btn) { btn.disabled = false; btn.textContent = "立即同步"; }
       if (ghData) {
         DATA = ghData;
         onLoaded();
-        hideLoading();
+        updateSyncUI();
         showToast("已拉取云端最新数据");
       } else {
-        hideLoading();
-        showToast("拉取失败：" + (err || "未知错误"), "error");
+        // 根据错误类型给出不同的提示
+        if (err && err.indexOf("401") >= 0) {
+          showSyncError("Token 已失效", "你的 GitHub Token 已过期或被撤销。\\n\\n这可能是因为 Token 出现在了公开代码中被 GitHub 安全扫描自动撤销。\\n\\n请生成一个新的 Token，然后点击「设置」重新输入。");
+        } else if (err === "no token") {
+          showSyncError("未配置 Token", "请先配置 GitHub Token。");
+        } else {
+          showSyncError("同步失败", "错误详情：" + (err || "未知错误") + "\\n\\n请检查网络连接后重试。");
+        }
       }
     });
   };
+
+  // 同步错误弹窗（比 toast 更醒目）
+  function showSyncError(title, message) {
+    var existing = document.getElementById("sync-error-overlay");
+    if (existing) existing.remove();
+
+    var overlay = document.createElement("div");
+    overlay.id = "sync-error-overlay";
+    overlay.className = "modal-overlay";
+    overlay.style.zIndex = 99999;
+
+    var modal = document.createElement("div");
+    modal.className = "modal-content";
+    modal.style.maxWidth = "460px";
+    modal.innerHTML =
+      '<div class="modal-header"><h3 style="color:#d93025">⚠️ ' + escapeHtml(title) + '</h3>' +
+      '<button class="modal-close" id="sync-err-close">&times;</button></div>' +
+      '<div class="modal-body">' +
+        '<p style="font-size:13px;color:var(--text-secondary);line-height:1.8;white-space:pre-line">' + escapeHtml(message) + '</p>' +
+      '</div>' +
+      '<div class="modal-footer">' +
+        '<button class="btn-modal cancel" id="sync-err-ok">知道了</button>' +
+        '<button class="btn-modal save" id="sync-err-settings">去设置</button>' +
+      '</div>';
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    var close = function () { overlay.remove(); };
+    document.getElementById("sync-err-close").addEventListener("click", close);
+    document.getElementById("sync-err-ok").addEventListener("click", close);
+    document.getElementById("sync-err-settings").addEventListener("click", function () {
+      close();
+      window._openSyncSettings();
+    });
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+  }
 
   // 打开同步设置模态框
   window._openSyncSettings = function () {
