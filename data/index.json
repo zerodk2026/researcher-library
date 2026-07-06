@@ -1,11 +1,11 @@
 {
   "meta": {
     "knowledge_base_name": "研究员库",
-    "total_researchers": 34,
-    "total_records": 125,
-    "total_main_records": 114,
+    "total_researchers": 33,
+    "total_records": 124,
+    "total_main_records": 113,
     "total_sub_records": 11,
-    "total_subjects": 81
+    "total_subjects": 80
   },
   "researchers": [
     {
@@ -1652,28 +1652,6 @@
       "style": ""
     },
     {
-      "name": "逢人知命",
-      "item_count": 1,
-      "subjects": {
-        "大行科工": [
-          {
-            "title": "大行科工",
-            "subject": "大行科工",
-            "subfolder": "",
-            "path": "逢人知命/大行科工.md",
-            "content": "# 逢人知命 — 大行科工 研究记录\n\n\n\n研究员评级：★★★\n建档日期：2026-06-24\n\n## 研究成果\n\n||||||\n|---|---|---|---|---|\n||||||\n\n在此下方追加新的研究成果记录\n\n",
-            "rating": "★★★",
-            "direction": "",
-            "date": "2026-06-24",
-            "is_main": true,
-            "content_preview": "# 逢人知命 — 大行科工 研究记录    研究员评级：★★★ 建档日期：2026-06-24  ## 研究成果  |||||| |---|---|---|---|---| ||||||  在此下方追加新的研究成果记录"
-          }
-        ]
-      },
-      "rating": "★★★",
-      "style": ""
-    },
-    {
       "name": "自然而然vieq",
       "item_count": 1,
       "subjects": {
@@ -2191,10 +2169,6 @@
     },
     {
       "subject": "龙湖集团",
-      "count": 1
-    },
-    {
-      "subject": "大行科工",
       "count": 1
     },
     {
