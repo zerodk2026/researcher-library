@@ -59,31 +59,19 @@
    * callback(data, error)
    */
   function pull(onDone) {
-    var token = getToken();
-    if (!token) { onDone(null, "no token"); return; }
-
+    // 数据仓库已公开，通过 raw URL 直接读取，无需 token
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", apiBase() + "/contents/" + GH_CONFIG.dataPath + "?ref=" + GH_CONFIG.branch, true);
-    xhr.setRequestHeader("Authorization", "Bearer " + token);
-    xhr.setRequestHeader("Accept", "application/vnd.github+json");
+    xhr.open("GET", rawUrl(), true);
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           try {
-            var resp = JSON.parse(xhr.responseText);
-            // 正确解码 base64 → UTF-8（atob 默认按 Latin-1 解码，中文会乱码）
-            var binary = atob(resp.content.replace(/\n/g, ""));
-            var bytes = new Uint8Array(binary.length);
-            for (var i = 0; i < binary.length; i++) { bytes[i] = binary.charCodeAt(i); }
-            var content = new TextDecoder("utf-8").decode(bytes);
-            var data = JSON.parse(content);
+            var data = JSON.parse(xhr.responseText);
             localStorage.setItem(LAST_SYNC_KEY, new Date().toISOString());
             onDone(data, null);
           } catch (e) {
             onDone(null, "parse error: " + e.message);
           }
-        } else if (xhr.status === 404) {
-          onDone(null, "file not found");
         } else {
           onDone(null, "HTTP " + xhr.status);
         }
