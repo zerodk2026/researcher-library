@@ -14,29 +14,22 @@
 
   // ---------- 初始化 ----------
   function init() {
-    // 先尝试从 GitHub 同步（如果配了 token），否则用本地文件
-    if (window.GitHubSync && GitHubSync.hasToken()) {
+    // 数据仓库已公开，pull 通过 raw URL 直接读取，无需 token
+    if (window.GitHubSync) {
       showSyncBar();
       GitHubSync.pull(function (ghData, err) {
         if (ghData) {
           DATA = ghData;
           onLoaded();
-          showToast("已从云端同步最新数据");
+          if (GitHubSync.hasToken()) {
+            showToast("已从云端同步最新数据");
+          }
         } else {
-          // GitHub 拉取失败，fallback 到本地
           loadJSON("data/index.json", function (data) {
             DATA = data;
             onLoaded();
-            // Token 可能已失效，给出醒目提示（延迟弹出，避免初始加载时阻塞）
-            if (err && (err.indexOf("401") >= 0 || err.indexOf("403") >= 0)) {
-              setTimeout(function () {
-                showSyncError("Token 已失效", "你的 GitHub Token 已过期或被撤销，云同步无法工作。\\n\\n当前显示的是本地缓存数据，编辑不会同步到云端。\\n\\n请生成一个新 Token，点击「设置」重新输入。");
-                updateSyncStatus("已失效");
-              }, 1000);
-            } else {
-              showToast("云同步失败，使用本地数据：" + (err || ""), "error");
-              updateSyncStatus("同步失败");
-            }
+            showToast("云同步失败，使用本地数据：" + (err || ""), "error");
+            updateSyncStatus("同步失败");
           }, function () {
             showErrorState();
           });
