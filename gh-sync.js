@@ -54,14 +54,26 @@
            "?t=" + Date.now(); // cache buster
   }
 
+  function cdnUrl() {
+    return "https://cdn.jsdelivr.net/gh/" + GH_CONFIG.owner + "/" +
+           GH_CONFIG.repo + "@" + GH_CONFIG.branch + "/" + GH_CONFIG.dataPath +
+           "?t=" + Date.now();
+  }
+
   /**
    * 从 GitHub 拉取最新数据（私有仓库必须用 API + token）
    * callback(data, error)
    */
   function pull(onDone) {
-    // 数据仓库已公开，通过 raw URL 直接读取，无需 token
+    // 数据仓库已公开，优先用 jsDelivr CDN（国内可访问），raw 降级
+    tryFetch([cdnUrl(), rawUrl()], 0, onDone);
+  }
+
+  function tryFetch(urls, idx, onDone) {
+    if (idx >= urls.length) { onDone(null, "all sources failed"); return; }
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", rawUrl(), true);
+    xhr.open("GET", urls[idx], true);
+    xhr.timeout = 8000;
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
@@ -70,14 +82,15 @@
             localStorage.setItem(LAST_SYNC_KEY, new Date().toISOString());
             onDone(data, null);
           } catch (e) {
-            onDone(null, "parse error: " + e.message);
+            tryFetch(urls, idx + 1, onDone);
           }
         } else {
-          onDone(null, "HTTP " + xhr.status);
+          tryFetch(urls, idx + 1, onDone);
         }
       }
     };
-    xhr.onerror = function () { onDone(null, "network error"); };
+    xhr.ontimeout = function () { tryFetch(urls, idx + 1, onDone); };
+    xhr.onerror = function () { tryFetch(urls, idx + 1, onDone); };
     xhr.send();
   }
 
