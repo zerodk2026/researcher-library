@@ -65,15 +65,27 @@
    * callback(data, error)
    */
   function pull(onDone) {
-    // 数据仓库已公开，优先用 jsDelivr CDN（国内可访问），raw 降级
-    tryFetch([cdnUrl(), rawUrl()], 0, onDone);
+    // 数据仓库已公开，多源降级：GitHub API → jsDelivr CDN → raw
+    trySource(0, onDone);
   }
 
-  function tryFetch(urls, idx, onDone) {
-    if (idx >= urls.length) { onDone(null, "all sources failed"); return; }
+  // source 0: GitHub API (raw media type, 国内可访问)
+  // source 1: jsDelivr CDN
+  // source 2: raw.githubusercontent.com (备用)
+  function trySource(idx, onDone) {
+    var sources = [
+      { url: apiBase() + "/contents/" + GH_CONFIG.dataPath + "?ref=" + GH_CONFIG.branch, raw: true },
+      { url: cdnUrl(), raw: false },
+      { url: rawUrl(), raw: false }
+    ];
+    if (idx >= sources.length) { onDone(null, "all sources failed"); return; }
+    var src = sources[idx];
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", urls[idx], true);
-    xhr.timeout = 8000;
+    xhr.open("GET", src.url, true);
+    xhr.timeout = 10000;
+    if (src.raw) {
+      xhr.setRequestHeader("Accept", "application/vnd.github.raw");
+    }
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
@@ -81,16 +93,16 @@
             var data = JSON.parse(xhr.responseText);
             localStorage.setItem(LAST_SYNC_KEY, new Date().toISOString());
             onDone(data, null);
+            return;
           } catch (e) {
-            tryFetch(urls, idx + 1, onDone);
+            // parse failed, try next
           }
-        } else {
-          tryFetch(urls, idx + 1, onDone);
         }
+        trySource(idx + 1, onDone);
       }
     };
-    xhr.ontimeout = function () { tryFetch(urls, idx + 1, onDone); };
-    xhr.onerror = function () { tryFetch(urls, idx + 1, onDone); };
+    xhr.ontimeout = function () { trySource(idx + 1, onDone); };
+    xhr.onerror = function () { trySource(idx + 1, onDone); };
     xhr.send();
   }
 
