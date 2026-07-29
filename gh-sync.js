@@ -60,6 +60,11 @@
            "?t=" + Date.now();
   }
 
+  // 同源文件（前端仓库自带的 data/index.json 副本），无 CORS 问题
+  function sameOriginUrl() {
+    return "data/index.json?t=" + Date.now();
+  }
+
   /**
    * 从 GitHub 拉取最新数据（私有仓库必须用 API + token）
    * callback(data, error)
@@ -74,6 +79,7 @@
   // source 2: raw.githubusercontent.com (备用)
   function trySource(idx, onDone) {
     var sources = [
+      { url: sameOriginUrl(), raw: false },
       { url: apiBase() + "/contents/" + GH_CONFIG.dataPath + "?ref=" + GH_CONFIG.branch, raw: true },
       { url: cdnUrl(), raw: false },
       { url: rawUrl(), raw: false }
