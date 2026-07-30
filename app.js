@@ -193,7 +193,8 @@
     var html = "";
     list.forEach(function (r) {
       var isActive = currentResearcher && currentResearcher.name === r.name ? " active" : "";
-      var ratingHtml = r.rating ? '<span class="researcher-rating-mini">' + escapeHtml(r.rating.split("")[0]) + '</span>' : "";
+      var ratingStr = typeof r.rating === "string" ? r.rating : "";
+      var ratingHtml = ratingStr ? '<span class="researcher-rating-mini">' + escapeHtml(ratingStr.split("")[0]) + '</span>' : "";
       html +=
         '<div class="researcher-item' + isActive + '" onclick="window._selectResearcher(\'' + escapeAttr(r.name) + '\')">' +
         '<div class="researcher-name">' + highlightText(r.name) + '</div>' +
