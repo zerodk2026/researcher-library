@@ -4583,7 +4583,12 @@ body {
       });
 
       html += '<div class="researcher-tracking-item">';
-      html += '<div class="researcher-tracking-name">' + escapeHtml(r.name) + '</div>';
+      html += '<div class="researcher-tracking-name">' + escapeHtml(r.name);
+    var ratingStr = (typeof r.rating === "string" && r.rating) ? r.rating : "";
+    if (ratingStr && ratingStr !== "待定") {
+      html += ' <span class="researcher-tracking-rating">' + escapeHtml(ratingStr) + '</span>';
+    }
+    html += '</div>';
       html += '<div class="researcher-tracking-tags">';
       subjects.forEach(function (subj) {
         var info = subjectDates[subj];
