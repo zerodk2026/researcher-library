@@ -242,9 +242,6 @@ body {
 .researcher-tracking-name {
   font-weight: 600; font-size: 13px; min-width: 120px; padding-top: 2px;
 }
-.researcher-tracking-rating {
-  font-size: 11px; color: #f5a623; letter-spacing: -1px; margin-left: 2px;
-}
 .researcher-tracking-tags { flex: 1; display: flex; flex-wrap: wrap; gap: 6px; }
 .tracking-tag {
   font-size: 12px; padding: 2px 10px; border-radius: 12px; white-space: nowrap;
@@ -4586,12 +4583,9 @@ body {
       });
 
       html += '<div class="researcher-tracking-item">';
-      html += '<div class="researcher-tracking-name">' + escapeHtml(r.name);
+      html += '<div class="researcher-tracking-name">' + escapeHtml(r.name) + '</div>';
     var ratingStr = (typeof r.rating === "string" && r.rating) ? r.rating : "";
-    if (ratingStr && ratingStr !== "待定") {
-      html += ' <span class="researcher-tracking-rating">' + escapeHtml(ratingStr) + '</span>';
-    }
-    html += '</div>';
+    html += '<div class="researcher-tracking-rating">' + (ratingStr === "待定" ? "-" : escapeHtml(ratingStr)) + '</div>';
       html += '<div class="researcher-tracking-tags">';
       subjects.forEach(function (subj) {
         var info = subjectDates[subj];
