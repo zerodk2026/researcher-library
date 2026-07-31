@@ -1016,12 +1016,9 @@
       });
 
       html += '<div class="researcher-tracking-item">';
-      html += '<div class="researcher-tracking-name">' + escapeHtml(r.name);
+      html += '<div class="researcher-tracking-name">' + escapeHtml(r.name) + '</div>';
     var ratingStr = (typeof r.rating === "string" && r.rating) ? r.rating : "";
-    if (ratingStr && ratingStr !== "待定") {
-      html += ' <span class="researcher-tracking-rating">' + escapeHtml(ratingStr) + '</span>';
-    }
-    html += '</div>';
+    html += '<div class="researcher-tracking-rating">' + (ratingStr === "待定" ? "-" : escapeHtml(ratingStr)) + '</div>';
       html += '<div class="researcher-tracking-tags">';
       subjects.forEach(function (subj) {
         var info = subjectDates[subj];
