@@ -1,14 +1,14 @@
 {
-  "fetch_time": "2026-07-31 20:04:21",
+  "fetch_time": "2026-08-01 20:10:06",
   "total": 90,
   "skipped_non_stock": [
+    "_研究体系_",
     "银行估值方法论",
-    "投资收益率计算公式_原始图片.png",
-    "宏观观点",
-    "互联网估值框架",
     "实盘月报",
     "投资收益率计算公式",
-    "_研究体系_",
+    "互联网估值框架",
+    "宏观观点",
+    "投资收益率计算公式_原始图片.png",
     "拼多多",
     "拼多多（PDD）",
     "腾讯音乐（TME）",
@@ -52,7 +52,7 @@
       "change_percent": 0.76,
       "chg_5d": 4.57,
       "chg_20d": 18.44,
-      "chg_ytd": -13.01,
+      "chg_ytd": -13.15,
       "market_name": "上海主板",
       "researchers": [
         "猫大人的FIRE计划",
@@ -200,7 +200,7 @@
       "change_percent": -0.35,
       "chg_5d": 0.47,
       "chg_20d": 8.52,
-      "chg_ytd": 6.91,
+      "chg_ytd": 3.07,
       "market_name": "上海主板",
       "researchers": [
         "油菜君"
@@ -228,7 +228,7 @@
       "change_percent": 1.97,
       "chg_5d": 3.33,
       "chg_20d": -4.02,
-      "chg_ytd": 2.48,
+      "chg_ytd": 1.97,
       "market_name": "深圳主板",
       "researchers": [
         "油菜君",
@@ -243,7 +243,7 @@
       "change_percent": 0.92,
       "chg_5d": 2.7,
       "chg_20d": -3.28,
-      "chg_ytd": -18.96,
+      "chg_ytd": -30.98,
       "market_name": "上海主板",
       "researchers": [
         "油菜君",
@@ -280,6 +280,21 @@
       ],
       "tracked_name": "兖矿能源"
     },
+    "中煤能源（01898）": {
+      "code": "hk01898",
+      "name": "中煤能源",
+      "price": 10.71,
+      "change_percent": -2.01,
+      "chg_5d": -2.28,
+      "chg_20d": 6.89,
+      "chg_ytd": -1.02,
+      "market_name": "港股",
+      "researchers": [
+        "油菜君",
+        "超级鹿鼎公"
+      ],
+      "tracked_name": "中煤能源（01898）"
+    },
     "盐湖": {
       "code": "sz000792",
       "name": "盐湖股份",
@@ -287,7 +302,7 @@
       "change_percent": -1.94,
       "chg_5d": 1.75,
       "chg_20d": -7.11,
-      "chg_ytd": -16.66,
+      "chg_ytd": -18.69,
       "market_name": "深圳主板",
       "researchers": [
         "陈chensir"
@@ -301,7 +316,7 @@
       "change_percent": 0.41,
       "chg_5d": 2.7,
       "chg_20d": 8.57,
-      "chg_ytd": -2.95,
+      "chg_ytd": -2.18,
       "market_name": "上海主板",
       "researchers": [
         "陈chensir"
@@ -330,7 +345,7 @@
       "change_percent": 2.8,
       "chg_5d": -4.84,
       "chg_20d": -34.25,
-      "chg_ytd": 22.88,
+      "chg_ytd": 22.61,
       "market_name": "深圳主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -344,7 +359,7 @@
       "change_percent": 2.39,
       "chg_5d": 1.4,
       "chg_20d": -16.07,
-      "chg_ytd": 15.65,
+      "chg_ytd": 9.32,
       "market_name": "上海主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -358,7 +373,7 @@
       "change_percent": 2.95,
       "chg_5d": 2.52,
       "chg_20d": 5.4,
-      "chg_ytd": -15.18,
+      "chg_ytd": -18.27,
       "market_name": "上海主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -372,7 +387,7 @@
       "change_percent": 1.2,
       "chg_5d": 3.04,
       "chg_20d": 10.94,
-      "chg_ytd": 7.65,
+      "chg_ytd": 7.2,
       "market_name": "上海主板",
       "researchers": [
         "大黄蚬子hgx",
@@ -429,7 +444,7 @@
       "change_percent": 1.42,
       "chg_5d": 6.67,
       "chg_20d": -11.63,
-      "chg_ytd": -28.98,
+      "chg_ytd": -29.42,
       "market_name": "上海主板",
       "researchers": [
         "贪心和不甘心"
@@ -472,7 +487,7 @@
       "change_percent": -0.17,
       "chg_5d": 3.97,
       "chg_20d": -4.16,
-      "chg_ytd": 8.47,
+      "chg_ytd": 6.86,
       "market_name": "上海主板",
       "researchers": [
         "山湖水"
@@ -500,7 +515,7 @@
       "change_percent": 0.0,
       "chg_5d": 3.5,
       "chg_20d": 7.24,
-      "chg_ytd": -1.25,
+      "chg_ytd": -2.34,
       "market_name": "深圳主板",
       "researchers": [
         "山湖水"
@@ -556,7 +571,7 @@
       "change_percent": 0.0,
       "chg_5d": 6.47,
       "chg_20d": 5.77,
-      "chg_ytd": -24.53,
+      "chg_ytd": -24.75,
       "market_name": "上海主板",
       "researchers": [
         "飞翔芸"
@@ -570,7 +585,7 @@
       "change_percent": 1.62,
       "chg_5d": 6.36,
       "chg_20d": 7.26,
-      "chg_ytd": -3.46,
+      "chg_ytd": -9.06,
       "market_name": "上海主板",
       "researchers": [
         "飞翔芸"
@@ -627,7 +642,7 @@
       "change_percent": 1.69,
       "chg_5d": 7.33,
       "chg_20d": 6.72,
-      "chg_ytd": 16.82,
+      "chg_ytd": 13.52,
       "market_name": "上海主板",
       "researchers": [
         "闯关东了吧"
@@ -669,7 +684,7 @@
       "change_percent": 0.08,
       "chg_5d": 5.31,
       "chg_20d": 5.7,
-      "chg_ytd": 37.98,
+      "chg_ytd": 37.24,
       "market_name": "深圳主板",
       "researchers": [
         "反向研究"
@@ -698,7 +713,7 @@
       "change_percent": 3.37,
       "chg_5d": -18.14,
       "chg_20d": -42.85,
-      "chg_ytd": 156.5,
+      "chg_ytd": 144.37,
       "market_name": "上海主板",
       "researchers": [
         "反向研究"
@@ -726,7 +741,7 @@
       "change_percent": -1.52,
       "chg_5d": 3.67,
       "chg_20d": 12.37,
-      "chg_ytd": 18.8,
+      "chg_ytd": 19.14,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987",
@@ -784,7 +799,7 @@
       "change_percent": 0.48,
       "chg_5d": -4.14,
       "chg_20d": -2.92,
-      "chg_ytd": -36.5,
+      "chg_ytd": -34.83,
       "market_name": "深圳主板",
       "researchers": [
         "做人要厚道"
@@ -813,7 +828,7 @@
       "change_percent": -0.79,
       "chg_5d": 2.37,
       "chg_20d": 7.25,
-      "chg_ytd": -21.84,
+      "chg_ytd": -24.46,
       "market_name": "上海主板",
       "researchers": [
         "长期理性",
@@ -828,7 +843,7 @@
       "change_percent": -1.55,
       "chg_5d": -8.88,
       "chg_20d": -19.85,
-      "chg_ytd": 8.84,
+      "chg_ytd": 7.22,
       "market_name": "上海主板",
       "researchers": [
         "止疼片"
@@ -842,7 +857,7 @@
       "change_percent": 1.59,
       "chg_5d": 6.41,
       "chg_20d": -4.36,
-      "chg_ytd": 0.27,
+      "chg_ytd": -1.36,
       "market_name": "上海主板",
       "researchers": [
         "止疼片"
@@ -912,7 +927,7 @@
       "change_percent": -0.29,
       "chg_5d": 0.38,
       "chg_20d": -0.95,
-      "chg_ytd": 14.43,
+      "chg_ytd": 11.98,
       "market_name": "深圳主板",
       "researchers": [
         "修身德真"
@@ -940,7 +955,7 @@
       "change_percent": 5.03,
       "chg_5d": 0.57,
       "chg_20d": -7.16,
-      "chg_ytd": -37.27,
+      "chg_ytd": -38.32,
       "market_name": "上海主板",
       "researchers": [
         "自然而然vieq"
@@ -954,7 +969,7 @@
       "change_percent": 5.03,
       "chg_5d": 0.57,
       "chg_20d": -7.16,
-      "chg_ytd": -37.27,
+      "chg_ytd": -38.32,
       "market_name": "上海主板",
       "researchers": [
         "自然而然vieq"
@@ -974,20 +989,6 @@
         "润哥"
       ],
       "tracked_name": "中远海能"
-    },
-    "中煤能源（01898）": {
-      "code": "hk01898",
-      "name": "中煤能源",
-      "price": 10.71,
-      "change_percent": -2.01,
-      "chg_5d": -2.28,
-      "chg_20d": 6.89,
-      "chg_ytd": -1.02,
-      "market_name": "港股",
-      "researchers": [
-        "超级鹿鼎公"
-      ],
-      "tracked_name": "中煤能源（01898）"
     },
     "华能国际电力股份（00902）": {
       "code": "hk00902",
@@ -1054,7 +1055,7 @@
       "change_percent": -1.36,
       "chg_5d": 0.66,
       "chg_20d": 10.78,
-      "chg_ytd": 11.97,
+      "chg_ytd": 12.4,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1068,7 +1069,7 @@
       "change_percent": 0.45,
       "chg_5d": 4.8,
       "chg_20d": 18.73,
-      "chg_ytd": -17.87,
+      "chg_ytd": -19.16,
       "market_name": "深圳主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1082,7 +1083,7 @@
       "change_percent": -1.1,
       "chg_5d": 4.36,
       "chg_20d": 18.18,
-      "chg_ytd": -11.34,
+      "chg_ytd": -15.01,
       "market_name": "深圳主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1096,7 +1097,7 @@
       "change_percent": -0.29,
       "chg_5d": 0.38,
       "chg_20d": -0.95,
-      "chg_ytd": 14.43,
+      "chg_ytd": 11.98,
       "market_name": "深圳主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1110,7 +1111,7 @@
       "change_percent": 0.24,
       "chg_5d": 0.4,
       "chg_20d": 15.13,
-      "chg_ytd": 16.15,
+      "chg_ytd": 15.83,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1124,7 +1125,7 @@
       "change_percent": -2.47,
       "chg_5d": -0.38,
       "chg_20d": 13.39,
-      "chg_ytd": 14.11,
+      "chg_ytd": 11.65,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1138,7 +1139,7 @@
       "change_percent": 1.81,
       "chg_5d": 7.83,
       "chg_20d": 14.21,
-      "chg_ytd": -22.99,
+      "chg_ytd": -28.0,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1152,7 +1153,7 @@
       "change_percent": -0.02,
       "chg_5d": -0.02,
       "chg_20d": 15.18,
-      "chg_ytd": 12.62,
+      "chg_ytd": 12.68,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1222,7 +1223,7 @@
       "change_percent": 0.79,
       "chg_5d": -15.21,
       "chg_20d": -28.6,
-      "chg_ytd": 8.22,
+      "chg_ytd": 8.83,
       "market_name": "上海主板",
       "researchers": [
         "静安一朵花"
@@ -1236,7 +1237,7 @@
       "change_percent": 2.02,
       "chg_5d": -17.16,
       "chg_20d": -44.14,
-      "chg_ytd": 52.13,
+      "chg_ytd": 46.02,
       "market_name": "上海主板",
       "researchers": [
         "静安一朵花"
@@ -1250,7 +1251,7 @@
       "change_percent": -1.31,
       "chg_5d": 2.43,
       "chg_20d": -3.36,
-      "chg_ytd": -16.97,
+      "chg_ytd": -17.38,
       "market_name": "深圳主板",
       "researchers": [
         "静安一朵花"
@@ -1264,7 +1265,7 @@
       "change_percent": 1.03,
       "chg_5d": 4.34,
       "chg_20d": 9.91,
-      "chg_ytd": -7.88,
+      "chg_ytd": -9.62,
       "market_name": "深圳主板",
       "researchers": [
         "金哥777"
@@ -1278,7 +1279,7 @@
       "change_percent": -1.94,
       "chg_5d": 1.75,
       "chg_20d": -7.11,
-      "chg_ytd": -16.66,
+      "chg_ytd": -18.69,
       "market_name": "深圳主板",
       "researchers": [
         "金哥777"
@@ -1292,7 +1293,7 @@
       "change_percent": 0.53,
       "chg_5d": 5.6,
       "chg_20d": 16.09,
-      "chg_ytd": -26.06,
+      "chg_ytd": -27.6,
       "market_name": "深圳主板",
       "researchers": [
         "金哥777"
