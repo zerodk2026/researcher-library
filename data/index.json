@@ -3,8 +3,8 @@
     "knowledge_base_name": "研究员库",
     "total_researchers": 37,
     "total_records": 231,
-    "total_main_records": 186,
-    "total_sub_records": 45,
+    "total_main_records": 185,
+    "total_sub_records": 46,
     "total_subjects": 128
   },
   "researchers": [
@@ -2009,7 +2009,7 @@
     },
     {
       "name": "STH",
-      "item_count": 2,
+      "item_count": 3,
       "subjects": {
         "波司登": [
           {
