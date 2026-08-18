@@ -1,37 +1,26 @@
 {
-  "fetch_time": "2026-08-18 20:16:03",
-  "total": 106,
+  "fetch_time": "2026-08-18 20:16:57",
+  "total": 117,
   "skipped_non_stock": [
-    "_研究体系_",
-    "投资收益率计算公式",
-    "实盘月报",
-    "银行估值方法论",
     "互联网估值框架",
-    "油气",
+    "实盘月报",
     "宏观观点",
+    "_研究体系_",
+    "油气",
+    "银行估值方法论",
+    "投资收益率计算公式",
     "投资收益率计算公式_原始图片.png",
     "中煤能源",
     "多晶硅",
     "恒力石化",
     "焦煤",
-    "药明康德",
-    "平安银行",
-    "石头科技",
     "FML (Focus Minerals)",
     "铜",
-    "福耀玻璃",
     "拼多多",
-    "华新水泥",
     "HCC (Warrior Met Coal)",
-    "拼多多（PDD）",
-    "腾讯音乐（TME）",
     "低估值轮動组合（实盘）",
     "西藏铜矿资源税",
-    "超盈国际",
-    "宏桥控股",
-    "西部矿业",
-    "海螺创业",
-    "五矿资源"
+    "超盈国际"
   ],
   "errors": [
     "煤炭（十五五规划） (hk十五五规划)"
@@ -836,6 +825,48 @@
       ],
       "tracked_name": "众安在线"
     },
+    "药明康德": {
+      "code": "sh603259",
+      "name": "药明康德",
+      "price": 167.18,
+      "change_percent": 0.17,
+      "chg_5d": 4.35,
+      "chg_20d": 32.21,
+      "chg_ytd": 78.55,
+      "market_name": "上海主板",
+      "researchers": [
+        "夏至1987"
+      ],
+      "tracked_name": "药明康德"
+    },
+    "平安银行": {
+      "code": "sz000001",
+      "name": "平安银行",
+      "price": 11.05,
+      "change_percent": -0.45,
+      "chg_5d": -1.87,
+      "chg_20d": 1.94,
+      "chg_ytd": 5.64,
+      "market_name": "深圳主板",
+      "researchers": [
+        "夏至1987"
+      ],
+      "tracked_name": "平安银行"
+    },
+    "石头科技": {
+      "code": "sh688169",
+      "name": "石头科技",
+      "price": 120.8,
+      "change_percent": 6.68,
+      "chg_5d": 8.37,
+      "chg_20d": 16.94,
+      "chg_ytd": -14.65,
+      "market_name": "上海主板",
+      "researchers": [
+        "夏至1987"
+      ],
+      "tracked_name": "石头科技"
+    },
     "宇树科技（688836）": {
       "code": "sh688836",
       "name": "宇树科技-W",
@@ -1053,6 +1084,20 @@
       ],
       "tracked_name": "陕西能源"
     },
+    "福耀玻璃": {
+      "code": "sh600660",
+      "name": "福耀玻璃",
+      "price": 56.16,
+      "change_percent": 0.9,
+      "chg_5d": 0.66,
+      "chg_20d": 2.48,
+      "chg_ytd": -7.27,
+      "market_name": "上海主板",
+      "researchers": [
+        "STH"
+      ],
+      "tracked_name": "福耀玻璃"
+    },
     "力量发展（01277）": {
       "code": "hk01277",
       "name": "力量发展",
@@ -1080,6 +1125,20 @@
         "自然而然vieq"
       ],
       "tracked_name": "盛屯矿业（600711）"
+    },
+    "华新水泥": {
+      "code": "sh600801",
+      "name": "华新建材",
+      "price": 22.78,
+      "change_percent": -0.39,
+      "chg_5d": -6.56,
+      "chg_20d": 10.58,
+      "chg_ytd": -6.22,
+      "market_name": "上海主板",
+      "researchers": [
+        "亲爱的阿兰"
+      ],
+      "tracked_name": "华新水泥"
     },
     "中远海能": {
       "code": "hk01138",
@@ -1278,6 +1337,34 @@
       ],
       "tracked_name": "东方海外国际（00316）"
     },
+    "拼多多（PDD）": {
+      "code": "usPDD",
+      "name": "拼多多",
+      "price": 86.94,
+      "change_percent": 2.54,
+      "chg_5d": 0,
+      "chg_20d": 0,
+      "chg_ytd": 0,
+      "market_name": "美股",
+      "researchers": [
+        "達人知命"
+      ],
+      "tracked_name": "拼多多（PDD）"
+    },
+    "腾讯音乐（TME）": {
+      "code": "usTME",
+      "name": "腾讯音乐",
+      "price": 8.87,
+      "change_percent": 0.34,
+      "chg_5d": 0,
+      "chg_20d": 0,
+      "chg_ytd": 0,
+      "market_name": "美股",
+      "researchers": [
+        "達人知命"
+      ],
+      "tracked_name": "腾讯音乐（TME）"
+    },
     "大行科工（02543）": {
       "code": "hk02543",
       "name": "大行科工",
@@ -1291,6 +1378,20 @@
         "達人知命"
       ],
       "tracked_name": "大行科工（02543）"
+    },
+    "宏桥控股": {
+      "code": "hk01378",
+      "name": "中国宏桥",
+      "price": 22.96,
+      "change_percent": -1.54,
+      "chg_5d": -4.49,
+      "chg_20d": 1.32,
+      "chg_ytd": -35.07,
+      "market_name": "港股",
+      "researchers": [
+        "巍巍昆仑侠"
+      ],
+      "tracked_name": "宏桥控股"
     },
     "华安证券": {
       "code": "sh600909",
@@ -1361,6 +1462,34 @@
         "金哥777"
       ],
       "tracked_name": "天山铝业"
+    },
+    "西部矿业": {
+      "code": "sh601168",
+      "name": "西部矿业",
+      "price": 38.95,
+      "change_percent": -0.99,
+      "chg_5d": -0.66,
+      "chg_20d": 15.0,
+      "chg_ytd": 21.95,
+      "market_name": "上海主板",
+      "researchers": [
+        "金哥777"
+      ],
+      "tracked_name": "西部矿业"
+    },
+    "海螺创业": {
+      "code": "hk00586",
+      "name": "海螺创业",
+      "price": 8.67,
+      "change_percent": 1.23,
+      "chg_5d": -0.74,
+      "chg_20d": 5.86,
+      "chg_ytd": -19.12,
+      "market_name": "港股",
+      "researchers": [
+        "狂暴干饭食兔君"
+      ],
+      "tracked_name": "海螺创业"
     },
     "杭州银行（600926）": {
       "code": "sh600926",
@@ -1530,6 +1659,20 @@
         "摸索fhy"
       ],
       "tracked_name": "平安银行（000001）"
+    },
+    "五矿资源": {
+      "code": "hk01208",
+      "name": "五矿资源",
+      "price": 9.2,
+      "change_percent": 1.94,
+      "chg_5d": 2.39,
+      "chg_20d": 19.02,
+      "chg_ytd": -12.38,
+      "market_name": "港股",
+      "researchers": [
+        "愤怒的龙卷风"
+      ],
+      "tracked_name": "五矿资源"
     },
     "立讯精密（002475）": {
       "code": "sz002475",
