@@ -117,10 +117,6 @@ body {
 .record-card:hover { box-shadow: var(--shadow); }
 .record-header { padding: 10px 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
 .record-header:hover { background: var(--bg-secondary); }
-.record-anon {
-  font-size: 11px; color: var(--accent-dark); background: var(--accent-light);
-  padding: 1px 8px; border-radius: 10px; white-space: nowrap; font-weight: 500;
-}
 .record-title { font-weight: 500; font-size: 13px; flex: 1; }
 .record-direction { font-size: 11px; padding: 1px 8px; border-radius: 10px; white-space: nowrap; }
 .record-direction.看多 { background: var(--green-light); color: var(--green); }
@@ -283,9 +279,8 @@ table.stats-table { width: 100%; border-collapse: collapse; font-size: 13px; min
   var currentTab = "subjects";
   var currentSubject = null;
   var searchQuery = "";
-  var ANON = {};        // 研究员名 -> 匿名代号
+  var SUBJ_MAP = {};    // 标的名 -> {records:[...]}
   var NAME_RE = null;   // 全局替换正则
-  var SUBJ_MAP = {};    // 标的名 -> {records:[{...rec, _anon}], researchers:N}
 
   /* ---------------- 工具 ---------------- */
   function escapeHtml(text) {
@@ -328,13 +323,11 @@ table.stats-table { width: 100%; border-collapse: collapse; font-size: 13px; min
     xhr.send();
   }
 
-  /* ---------------- 匿名化 ---------------- */
+  /* ---------------- 敏感信息脱敏：正文中的研究员名统一替换为"某研究员" ---------------- */
   function buildAnon() {
     var names = [];
     var seen = {};
-    DATA.researchers.forEach(function (r, i) {
-      var code = "研究员" + String(i + 1).padStart(2, "0");
-      ANON[r.name] = code;
+    DATA.researchers.forEach(function (r) {
       if (!seen[r.name]) { seen[r.name] = true; names.push(r.name); }
     });
     // 长名优先，避免短名误替换
@@ -345,7 +338,7 @@ table.stats-table { width: 100%; border-collapse: collapse; font-size: 13px; min
   }
   function anonText(t) {
     if (!t) return t;
-    return String(t).replace(NAME_RE, function (m) { return ANON[m] || m; });
+    return String(t).replace(NAME_RE, "某研究员");
   }
   /* 渲染后脱敏：替换雪球链接指向（防通过帖子反查作者） */
   function sanitizeLinks(rootEl) {
@@ -365,19 +358,17 @@ table.stats-table { width: 100%; border-collapse: collapse; font-size: 13px; min
   function buildSubjects() {
     SUBJ_MAP = {};
     DATA.researchers.forEach(function (r) {
-      var anon = ANON[r.name] || "研究员??";
       var subjects = r.subjects || {};
       Object.keys(subjects).forEach(function (subj) {
-        if (!SUBJ_MAP[subj]) SUBJ_MAP[subj] = { records: [], researchers: [] };
+        if (!SUBJ_MAP[subj]) SUBJ_MAP[subj] = { records: [] };
         var bucket = SUBJ_MAP[subj];
         subjects[subj].forEach(function (rec) {
           bucket.records.push({
             title: rec.title, date: rec.date, direction: rec.direction,
             content: rec.content, summary: rec.summary,
-            is_main: rec.is_main, _anon: anon
+            is_main: rec.is_main
           });
         });
-        if (bucket.researchers.indexOf(anon) < 0) bucket.researchers.push(anon);
       });
     });
     Object.keys(SUBJ_MAP).forEach(function (k) {
@@ -589,7 +580,7 @@ table.stats-table { width: 100%; border-collapse: collapse; font-size: 13px; min
 
     var html = '<div class="subject-hero">';
     html += "<h2>" + escapeHtml(name) + "</h2>";
-    html += '<div class="sub">' + info.records.length + " 条观点 · " + info.researchers.length + " 位独立研究员覆盖</div>";
+    html += '<div class="sub">' + info.records.length + " 条观点</div>";
     html += '<div class="quote-strip">';
     if (q) {
       html += '<div class="quote-item"><span class="ql">最新价</span><span class="qv">' + q.price.toFixed(2) + "</span></div>";
@@ -607,7 +598,6 @@ table.stats-table { width: 100%; border-collapse: collapse; font-size: 13px; min
       var d = rec.direction || "—";
       html += '<div class="record-card" data-idx="' + i + '">';
       html += '<div class="record-header">';
-      html += '<span class="record-anon">' + escapeHtml(rec._anon) + "</span>";
       html += '<span class="record-title">' + escapeHtml(anonText(rec.title || "（无标题）")) + "</span>";
       html += '<span class="record-direction ' + escapeAttr(dirClass(d)) + '">' + escapeHtml(d) + "</span>";
       html += '<span class="record-date">' + escapeHtml(rec.date || "") + "</span>";
@@ -644,7 +634,7 @@ table.stats-table { width: 100%; border-collapse: collapse; font-size: 13px; min
   function renderWelcome() {
     document.getElementById("subject-display").innerHTML =
       '<div class="welcome"><h2>投研观点库 · 公开版</h2>' +
-      "<p>多位独立研究员的观点聚合，按标的浏览。</p>" +
+      "<p>投研观点聚合展示，按标的浏览。</p>" +
       "<p>选择左侧任意标的开始。</p></div>";
   }
 
