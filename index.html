@@ -667,6 +667,10 @@ body.mobile-detail-open { overflow: hidden; }
     return "https://api.github.com/repos/" + GH_CONFIG.owner + "/" + GH_CONFIG.repo;
   }
 
+  function apiBaseFor(cfg) {
+    return "https://api.github.com/repos/" + cfg.owner + "/" + cfg.repo;
+  }
+
   function rawUrl() {
     return "https://raw.githubusercontent.com/" + GH_CONFIG.owner + "/" +
            GH_CONFIG.repo + "/" + GH_CONFIG.branch + "/" + GH_CONFIG.dataPath +
@@ -732,13 +736,26 @@ body.mobile-detail-open { overflow: hidden; }
   }
 
   /**
-   * 推送数据到 GitHub
+   * 推送数据到 GitHub（私有数据仓库）
    * data: JSON object to push
    * callback(success, error)
    *
    * 内置防抖：如果正在推送，标记 queue=true，推送完成后自动再推一次
    */
   function push(data, onDone) {
+    pushToRepo(GH_CONFIG, data, onDone);
+  }
+
+  /**
+   * 推送数据到前端公开仓库的 data/index.json 副本
+   * 页面加载以该副本为主数据源，不同步会导致删除/重命名在刷新后"复活"
+   */
+  function pushToFrontend(data, onDone) {
+    var cfg = { owner: GH_CONFIG.owner, repo: "researcher-library", branch: GH_CONFIG.branch, dataPath: GH_CONFIG.dataPath };
+    pushToRepo(cfg, data, onDone);
+  }
+
+  function pushToRepo(cfg, data, onDone) {
     if (pushLock) {
       pushQueue = true;
       if (onDone) onDone(true, "queued");
@@ -755,7 +772,7 @@ body.mobile-detail-open { overflow: hidden; }
 
     // Step 1: 获取当前文件的 sha（用于更新）
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", apiBase() + "/contents/" + GH_CONFIG.dataPath + "?ref=" + GH_CONFIG.branch, true);
+    xhr.open("GET", apiBaseFor(cfg) + "/contents/" + cfg.dataPath + "?ref=" + cfg.branch, true);
     xhr.setRequestHeader("Authorization", "Bearer " + token);
     xhr.setRequestHeader("Accept", "application/vnd.github+json");
     xhr.onreadystatechange = function () {
@@ -765,7 +782,7 @@ body.mobile-detail-open { overflow: hidden; }
           try { sha = JSON.parse(xhr.responseText).sha; } catch (e) {}
         }
         // Step 2: 推送内容（sha 可有可无，有则是更新，无则是创建）
-        pushContent(data, sha, onDone);
+        pushContentToRepo(cfg, data, sha, onDone);
       }
     };
     xhr.onerror = function () {
@@ -775,19 +792,19 @@ body.mobile-detail-open { overflow: hidden; }
     xhr.send();
   }
 
-  function pushContent(data, sha, onDone) {
+  function pushContentToRepo(cfg, data, sha, onDone) {
     var token = getToken();
     var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
 
     var payload = {
       message: "Auto-sync " + new Date().toISOString().replace("T", " ").slice(0, 19),
       content: content,
-      branch: GH_CONFIG.branch
+      branch: cfg.branch
     };
     if (sha) payload.sha = sha;
 
     var xhr = new XMLHttpRequest();
-    xhr.open("PUT", apiBase() + "/contents/" + GH_CONFIG.dataPath, true);
+    xhr.open("PUT", apiBaseFor(cfg) + "/contents/" + cfg.dataPath, true);
     xhr.setRequestHeader("Authorization", "Bearer " + token);
     xhr.setRequestHeader("Accept", "application/vnd.github+json");
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -800,7 +817,7 @@ body.mobile-detail-open { overflow: hidden; }
           // 处理排队的推送
           if (pushQueue) {
             pushQueue = false;
-            setTimeout(function () { push(data, null); }, 500);
+            setTimeout(function () { pushToRepo(cfg, data, null); }, 500);
           }
         } else {
           var msg = "HTTP " + xhr.status;
@@ -846,6 +863,7 @@ body.mobile-detail-open { overflow: hidden; }
     hasToken: hasToken,
     pull: pull,
     push: push,
+    pushToFrontend: pushToFrontend,
     getLastSyncText: getLastSyncText
   };
 })(window);
@@ -1322,27 +1340,34 @@ body.mobile-detail-open { overflow: hidden; }
   var HAS_SERVER = false;  // 后端 API 是否可用
 
   // 检测是否在编辑模式（本地服务器或客户端模式）
+  function enterClientEditMode() {
+    HAS_SERVER = false;
+    EDIT_MODE = true;
+    // 尝试从 localStorage 恢复已编辑的数据
+    loadClientEdits();
+    showEditBanner("编辑模式（客户端）— 你可以重命名/删除标的和记录。修改保存在浏览器本地，可导出备份。");
+  }
+
   function checkEditMode() {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/api/rebuild", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
-        if (xhr.status > 0) {
-          // 后端 API 可用
+        if (xhr.status >= 200 && xhr.status < 300) {
+          // 后端 API 可用（只有 2xx 才算；静态托管对 POST 返回 405，不能当作有后端）
           HAS_SERVER = true;
           EDIT_MODE = true;
           showEditBanner("编辑模式（服务端）— 你可以重命名/删除标的和记录。所有操作会自动备份。");
+        } else {
+          // 405/404 等：静态托管无后端 → 客户端编辑模式
+          enterClientEditMode();
         }
       }
     };
     xhr.onerror = function () {
       // 没有后端服务器 — 启用客户端编辑模式
-      HAS_SERVER = false;
-      EDIT_MODE = true;
-      // 尝试从 localStorage 恢复已编辑的数据
-      loadClientEdits();
-      showEditBanner("编辑模式（客户端）— 你可以重命名/删除标的和记录。修改保存在浏览器本地，可导出备份。");
+      enterClientEditMode();
     };
     xhr.send("{}");
   }
@@ -2204,14 +2229,37 @@ body.mobile-detail-open { overflow: hidden; }
   // 每次编辑后自动推送到 GitHub
   function syncPushIfNeeded(silent) {
     if (!window.GitHubSync || !GitHubSync.hasToken() || !DATA) return;
+    // 先推私有数据仓库
     GitHubSync.push(DATA, function (ok, err) {
       if (ok) {
-        updateSyncUI();
-        if (!silent) showToast("已自动同步到云端");
+        // 再同步前端仓库的 data/index.json 副本（页面加载主源，不同步会导致刷新后数据复活）
+        if (GitHubSync.pushToFrontend) {
+          GitHubSync.pushToFrontend(DATA, function (ok2) {
+            updateSyncUI();
+            if (!silent) showToast("已自动同步到云端");
+            if (ok2) clearSyncedClientEdits();
+          });
+        } else {
+          updateSyncUI();
+          if (!silent) showToast("已自动同步到云端");
+          clearSyncedClientEdits();
+        }
       } else {
         if (!silent) showToast("云同步失败：" + (err || "未知错误"), "error");
       }
     });
+  }
+
+  /* 两处云端均已落盘后，清空本地编辑日志。
+     避免陈旧删除日志在日后自动化重新录入同名标的时再次将其误删。 */
+  function clearSyncedClientEdits() {
+    try {
+      if (!CLIENT_EDITS) return;
+      if (CLIENT_EDITS.renames.length || CLIENT_EDITS.deletions.length || Object.keys(CLIENT_EDITS.recordEdits).length) {
+        CLIENT_EDITS = { version: 1, renames: [], deletions: [], recordEdits: {} };
+        saveClientEdits();
+      }
+    } catch (e) {}
   }
 
   // 手动立即同步（先拉后推）
