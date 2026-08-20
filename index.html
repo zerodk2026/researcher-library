@@ -40,7 +40,7 @@ body {
   line-height: 1.6;
 }
 
-#app { height: 100vh; display: flex; flex-direction: column; }
+#app { height: 100vh; height: 100dvh; display: flex; flex-direction: column; }
 
 /* 顶部栏 */
 .topbar {
@@ -459,6 +459,133 @@ body {
   .topbar-center { max-width: 200px; }
 }
 
+/* ============================================================
+   移动端适配（手机 / 平板竖屏）
+   列表 → 详情 两级导航；统计页表格横向滚动
+   ============================================================ */
+@media (max-width: 768px) {
+  /* 顶栏：两行布局（第一行 logo+tab，第二行搜索） */
+  .topbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .topbar-left { flex: 1; min-width: 0; gap: 8px; }
+  .logo { font-size: 16px; }
+  .badge { display: none; }   /* 手机上信息太挤，隐藏徽章 */
+  .topbar-center { order: 3; flex-basis: 100%; max-width: none; }
+  .search-box input { padding: 9px 4px; font-size: 16px; } /* ≥16px 防止 iOS 聚焦自动放大 */
+  .topbar-right { gap: 6px; }
+  .tab-btn { padding: 6px 14px; font-size: 13px; }
+
+  /* 浏览模式：侧栏与内容区改为单栏两级切换 */
+  #tab-browse.active { flex-direction: column; }
+  .sidebar {
+    width: 100% !important;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex: 1;
+    min-height: 0;
+  }
+  .content-area {
+    display: none;              /* 默认隐藏详情，点研究员时展开 */
+    position: fixed;
+    inset: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 500;
+    background: var(--bg-secondary);
+    padding: 12px 14px;
+    padding-top: 60px;          /* 给返回栏留空间 */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .content-area.mobile-open { display: block; }
+
+  /* 详情页顶部返回栏 */
+  .mobile-back-bar {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 48px;
+    z-index: 510;               /* 高于 content-area，低于模态框 */
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    padding: 0 8px;
+    gap: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .mobile-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none; border: none;
+    font-size: 15px; color: var(--accent);
+    padding: 8px 10px; cursor: pointer;
+  }
+  .mobile-back-btn:active { opacity: 0.6; }
+  .mobile-back-title {
+    flex: 1; font-size: 14px; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .mobile-back-bar.visible { display: flex; }
+
+  /* 列表项：加大触控区 */
+  .researcher-item { padding: 12px 16px; }
+  .researcher-name { font-size: 14px; }
+  .researcher-meta { font-size: 12px; }
+
+  /* 详情内容排版 */
+  .researcher-detail h2 { font-size: 19px; }
+  .record-header { padding: 12px 14px; flex-wrap: wrap; }
+  .record-title { font-size: 14px; flex-basis: 100%; order: 2; margin-top: 2px; }
+  .record-header .record-type-badge { order: 1; }
+  .record-header .record-direction { order: 3; }
+  .record-header .record-date { order: 4; }
+  .record-header .record-toggle { order: 5; }
+  .record-body { padding: 0 12px 14px; }
+  .record-body h2 { font-size: 15px; }
+  .record-body p, .record-body li { font-size: 14px; }
+  .record-body table { font-size: 12px; display: block; overflow-x: auto; white-space: nowrap; }
+
+  /* 搜索结果页也全屏化 */
+  .content-area .search-results-info { margin-bottom: 12px; }
+
+  /* 统计页 */
+  .stats-container { padding: 14px 12px; }
+  .stats-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-card { padding: 14px; }
+  .stat-card .value { font-size: 22px; }
+  .stats-section { padding: 14px; }
+  .researcher-tracking-item { flex-direction: column; gap: 6px; }
+  .researcher-tracking-name { min-width: 0; }
+
+  /* 表格容器确保横向滚动 */
+  .stock-performance-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .stock-performance-table { min-width: 640px; }
+
+  /* 模态框撑满，方便手机编辑 */
+  .modal-content, .edit-modal { width: 100%; max-width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
+  .modal-body { padding: 12px; }
+  .edit-textarea { min-height: 300px; font-size: 14px; }
+  .modal-footer { padding: 10px 12px; flex-wrap: wrap; }
+  .modal-hint { flex-basis: 100%; order: 3; }
+
+  /* Toast 避开底部安全区 */
+  .toast { bottom: calc(30px + env(safe-area-inset-bottom)); }
+
+  /* 隐藏 hover 造成的延迟感，用 active 反馈 */
+  .researcher-item:hover, .record-card:hover, .record-header:hover { background: transparent; }
+  .researcher-item:active { background: var(--bg-secondary); }
+}
+
+/* 桌面端隐藏返回栏 */
+.mobile-back-bar { display: none; }
+
+/* 防止 iOS 橡皮筋滚动穿透：详情全屏层内允许滚动，外层锁定 */
+body.mobile-detail-open { overflow: hidden; }
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
@@ -750,6 +877,15 @@ body {
   </div>
 </div>
 <div id="app">
+  <!-- 移动端详情返回栏（桌面端隐藏，CSS 控制） -->
+  <div class="mobile-back-bar" id="mobile-back-bar">
+    <button class="mobile-back-btn" id="mobile-back-btn" aria-label="返回列表">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      返回
+    </button>
+    <span class="mobile-back-title" id="mobile-back-title">研究员</span>
+  </div>
+
   <!-- 顶部栏 -->
   <header class="topbar">
     <div class="topbar-left">
@@ -790,7 +926,7 @@ body {
       </aside>
 
       <!-- 右侧内容 -->
-      <main class="content-area">
+      <main class="content-area" id="content-area">
         <div id="content-display"></div>
       </main>
     </div>
@@ -885,8 +1021,14 @@ body {
       searchTimer = setTimeout(function () {
         searchQuery = val.toLowerCase();
         if (currentTab === "browse") {
-          if (searchQuery) { renderSearchResults(); }
-          else { renderResearcherList(); if (currentResearcher) { renderResearcherDetail(currentResearcher); } else { renderWelcome(); } }
+          if (searchQuery) {
+            renderSearchResults();
+            if (isMobile()) { openMobileDetail("搜索: " + val); }  /* 手机上搜索结果全屏展示 */
+          }
+          else {
+            renderResearcherList();
+            if (currentResearcher) { renderResearcherDetail(currentResearcher); } else { renderWelcome(); }
+          }
         }
       }, 200);
     });
@@ -897,6 +1039,7 @@ body {
       this.style.display = "none";
       renderResearcherList();
       if (currentResearcher) { renderResearcherDetail(currentResearcher); } else { renderWelcome(); }
+      closeMobileDetail();   /* 手机上收起全屏结果层 */
     });
 
     // 排序
@@ -911,10 +1054,24 @@ body {
       if (currentResearcher) { renderResearcherDetail(currentResearcher); }
       renderResearcherList();
     });
+
+    // 移动端返回按钮
+    var backBtn = document.getElementById("mobile-back-btn");
+    if (backBtn) {
+      backBtn.addEventListener("click", function () { closeMobileDetail(); });
+    }
+
+    // 尺寸切换到桌面时，清理移动端全屏层状态
+    window.addEventListener("resize", function () {
+      if (!window.matchMedia("(max-width: 768px)").matches) {
+        closeMobileDetail();
+      }
+    });
   }
 
   function switchTab(tab) {
     currentTab = tab;
+    closeMobileDetail();   /* 切 tab 时收起手机详情层 */
     document.querySelectorAll(".tab-btn").forEach(function (b) { b.classList.remove("active"); });
     document.querySelector('[data-tab="' + tab + '"]').classList.add("active");
     document.querySelectorAll(".tab-panel").forEach(function (p) { p.classList.remove("active"); });
@@ -1004,6 +1161,32 @@ body {
     document.getElementById("researcher-list").innerHTML = html;
   }
 
+  // ---------- 移动端两级导航 ----------
+  function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  // 手机上打开研究员详情（全屏覆盖层 + 顶部返回栏）
+  function openMobileDetail(name) {
+    var ca = document.getElementById("content-area");
+    var bar = document.getElementById("mobile-back-bar");
+    var title = document.getElementById("mobile-back-title");
+    if (ca) ca.classList.add("mobile-open");
+    if (bar) bar.classList.add("visible");
+    if (title) title.textContent = name;
+    document.body.classList.add("mobile-detail-open");
+    // 滚动到顶部
+    if (ca) ca.scrollTop = 0;
+  }
+
+  function closeMobileDetail() {
+    var ca = document.getElementById("content-area");
+    var bar = document.getElementById("mobile-back-bar");
+    if (ca) ca.classList.remove("mobile-open");
+    if (bar) bar.classList.remove("visible");
+    document.body.classList.remove("mobile-detail-open");
+  }
+
   window._selectResearcher = function (name) {
     var r = DATA.researchers.find(function (x) { return x.name === name; });
     if (r) {
@@ -1013,7 +1196,12 @@ body {
       document.getElementById("search-clear").style.display = "none";
       renderResearcherList();
       renderResearcherDetail(r);
+      if (isMobile()) { openMobileDetail(name); }
     }
+  };
+
+  window._backToList = function () {
+    closeMobileDetail();
   };
 
   // ---------- 渲染：研究员详情 ----------
