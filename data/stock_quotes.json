@@ -1,29 +1,26 @@
 {
-  "fetch_time": "2026-08-24 20:40:50",
-  "total": 114,
+  "fetch_time": "2026-08-24 20:41:51",
+  "total": 117,
   "skipped_non_stock": [
-    "投资收益率计算公式_原始图片.png",
+    "厄尔尼诺与能源宏观",
+    "焦煤",
+    "实盘月报",
+    "HCC (Warrior Met Coal)",
+    "油气",
+    "西藏铜矿资源税",
+    "宏观观点",
+    "银行估值方法论",
+    "多晶硅",
     "低估值轮動组合（实盘）",
     "FML (Focus Minerals)",
-    "西藏铜矿资源税",
-    "投资收益率计算公式",
-    "宏观观点",
-    "HCC (Warrior Met Coal)",
-    "多晶硅",
-    "银行估值方法论",
-    "厄尔尼诺与能源宏观",
-    "煤炭（十五五规划）",
-    "焦煤",
     "互联网估值框架",
     "_研究体系_",
-    "油气",
-    "实盘月报",
+    "煤炭（十五五规划）",
+    "投资收益率计算公式_原始图片.png",
     "铜",
-    "万华化学",
+    "投资收益率计算公式",
     "宇树科技",
-    "AMR (Alpha Metallurgical)",
-    "大行科工",
-    "零跑汽车"
+    "大行科工"
   ],
   "errors": [],
   "stocks": {
@@ -753,6 +750,20 @@
       ],
       "tracked_name": "ST司特"
     },
+    "万华化学": {
+      "code": "sh600309",
+      "name": "万华化学",
+      "price": 73.19,
+      "change_percent": -1.07,
+      "chg_5d": 0.08,
+      "chg_20d": -1.29,
+      "chg_ytd": -9.29,
+      "market_name": "上海主板",
+      "researchers": [
+        "飞翔芸"
+      ],
+      "tracked_name": "万华化学"
+    },
     "中国海洋石油": {
       "code": "hk00883",
       "name": "中国海洋石油",
@@ -1213,6 +1224,20 @@
         "亲爱的阿兰"
       ],
       "tracked_name": "华新水泥"
+    },
+    "AMR (Alpha Metallurgical)": {
+      "code": "usAMR",
+      "name": "Alpha Metallurgical Resources, Inc.",
+      "price": 210.01,
+      "change_percent": 8.09,
+      "chg_5d": 3354.11,
+      "chg_20d": 3354.11,
+      "chg_ytd": 4.61,
+      "market_name": "美股",
+      "researchers": [
+        "亲爱的阿兰"
+      ],
+      "tracked_name": "AMR (Alpha Metallurgical)"
     },
     "中远海能": {
       "code": "hk01138",
@@ -1676,6 +1701,20 @@
         "愤怒的龙卷风"
       ],
       "tracked_name": "中金黄金"
+    },
+    "零跑汽车": {
+      "code": "hk09863",
+      "name": "零跑汽车",
+      "price": 42.76,
+      "change_percent": 0.05,
+      "chg_5d": 2.1,
+      "chg_20d": 15.13,
+      "chg_ytd": -2.64,
+      "market_name": "港股",
+      "researchers": [
+        "郭小松驾道"
+      ],
+      "tracked_name": "零跑汽车"
     }
   }
 }
