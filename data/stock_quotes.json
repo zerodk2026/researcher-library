@@ -1,33 +1,29 @@
 {
-  "fetch_time": "2026-08-31 20:24:42",
-  "total": 147,
+  "fetch_time": "2026-08-31 20:25:56",
+  "total": 151,
   "skipped_non_stock": [
-    "焦煤",
-    "HCC (Warrior Met Coal)",
-    "煤炭（十五五规划）",
-    "西藏铜矿资源税",
-    "铜",
-    "实盘月报",
-    "低估值轮動组合（实盘）",
-    "油运",
-    "AI资本开支",
-    "_研究体系_",
-    "互联网估值框架",
-    "油气",
-    "多晶硅",
-    "投资收益率计算公式_原始图片.png",
     "厄尔尼诺与能源宏观",
-    "FML (Focus Minerals)",
     "投资收益率计算公式",
+    "煤炭（十五五规划）",
+    "实盘月报",
+    "油运",
+    "多晶硅",
+    "互联网估值框架",
+    "HCC (Warrior Met Coal)",
+    "焦煤",
+    "_研究体系_",
+    "低估值轮動组合（实盘）",
+    "西藏铜矿资源税",
     "宏观观点",
+    "FML (Focus Minerals)",
+    "投资收益率计算公式_原始图片.png",
+    "油气",
+    "铜",
+    "AI资本开支",
     "银行估值方法论",
     "煤炭行业",
     "宇树科技",
-    "保利发展",
-    "越秀地产",
-    "蒙古焦煤",
     "银华日利",
-    "招金矿业",
     "爱迪特"
   ],
   "errors": [],
@@ -1417,6 +1413,34 @@
       ],
       "tracked_name": "招商蛇口"
     },
+    "保利发展": {
+      "code": "sh600048",
+      "name": "保利发展",
+      "price": 4.97,
+      "change_percent": -4.24,
+      "chg_5d": -1.78,
+      "chg_20d": -5.33,
+      "chg_ytd": -26.86,
+      "market_name": "上海主板",
+      "researchers": [
+        "修身德真"
+      ],
+      "tracked_name": "保利发展"
+    },
+    "越秀地产": {
+      "code": "hk00123",
+      "name": "越秀地产",
+      "price": 3.26,
+      "change_percent": -13.64,
+      "chg_5d": -11.41,
+      "chg_20d": -9.19,
+      "chg_ytd": -29.13,
+      "market_name": "港股",
+      "researchers": [
+        "修身德真"
+      ],
+      "tracked_name": "越秀地产"
+    },
     "伊泰B股": {
       "code": "sh900948",
       "name": "伊泰Ｂ股",
@@ -1472,6 +1496,20 @@
         "自然而然vieq"
       ],
       "tracked_name": "盛屯矿业"
+    },
+    "蒙古焦煤": {
+      "code": "hk00975",
+      "name": "蒙古焦煤",
+      "price": 10.84,
+      "change_percent": 0.09,
+      "chg_5d": 4.23,
+      "chg_20d": 56.2,
+      "chg_ytd": -8.52,
+      "market_name": "港股",
+      "researchers": [
+        "自然而然vieq"
+      ],
+      "tracked_name": "蒙古焦煤"
     },
     "AMR (Alpha Metallurgical)": {
       "code": "usAMR",
@@ -2104,6 +2142,20 @@
         "愤怒的龙卷风"
       ],
       "tracked_name": "电投能源"
+    },
+    "招金矿业": {
+      "code": "hk01818",
+      "name": "招金矿业",
+      "price": 23.16,
+      "change_percent": -3.26,
+      "chg_5d": -11.4,
+      "chg_20d": 9.56,
+      "chg_ytd": -27.44,
+      "market_name": "港股",
+      "researchers": [
+        "愤怒的龙卷风"
+      ],
+      "tracked_name": "招金矿业"
     },
     "永新股份": {
       "code": "sz002014",
