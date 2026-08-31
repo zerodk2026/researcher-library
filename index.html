@@ -55,7 +55,8 @@ body {
 }
 
 .topbar-left { display: flex; align-items: center; gap: 12px; }
-.logo { font-size: 18px; font-weight: 600; white-space: nowrap; }
+.logo { font-size: 18px; font-weight: 600; white-space: nowrap; cursor: pointer; user-select: none; }
+.logo:hover { color: var(--accent); }
 .badge {
   font-size: 12px; color: var(--text-secondary);
   background: var(--bg-tertiary); padding: 2px 10px; border-radius: 20px;
@@ -78,7 +79,8 @@ body {
   color: var(--text-tertiary); padding: 0 4px; line-height: 1;
 }
 
-.topbar-right { display: flex; gap: 4px; }
+.topbar-right { display: flex; gap: 4px; align-items: center; }
+.topbar-stats { font-size: 12px; color: var(--text-secondary); white-space: nowrap; margin-right: 8px; }
 .tab-btn {
   padding: 6px 16px; border: 1px solid var(--border); background: var(--bg-primary);
   border-radius: var(--radius); cursor: pointer; font-size: 13px; color: var(--text-secondary);
@@ -112,6 +114,7 @@ body {
 }
 
 .filter-bar { padding: 8px 16px; border-bottom: 1px solid var(--border-light); }
+.filter-bar .filter-select { width: 100%; max-width: 100%; }
 
 .researcher-list { flex: 1; overflow-y: auto; }
 .researcher-item {
@@ -129,6 +132,28 @@ body {
 
 .welcome-state { text-align: center; padding: 80px 20px; color: var(--text-tertiary); }
 .welcome-state h2 { font-size: 20px; margin-bottom: 8px; color: var(--text-secondary); }
+
+/* 最近录入页 */
+.recent-page { max-width: 980px; margin: 0 auto; }
+.recent-page-title { font-size: 20px; font-weight: 600; margin-bottom: 2px; }
+.recent-page-sub { font-size: 12px; color: var(--text-tertiary); margin-bottom: 16px; }
+.recent-item {
+  background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: var(--radius);
+  margin-bottom: 8px; overflow: hidden; transition: box-shadow 0.15s;
+}
+.recent-item:hover { box-shadow: var(--shadow); }
+.recent-item-header { padding: 10px 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+.recent-item-header:hover { background: var(--bg-secondary); }
+.recent-item-date { font-size: 11px; color: var(--text-tertiary); white-space: nowrap; min-width: 74px; }
+.recent-item-title { font-weight: 500; font-size: 13px; flex: 1; }
+.recent-item-researcher {
+  font-size: 11px; color: var(--accent-dark); background: var(--accent-light);
+  padding: 1px 8px; border-radius: 10px; white-space: nowrap;
+}
+.recent-item-body { display: none; padding: 0 14px 14px; border-top: 1px solid var(--border-light); }
+.recent-item.expanded .recent-item-body { display: block; }
+.recent-item-toggle { color: var(--text-tertiary); font-size: 12px; transition: transform 0.2s; }
+.recent-item.expanded .recent-item-toggle { transform: rotate(90deg); }
 
 /* 研究员详情 */
 .researcher-detail h2 { font-size: 22px; margin-bottom: 4px; }
@@ -474,6 +499,7 @@ body {
   .topbar-left { flex: 1; min-width: 0; gap: 8px; }
   .logo { font-size: 16px; }
   .badge { display: none; }   /* 手机上信息太挤，隐藏徽章 */
+  .topbar-stats { display: none; }  /* 手机上隐藏右上角统计，避免挤压 */
   .topbar-center { order: 3; flex-basis: 100%; max-width: none; }
   .search-box input { padding: 9px 4px; font-size: 16px; } /* ≥16px 防止 iOS 聚焦自动放大 */
   .topbar-right { gap: 6px; }
@@ -551,6 +577,18 @@ body {
 
   /* 搜索结果页也全屏化 */
   .content-area .search-results-info { margin-bottom: 12px; }
+
+  /* 最近录入页：条目换行适配小屏 */
+  .recent-item-header { padding: 12px 14px; flex-wrap: wrap; }
+  .recent-item-title { font-size: 14px; flex-basis: 100%; order: 2; margin-top: 2px; }
+  .recent-item-header .recent-item-date { order: 1; }
+  .recent-item-header .recent-item-researcher { order: 3; }
+  .recent-item-header .record-direction { order: 4; }
+  .recent-item-header .recent-item-toggle { order: 5; }
+  .recent-item-body { padding: 0 12px 14px; }
+  .recent-item-body p, .recent-item-body li { font-size: 14px; }
+  .recent-item-body h2 { font-size: 15px; }
+  .recent-item-body table { font-size: 12px; display: block; overflow-x: auto; white-space: nowrap; }
 
   /* 统计页 */
   .stats-container { padding: 14px 12px; }
@@ -907,7 +945,7 @@ body.mobile-detail-open { overflow: hidden; }
   <!-- 顶部栏 -->
   <header class="topbar">
     <div class="topbar-left">
-      <h1 class="logo">研究员库</h1>
+      <h1 class="logo" id="logo-home" title="返回主页">研究员库</h1>
       <span class="badge" id="stat-badge">加载中...</span>
     </div>
     <div class="topbar-center">
@@ -918,6 +956,7 @@ body.mobile-detail-open { overflow: hidden; }
       </div>
     </div>
     <div class="topbar-right">
+      <span class="topbar-stats" id="topbar-stats"></span>
       <button class="tab-btn active" data-tab="browse">浏览</button>
       <button class="tab-btn" data-tab="stats">统计</button>
     </div>
@@ -1079,6 +1118,24 @@ body.mobile-detail-open { overflow: hidden; }
       backBtn.addEventListener("click", function () { closeMobileDetail(); });
     }
 
+    // 点击 logo 返回默认主页（最近录入）
+    var logoEl = document.getElementById("logo-home");
+    if (logoEl) {
+      logoEl.addEventListener("click", function () {
+        currentResearcher = null;
+        // 清空搜索，回到浏览 tab
+        searchQuery = "";
+        var si = document.getElementById("search-input");
+        if (si) { si.value = ""; }
+        var sc = document.getElementById("search-clear");
+        if (sc) { sc.style.display = "none"; }
+        switchTab("browse");
+        renderResearcherList();
+        renderWelcome();
+        closeMobileDetail();
+      });
+    }
+
     // 尺寸切换到桌面时，清理移动端全屏层状态
     window.addEventListener("resize", function () {
       if (!window.matchMedia("(max-width: 768px)").matches) {
@@ -1115,27 +1172,80 @@ body.mobile-detail-open { overflow: hidden; }
   // ---------- 渲染：统计徽章 ----------
   function updateStatsBadge() {
     var m = DATA.meta;
-    document.getElementById("stat-badge").textContent =
-      m.total_researchers + " 位研究员 · " + m.total_records + " 条记录 · " + m.total_subjects + " 个标的";
+    var txt = m.total_researchers + " 位研究员 · " + m.total_records + " 条记录 · " + m.total_subjects + " 个标的";
+    document.getElementById("stat-badge").textContent = txt;
+    var topEl = document.getElementById("topbar-stats");
+    if (topEl) { topEl.textContent = txt; }
   }
 
-  // ---------- 渲染：欢迎页 ----------
+  // ---------- 渲染：欢迎页（最近录入） ----------
   function renderWelcome() {
-    document.getElementById("content-display").innerHTML =
-      '<div class="welcome-state">' +
-      '<h2>研究员库</h2>' +
-      '<p>从左侧选择一位研究员，或使用顶部搜索栏查找</p>' +
-      '<div style="margin-top:20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap">' +
-      statItem(DATA.meta.total_researchers, "研究员") +
-      statItem(DATA.meta.total_records, "研究记录") +
-      statItem(DATA.meta.total_subjects, "覆盖标的") +
-      '</div>' +
-      '</div>';
+    // 收集全部记录，按日期倒序取最近80条
+    var all = [];
+    DATA.researchers.forEach(function (r) {
+      Object.keys(r.subjects).forEach(function (sk) {
+        r.subjects[sk].forEach(function (rec) {
+          if (rec.date && rec.title) {
+            all.push({ researcher: r.name, subject: sk, rec: rec });
+          }
+        });
+      });
+    });
+    all.sort(function (a, b) {
+      if (a.rec.date === b.rec.date) { return (b.researcher + "").localeCompare(a.researcher + ""); }
+      return a.rec.date < b.rec.date ? 1 : -1;
+    });
+    var shown = all.slice(0, 80);
+
+    var html = '<div class="recent-page">';
+    html += '<div class="recent-page-title">最近录入</div>';
+    html += '<div class="recent-page-sub">按录入日期倒序 · 展示最近 ' + shown.length + ' 条（共 ' + all.length + ' 条有效记录）· 点击展开详情，点击研究员名可跳转</div>';
+
+    shown.forEach(function (item, idx) {
+      var rec = item.rec;
+      var cardId = "recent_" + idx;
+      var dirClass = (rec.direction || "").replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, "");
+      html += '<div class="recent-item" id="' + cardId + '">';
+      html += '<div class="recent-item-header" onclick="window._toggleRecent(\'' + cardId + '\')">';
+      html += '<span class="recent-item-date">' + escapeHtml(rec.date) + '</span>';
+      html += '<span class="recent-item-title">' + highlightText(rec.title) + '</span>';
+      html += '<span class="recent-item-researcher" onclick="window._gotoResearcher(\'' + escapeAttr(item.researcher) + '\', event)">' + escapeHtml(item.researcher) + '</span>';
+      if (rec.direction) {
+        html += '<span class="record-direction ' + dirClass + '">' + escapeHtml(rec.direction) + '</span>';
+      }
+      html += '<span class="recent-item-toggle">&#9654;</span>';
+      html += '</div>';
+      html += '<div class="recent-item-body">';
+      if (rec.content) {
+        html += renderMarkdown(rec.content);
+      } else {
+        html += '<p style="color:var(--text-tertiary)">（内容为空）</p>';
+      }
+      html += '</div>';
+      html += '</div>';
+    });
+
+    html += '</div>';
+    document.getElementById("content-display").innerHTML = html;
   }
 
-  function statItem(num, label) {
-    return '<div style="text-align:center"><div style="font-size:28px;font-weight:700;color:var(--accent)">' + num + '</div><div style="font-size:12px;color:var(--text-tertiary)">' + label + '</div></div>';
-  }
+  // 展开/收起最近录入条目
+  window._toggleRecent = function (id) {
+    var card = document.getElementById(id);
+    if (card) { card.classList.toggle("expanded"); }
+  };
+
+  // 从最近录入跳转到研究员
+  window._gotoResearcher = function (name, event) {
+    if (event) { event.stopPropagation(); }
+    var r = DATA.researchers.find(function (x) { return x.name === name; });
+    if (r) {
+      currentResearcher = r;
+      renderResearcherList();
+      renderResearcherDetail(r);
+      if (isMobile()) { openMobileDetail(name); }
+    }
+  };
 
   // ---------- 渲染：筛选器 ----------
   function renderFilters() {
