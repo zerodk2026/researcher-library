@@ -1,26 +1,26 @@
 {
-  "fetch_time": "2026-09-05 00:26:46",
-  "total": 155,
+  "fetch_time": "2026-09-05 20:13:21",
+  "total": 156,
   "skipped_non_stock": [
-    "互联网估值框架",
-    "银行估值方法论",
-    "_研究体系_",
-    "油运",
-    "FML (Focus Minerals)",
-    "多晶硅",
-    "宏观观点",
-    "铜",
     "焦煤",
-    "厄尔尼诺与能源宏观",
-    "投资收益率计算公式",
+    "多晶硅",
+    "铜",
+    "油运",
     "油气",
+    "银行估值方法论",
+    "FML (Focus Minerals)",
+    "西藏铜矿资源税",
+    "厄尔尼诺与能源宏观",
     "AI资本开支",
     "实盘月报",
+    "互联网估值框架",
     "HCC (Warrior Met Coal)",
-    "西藏铜矿资源税",
-    "投资收益率计算公式_原始图片.png",
-    "煤炭（十五五规划）",
     "低估值轮動组合（实盘）",
+    "_研究体系_",
+    "煤炭（十五五规划）",
+    "投资收益率计算公式_原始图片.png",
+    "投资收益率计算公式",
+    "宏观观点",
     "浩洋股份",
     "煤炭行业",
     "投资体系",
@@ -84,6 +84,7 @@
         "大黄蚬子hgx",
         "飞翔芸",
         "山行",
+        "润哥",
         "金哥777",
         "愤怒的龙卷风"
       ],
@@ -276,8 +277,8 @@
     "富途控股": {
       "code": "usFUTU",
       "name": "富途控股",
-      "price": 122.11,
-      "change_percent": 0.08,
+      "price": 121.75,
+      "change_percent": -0.21,
       "chg_5d": 0,
       "chg_20d": 0,
       "chg_ytd": 0,
@@ -434,7 +435,8 @@
       "researchers": [
         "油菜君",
         "修身德真",
-        "超级鹿鼎公"
+        "超级鹿鼎公",
+        "愤怒的龙卷风"
       ],
       "tracked_name": "陕西能源"
     },
@@ -712,8 +714,8 @@
     "新氧": {
       "code": "usSY",
       "name": "新氧",
-      "price": 2.73,
-      "change_percent": -3.19,
+      "price": 2.76,
+      "change_percent": -2.13,
       "chg_5d": 0,
       "chg_20d": 0,
       "chg_ytd": 0,
@@ -1396,8 +1398,8 @@
     "拼多多": {
       "code": "usPDD",
       "name": "拼多多",
-      "price": 82.04,
-      "change_percent": 0.5,
+      "price": 82.21,
+      "change_percent": 0.71,
       "chg_5d": 0,
       "chg_20d": 0,
       "chg_ytd": 0,
@@ -1552,11 +1554,11 @@
     "AMR (Alpha Metallurgical)": {
       "code": "usAMR",
       "name": "Alpha Metallurgical Resources, Inc.",
-      "price": 224.92,
-      "change_percent": 3.56,
-      "chg_5d": 3599.34,
-      "chg_20d": 3599.34,
-      "chg_ytd": 4.0,
+      "price": 225.41,
+      "change_percent": 3.79,
+      "chg_5d": 3607.4,
+      "chg_20d": 3607.4,
+      "chg_ytd": 4.23,
       "market_name": "美股",
       "researchers": [
         "亲爱的阿兰"
@@ -1608,8 +1610,8 @@
     "Veeva Systems": {
       "code": "usVEEV",
       "name": "Veeva Systems Inc.",
-      "price": 275.84,
-      "change_percent": -3.0,
+      "price": 275.09,
+      "change_percent": -3.27,
       "chg_5d": 0,
       "chg_20d": 0,
       "chg_ytd": 0,
@@ -1749,8 +1751,8 @@
     "腾讯音乐（TME）": {
       "code": "usTME",
       "name": "腾讯音乐",
-      "price": 8.28,
-      "change_percent": 0.98,
+      "price": 8.26,
+      "change_percent": 0.73,
       "chg_5d": 0,
       "chg_20d": 0,
       "chg_ytd": 0,
@@ -2209,6 +2211,20 @@
         "愤怒的龙卷风"
       ],
       "tracked_name": "招金矿业"
+    },
+    "中国石油": {
+      "code": "sh601857",
+      "name": "中国石油",
+      "price": 11.17,
+      "change_percent": -0.36,
+      "chg_5d": -0.53,
+      "chg_20d": 3.71,
+      "chg_ytd": -3.29,
+      "market_name": "上海主板",
+      "researchers": [
+        "愤怒的龙卷风"
+      ],
+      "tracked_name": "中国石油"
     },
     "永新股份": {
       "code": "sz002014",
