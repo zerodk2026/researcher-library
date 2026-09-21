@@ -1,37 +1,38 @@
 {
-  "fetch_time": "2026-09-20 20:11:20",
+  "fetch_time": "2026-09-21 20:19:14",
   "total": 171,
   "skipped_non_stock": [
-    "保险股方法论",
-    "能源套利",
-    "煤炭行业",
-    "投资体系",
-    "宏观观点",
-    "投资收益率计算公式_原始图片.png",
-    "城商行",
-    "券商板块",
-    "厄尔尼诺与能源宏观",
-    "西藏铜矿资源税",
-    "FML (Focus Minerals)",
-    "油运",
-    "HCC (Warrior Met Coal)",
     "_研究体系_",
-    "AI资本开支",
-    "油气",
-    "互联网估值框架",
-    "煤炭板块",
-    "铜",
-    "多晶硅",
-    "投资收益率计算公式",
-    "电解铝",
+    "宏观观点",
     "焦煤",
-    "券商估值方法论",
-    "银行股方法论",
-    "煤炭（十五五规划）",
+    "互联网估值框架",
+    "投资收益率计算公式",
+    "厄尔尼诺与能源宏观",
+    "煤炭行业",
+    "HCC (Warrior Met Coal)",
+    "能源套利",
     "低估值轮動组合（实盘）",
     "实盘月报",
+    "煤炭板块",
+    "券商板块",
+    "保险股方法论",
+    "煤炭（十五五规划）",
+    "投资收益率计算公式_原始图片.png",
+    "油气",
     "银行估值方法论",
-    "银华日利"
+    "投资体系",
+    "银行股方法论",
+    "银华日利",
+    "FML (Focus Minerals)",
+    "油运",
+    "电解铝",
+    "券商估值方法论",
+    "AI资本开支",
+    "多晶硅",
+    "铜",
+    "城商行",
+    "西藏铜矿资源税",
+    "柴油炼化"
   ],
   "errors": [],
   "stocks": {
@@ -39,13 +40,14 @@
       "code": "hk09992",
       "name": "泡泡玛特",
       "price": 155.1,
-      "change_percent": 1.24,
-      "chg_5d": 1.37,
-      "chg_20d": 4.09,
-      "chg_ytd": -24.56,
+      "change_percent": 0.0,
+      "chg_5d": 1.44,
+      "chg_20d": 0.06,
+      "chg_ytd": -23.37,
       "market_name": "港股",
       "researchers": [
         "猫大人的FIRE计划",
+        "巍巍昆仑侠",
         "终身黑白"
       ],
       "tracked_name": "泡泡玛特"
@@ -53,11 +55,11 @@
     "吉利汽车": {
       "code": "hk00175",
       "name": "吉利汽车",
-      "price": 15.94,
-      "change_percent": -0.38,
-      "chg_5d": -1.12,
-      "chg_20d": -14.99,
-      "chg_ytd": -7.81,
+      "price": 15.91,
+      "change_percent": -0.19,
+      "chg_5d": -4.1,
+      "chg_20d": -13.86,
+      "chg_ytd": -8.51,
       "market_name": "港股",
       "researchers": [
         "猫大人的FIRE计划",
@@ -70,11 +72,11 @@
     "紫金矿业": {
       "code": "sh601899",
       "name": "紫金矿业",
-      "price": 31.41,
-      "change_percent": 1.65,
-      "chg_5d": -2.63,
-      "chg_20d": -9.59,
-      "chg_ytd": -8.27,
+      "price": 31.3,
+      "change_percent": -0.35,
+      "chg_5d": -2.95,
+      "chg_20d": -9.38,
+      "chg_ytd": -8.59,
       "market_name": "上海主板",
       "researchers": [
         "猫大人的FIRE计划",
@@ -92,11 +94,11 @@
     "阜丰集团": {
       "code": "hk00546",
       "name": "阜丰集团",
-      "price": 4.4,
-      "change_percent": -0.56,
-      "chg_5d": -4.14,
-      "chg_20d": -15.95,
-      "chg_ytd": -49.54,
+      "price": 4.45,
+      "change_percent": 1.14,
+      "chg_5d": -2.63,
+      "chg_20d": -13.17,
+      "chg_ytd": -51.53,
       "market_name": "港股",
       "researchers": [
         "许舒"
@@ -106,11 +108,11 @@
     "海天国际": {
       "code": "hk01882",
       "name": "海天国际",
-      "price": 17.07,
-      "change_percent": -1.56,
-      "chg_5d": -2.51,
-      "chg_20d": -14.74,
-      "chg_ytd": -26.17,
+      "price": 17.6,
+      "change_percent": 3.1,
+      "chg_5d": 1.73,
+      "chg_20d": -10.3,
+      "chg_ytd": -24.27,
       "market_name": "港股",
       "researchers": [
         "许舒"
@@ -120,11 +122,11 @@
     "波司登": {
       "code": "hk03998",
       "name": "波司登",
-      "price": 4.1,
-      "change_percent": 0.61,
-      "chg_5d": -6.07,
-      "chg_20d": -11.83,
-      "chg_ytd": 0.49,
+      "price": 4.055,
+      "change_percent": -1.1,
+      "chg_5d": -7.1,
+      "chg_20d": -8.67,
+      "chg_ytd": -1.1,
       "market_name": "港股",
       "researchers": [
         "许舒",
@@ -136,11 +138,11 @@
     "中国宏桥": {
       "code": "hk01378",
       "name": "中国宏桥",
-      "price": 22.12,
-      "change_percent": 1.28,
-      "chg_5d": -1.69,
-      "chg_20d": -4.57,
-      "chg_ytd": -43.05,
+      "price": 21.66,
+      "change_percent": -2.08,
+      "chg_5d": -2.43,
+      "chg_20d": -9.37,
+      "chg_ytd": -46.28,
       "market_name": "港股",
       "researchers": [
         "许舒",
@@ -152,11 +154,11 @@
     "海丰国际": {
       "code": "hk01308",
       "name": "海丰国际",
-      "price": 48.16,
-      "change_percent": 0.5,
-      "chg_5d": 6.17,
-      "chg_20d": -1.83,
-      "chg_ytd": 38.79,
+      "price": 48.78,
+      "change_percent": 1.29,
+      "chg_5d": 6.04,
+      "chg_20d": 0.12,
+      "chg_ytd": 40.09,
       "market_name": "港股",
       "researchers": [
         "许舒"
@@ -166,11 +168,11 @@
     "腾讯控股": {
       "code": "hk00700",
       "name": "腾讯控股",
-      "price": 419.0,
-      "change_percent": -1.64,
-      "chg_5d": -2.19,
-      "chg_20d": -8.32,
-      "chg_ytd": -23.89,
+      "price": 430.0,
+      "change_percent": 2.63,
+      "chg_5d": -0.14,
+      "chg_20d": -2.27,
+      "chg_ytd": -21.32,
       "market_name": "港股",
       "researchers": [
         "许舒",
@@ -189,11 +191,11 @@
     "福耀玻璃": {
       "code": "sh600660",
       "name": "福耀玻璃",
-      "price": 53.68,
-      "change_percent": -0.74,
-      "chg_5d": -0.61,
-      "chg_20d": -5.43,
-      "chg_ytd": -7.29,
+      "price": 54.14,
+      "change_percent": 0.86,
+      "chg_5d": 0.48,
+      "chg_20d": -4.16,
+      "chg_ytd": -6.49,
       "market_name": "上海主板",
       "researchers": [
         "许舒",
@@ -204,11 +206,11 @@
     "中国食品": {
       "code": "hk00506",
       "name": "中国食品",
-      "price": 3.79,
-      "change_percent": 1.88,
-      "chg_5d": 0.8,
-      "chg_20d": 13.81,
-      "chg_ytd": -5.25,
+      "price": 3.69,
+      "change_percent": -2.64,
+      "chg_5d": -1.99,
+      "chg_20d": 10.98,
+      "chg_ytd": -7.98,
       "market_name": "港股",
       "researchers": [
         "许舒"
@@ -218,11 +220,11 @@
     "华润饮料": {
       "code": "hk02460",
       "name": "华润饮料",
-      "price": 7.165,
-      "change_percent": 0.14,
-      "chg_5d": -0.35,
-      "chg_20d": -6.09,
-      "chg_ytd": -26.96,
+      "price": 7.32,
+      "change_percent": 2.16,
+      "chg_5d": 2.09,
+      "chg_20d": -2.98,
+      "chg_ytd": -26.87,
       "market_name": "港股",
       "researchers": [
         "TerryP57",
@@ -233,11 +235,11 @@
     "美团": {
       "code": "hk03690",
       "name": "美团-W",
-      "price": 73.2,
-      "change_percent": 0.41,
-      "chg_5d": -2.53,
-      "chg_20d": -13.88,
-      "chg_ytd": -4.31,
+      "price": 74.0,
+      "change_percent": 1.09,
+      "chg_5d": -1.4,
+      "chg_20d": -10.52,
+      "chg_ytd": -2.63,
       "market_name": "港股",
       "researchers": [
         "TerryP57",
@@ -248,11 +250,11 @@
     "申洲国际": {
       "code": "hk02313",
       "name": "申洲国际",
-      "price": 35.04,
-      "change_percent": 0.29,
-      "chg_5d": -2.61,
-      "chg_20d": -16.29,
-      "chg_ytd": -37.04,
+      "price": 34.7,
+      "change_percent": -0.97,
+      "chg_5d": -2.14,
+      "chg_20d": -17.54,
+      "chg_ytd": -36.91,
       "market_name": "港股",
       "researchers": [
         "TerryP57"
@@ -262,11 +264,11 @@
     "壁仞科技": {
       "code": "hk06082",
       "name": "壁仞科技",
-      "price": 37.94,
-      "change_percent": 12.05,
-      "chg_5d": 6.99,
-      "chg_20d": 0.53,
-      "chg_ytd": 11.59,
+      "price": 42.58,
+      "change_percent": 12.23,
+      "chg_5d": 28.64,
+      "chg_20d": 22.57,
+      "chg_ytd": 28.18,
       "market_name": "港股",
       "researchers": [
         "TerryP57"
@@ -290,11 +292,11 @@
     "建设银行": {
       "code": "sh601939",
       "name": "建设银行",
-      "price": 10.81,
-      "change_percent": -0.92,
-      "chg_5d": -1.91,
-      "chg_20d": 2.66,
-      "chg_ytd": 20.82,
+      "price": 10.93,
+      "change_percent": 1.11,
+      "chg_5d": -1.62,
+      "chg_20d": 2.53,
+      "chg_ytd": 22.16,
       "market_name": "上海主板",
       "researchers": [
         "TerryP57"
@@ -304,11 +306,11 @@
     "康方生物": {
       "code": "hk09926",
       "name": "康方生物",
-      "price": 90.5,
-      "change_percent": -0.28,
-      "chg_5d": 0.22,
-      "chg_20d": 0.28,
-      "chg_ytd": -21.24,
+      "price": 99.3,
+      "change_percent": 9.72,
+      "chg_5d": 3.76,
+      "chg_20d": 12.39,
+      "chg_ytd": -10.62,
       "market_name": "港股",
       "researchers": [
         "TerryP57",
@@ -319,11 +321,11 @@
     "中芯国际": {
       "code": "hk00981",
       "name": "中芯国际",
-      "price": 65.15,
-      "change_percent": 4.41,
-      "chg_5d": 3.17,
-      "chg_20d": -10.14,
-      "chg_ytd": 3.25,
+      "price": 65.6,
+      "change_percent": 0.69,
+      "chg_5d": 7.01,
+      "chg_20d": -1.72,
+      "chg_ytd": 4.79,
       "market_name": "港股",
       "researchers": [
         "油菜君",
@@ -334,11 +336,11 @@
     "华阳股份": {
       "code": "sh600348",
       "name": "华阳股份",
-      "price": 8.94,
-      "change_percent": -1.11,
-      "chg_5d": -2.08,
-      "chg_20d": -0.22,
-      "chg_ytd": -10.36,
+      "price": 9.13,
+      "change_percent": 2.13,
+      "chg_5d": 1.67,
+      "chg_20d": 0.55,
+      "chg_ytd": -8.45,
       "market_name": "上海主板",
       "researchers": [
         "油菜君",
@@ -349,11 +351,11 @@
     "阿里巴巴": {
       "code": "hk09988",
       "name": "阿里巴巴-W",
-      "price": 109.3,
-      "change_percent": 4.0,
-      "chg_5d": 1.67,
-      "chg_20d": -11.14,
-      "chg_ytd": -16.31,
+      "price": 112.6,
+      "change_percent": 3.02,
+      "chg_5d": 6.33,
+      "chg_20d": 0.09,
+      "chg_ytd": -14.24,
       "market_name": "港股",
       "researchers": [
         "油菜君"
@@ -364,9 +366,9 @@
       "code": "sz000630",
       "name": "铜陵有色",
       "price": 6.09,
-      "change_percent": 1.16,
-      "chg_5d": -1.3,
-      "chg_20d": -7.59,
+      "change_percent": 0.0,
+      "chg_5d": 0.0,
+      "chg_20d": -8.14,
       "chg_ytd": -10.31,
       "market_name": "深圳主板",
       "researchers": [
@@ -380,11 +382,11 @@
     "特变电工": {
       "code": "sh600089",
       "name": "特变电工",
-      "price": 18.13,
-      "change_percent": 1.23,
-      "chg_5d": -3.15,
-      "chg_20d": -9.58,
-      "chg_ytd": -39.49,
+      "price": 18.3,
+      "change_percent": 0.94,
+      "chg_5d": -0.92,
+      "chg_20d": -3.68,
+      "chg_ytd": -38.92,
       "market_name": "上海主板",
       "researchers": [
         "油菜君",
@@ -397,11 +399,11 @@
     "兖矿能源": {
       "code": "hk01171",
       "name": "兖矿能源",
-      "price": 12.02,
-      "change_percent": -2.67,
-      "chg_5d": -7.4,
-      "chg_20d": -5.8,
-      "chg_ytd": -23.92,
+      "price": 12.34,
+      "change_percent": 2.66,
+      "chg_5d": -1.52,
+      "chg_20d": -4.93,
+      "chg_ytd": -26.24,
       "market_name": "港股",
       "researchers": [
         "油菜君"
@@ -411,11 +413,11 @@
     "中煤能源": {
       "code": "hk01898",
       "name": "中煤能源",
-      "price": 10.49,
-      "change_percent": -1.69,
-      "chg_5d": -5.83,
-      "chg_20d": -6.26,
-      "chg_ytd": -27.56,
+      "price": 10.83,
+      "change_percent": 3.24,
+      "chg_5d": -1.28,
+      "chg_20d": -6.07,
+      "chg_ytd": -27.8,
       "market_name": "港股",
       "researchers": [
         "油菜君",
@@ -427,11 +429,11 @@
     "陕西能源": {
       "code": "sz001286",
       "name": "陕西能源",
-      "price": 9.66,
-      "change_percent": 0.63,
-      "chg_5d": -1.02,
-      "chg_20d": 1.58,
-      "chg_ytd": -10.31,
+      "price": 9.6,
+      "change_percent": -0.62,
+      "chg_5d": -2.34,
+      "chg_20d": 2.35,
+      "chg_ytd": -10.86,
       "market_name": "深圳主板",
       "researchers": [
         "油菜君",
@@ -444,11 +446,11 @@
     "盐湖": {
       "code": "sz000792",
       "name": "盐湖股份",
-      "price": 24.74,
-      "change_percent": -1.0,
-      "chg_5d": -2.79,
-      "chg_20d": -14.13,
-      "chg_ytd": -37.29,
+      "price": 24.96,
+      "change_percent": 0.89,
+      "chg_5d": -0.72,
+      "chg_20d": -12.36,
+      "chg_ytd": -36.73,
       "market_name": "深圳主板",
       "researchers": [
         "陈chensir"
@@ -458,11 +460,11 @@
     "中远海发": {
       "code": "sh601866",
       "name": "中远海发",
-      "price": 2.47,
-      "change_percent": 0.0,
-      "chg_5d": -1.2,
-      "chg_20d": 3.35,
-      "chg_ytd": -12.87,
+      "price": 2.5,
+      "change_percent": 1.21,
+      "chg_5d": 0.4,
+      "chg_20d": 4.17,
+      "chg_ytd": -11.82,
       "market_name": "上海主板",
       "researchers": [
         "陈chensir"
@@ -472,16 +474,17 @@
     "中远海控": {
       "code": "sh601919",
       "name": "中远海控",
-      "price": 16.1,
-      "change_percent": -1.04,
-      "chg_5d": -0.56,
-      "chg_20d": -5.35,
-      "chg_ytd": 5.02,
+      "price": 16.71,
+      "change_percent": 3.79,
+      "chg_5d": 3.79,
+      "chg_20d": -4.08,
+      "chg_ytd": 9.0,
       "market_name": "上海主板",
       "researchers": [
         "陈chensir",
         "T6584",
         "超级鹿鼎公",
+        "達人知命",
         "EC999185"
       ],
       "tracked_name": "中远海控"
@@ -489,11 +492,11 @@
     "东方海外国际": {
       "code": "hk00316",
       "name": "东方海外国际",
-      "price": 146.3,
-      "change_percent": 0.76,
-      "chg_5d": -1.75,
-      "chg_20d": -17.2,
-      "chg_ytd": -6.04,
+      "price": 149.4,
+      "change_percent": 2.12,
+      "chg_5d": 1.77,
+      "chg_20d": -15.55,
+      "chg_ytd": 0.34,
       "market_name": "港股",
       "researchers": [
         "陈chensir",
@@ -504,11 +507,11 @@
     "京东方": {
       "code": "sz000725",
       "name": "京东方Ａ",
-      "price": 5.92,
-      "change_percent": 2.96,
-      "chg_5d": 11.07,
-      "chg_20d": -1.33,
-      "chg_ytd": 38.19,
+      "price": 6.07,
+      "change_percent": 2.53,
+      "chg_5d": 14.53,
+      "chg_20d": 5.57,
+      "chg_ytd": 41.69,
       "market_name": "深圳主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -518,11 +521,11 @@
     "金钼股份": {
       "code": "sh601958",
       "name": "金钼股份",
-      "price": 20.45,
-      "change_percent": 2.1,
-      "chg_5d": 0.94,
-      "chg_20d": -6.79,
-      "chg_ytd": -4.75,
+      "price": 20.93,
+      "change_percent": 2.35,
+      "chg_5d": 3.82,
+      "chg_20d": -10.13,
+      "chg_ytd": -2.52,
       "market_name": "上海主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -532,11 +535,11 @@
     "洛阳钼业": {
       "code": "sh603993",
       "name": "洛阳钼业",
-      "price": 17.51,
-      "change_percent": 0.92,
-      "chg_5d": -3.53,
-      "chg_20d": -5.48,
-      "chg_ytd": -6.96,
+      "price": 17.59,
+      "change_percent": 0.46,
+      "chg_5d": -1.68,
+      "chg_20d": -6.91,
+      "chg_ytd": -6.53,
       "market_name": "上海主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -546,11 +549,11 @@
     "国电电力": {
       "code": "sh600795",
       "name": "国电电力",
-      "price": 5.26,
-      "change_percent": 0.0,
+      "price": 5.25,
+      "change_percent": -0.19,
       "chg_5d": -1.13,
-      "chg_20d": 2.94,
-      "chg_ytd": 6.72,
+      "chg_20d": 1.74,
+      "chg_ytd": 6.51,
       "market_name": "上海主板",
       "researchers": [
         "大黄蚬子hgx",
@@ -561,11 +564,11 @@
     "兴业银锡": {
       "code": "sz000426",
       "name": "兴业银锡",
-      "price": 35.47,
-      "change_percent": 2.57,
-      "chg_5d": -1.39,
-      "chg_20d": -13.0,
-      "chg_ytd": -23.06,
+      "price": 34.93,
+      "change_percent": -1.52,
+      "chg_5d": -1.36,
+      "chg_20d": -17.19,
+      "chg_ytd": -24.23,
       "market_name": "深圳主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -575,11 +578,11 @@
     "京东方A": {
       "code": "sz000725",
       "name": "京东方Ａ",
-      "price": 5.92,
-      "change_percent": 2.96,
-      "chg_5d": 11.07,
-      "chg_20d": -1.33,
-      "chg_ytd": 38.19,
+      "price": 6.07,
+      "change_percent": 2.53,
+      "chg_5d": 14.53,
+      "chg_20d": 5.57,
+      "chg_ytd": 41.69,
       "market_name": "深圳主板",
       "researchers": [
         "大黄蚬子hgx"
@@ -591,9 +594,9 @@
       "name": "王氏港建",
       "price": 0.305,
       "change_percent": 0.0,
-      "chg_5d": -7.58,
+      "chg_5d": -4.69,
       "chg_20d": 3.39,
-      "chg_ytd": 15.09,
+      "chg_ytd": 22.0,
       "market_name": "港股",
       "researchers": [
         "贪心和不甘心"
@@ -603,11 +606,11 @@
     "先思行": {
       "code": "hk00595",
       "name": "先思行集团",
-      "price": 1.25,
-      "change_percent": -0.79,
-      "chg_5d": -3.47,
-      "chg_20d": -4.21,
-      "chg_ytd": 233.33,
+      "price": 1.26,
+      "change_percent": 0.8,
+      "chg_5d": -0.4,
+      "chg_20d": -2.7,
+      "chg_ytd": 227.27,
       "market_name": "港股",
       "researchers": [
         "贪心和不甘心"
@@ -618,10 +621,10 @@
       "code": "hk00433",
       "name": "北方矿业",
       "price": 0.042,
-      "change_percent": -4.55,
-      "chg_5d": -6.67,
-      "chg_20d": -30.0,
-      "chg_ytd": -53.33,
+      "change_percent": 0.0,
+      "chg_5d": -8.7,
+      "chg_20d": -27.59,
+      "chg_ytd": -51.72,
       "market_name": "港股",
       "researchers": [
         "贪心和不甘心"
@@ -631,11 +634,11 @@
     "爱柯迪": {
       "code": "sh600933",
       "name": "爱柯迪",
-      "price": 14.03,
-      "change_percent": 5.89,
-      "chg_5d": 9.87,
-      "chg_20d": 2.18,
-      "chg_ytd": -18.05,
+      "price": 14.55,
+      "change_percent": 3.71,
+      "chg_5d": 13.67,
+      "chg_20d": 5.13,
+      "chg_ytd": -15.01,
       "market_name": "上海主板",
       "researchers": [
         "贪心和不甘心"
@@ -645,11 +648,11 @@
     "浩洋股份": {
       "code": "sz300833",
       "name": "浩洋股份",
-      "price": 40.4,
-      "change_percent": 2.59,
-      "chg_5d": -1.34,
-      "chg_20d": 11.48,
-      "chg_ytd": 13.01,
+      "price": 40.92,
+      "change_percent": 1.29,
+      "chg_5d": -0.53,
+      "chg_20d": 12.29,
+      "chg_ytd": 14.46,
       "market_name": "创业板",
       "researchers": [
         "贪心和不甘心"
@@ -659,11 +662,11 @@
     "卡罗特": {
       "code": "hk02549",
       "name": "卡罗特",
-      "price": 4.095,
-      "change_percent": 3.67,
-      "chg_5d": 3.67,
-      "chg_20d": 6.5,
-      "chg_ytd": -13.61,
+      "price": 4.09,
+      "change_percent": -0.12,
+      "chg_5d": 1.61,
+      "chg_20d": 4.6,
+      "chg_ytd": -14.61,
       "market_name": "港股",
       "researchers": [
         "贪心和不甘心"
@@ -673,11 +676,11 @@
     "粉笔": {
       "code": "hk02469",
       "name": "粉笔",
-      "price": 0.29,
-      "change_percent": -7.94,
-      "chg_5d": 3.57,
-      "chg_20d": -21.62,
-      "chg_ytd": -76.8,
+      "price": 0.315,
+      "change_percent": 8.62,
+      "chg_5d": 10.53,
+      "chg_20d": -8.7,
+      "chg_ytd": -75.77,
       "market_name": "港股",
       "researchers": [
         "枯叶先生"
@@ -687,11 +690,11 @@
     "京能电力": {
       "code": "sh600578",
       "name": "京能电力",
-      "price": 5.37,
-      "change_percent": 1.32,
-      "chg_5d": -3.76,
-      "chg_20d": -2.89,
-      "chg_ytd": -1.83,
+      "price": 5.38,
+      "change_percent": 0.19,
+      "chg_5d": -4.27,
+      "chg_20d": -3.41,
+      "chg_ytd": -1.65,
       "market_name": "上海主板",
       "researchers": [
         "山湖水"
@@ -701,11 +704,11 @@
     "中国中车": {
       "code": "sh601766",
       "name": "中国中车",
-      "price": 6.0,
-      "change_percent": 0.84,
-      "chg_5d": -2.12,
-      "chg_20d": -0.66,
-      "chg_ytd": -5.66,
+      "price": 6.08,
+      "change_percent": 1.33,
+      "chg_5d": -0.82,
+      "chg_20d": 0.0,
+      "chg_ytd": -4.4,
       "market_name": "上海主板",
       "researchers": [
         "山湖水"
@@ -715,11 +718,11 @@
     "皖能电力": {
       "code": "sz000543",
       "name": "皖能电力",
-      "price": 7.35,
-      "change_percent": 0.27,
-      "chg_5d": -1.47,
-      "chg_20d": -0.54,
-      "chg_ytd": -14.25,
+      "price": 7.29,
+      "change_percent": -0.82,
+      "chg_5d": -2.67,
+      "chg_20d": -1.88,
+      "chg_ytd": -14.95,
       "market_name": "深圳主板",
       "researchers": [
         "山湖水"
@@ -729,11 +732,11 @@
     "华能国际": {
       "code": "sh600011",
       "name": "华能国际",
-      "price": 6.8,
-      "change_percent": 0.44,
-      "chg_5d": -2.16,
-      "chg_20d": 3.03,
-      "chg_ytd": -8.48,
+      "price": 6.79,
+      "change_percent": -0.15,
+      "chg_5d": -2.58,
+      "chg_20d": 2.26,
+      "chg_ytd": -8.61,
       "market_name": "上海主板",
       "researchers": [
         "山湖水",
@@ -744,11 +747,11 @@
     "重庆机电": {
       "code": "hk02722",
       "name": "重庆机电",
-      "price": 1.735,
-      "change_percent": 1.46,
-      "chg_5d": -3.34,
-      "chg_20d": -11.93,
-      "chg_ytd": -43.11,
+      "price": 1.755,
+      "change_percent": 1.15,
+      "chg_5d": -0.57,
+      "chg_20d": -7.39,
+      "chg_ytd": -39.48,
       "market_name": "港股",
       "researchers": [
         "韭菲特"
@@ -772,11 +775,11 @@
     "亿联网络": {
       "code": "sz300628",
       "name": "亿联网络",
-      "price": 41.46,
-      "change_percent": -0.07,
-      "chg_5d": 2.75,
-      "chg_20d": -0.65,
-      "chg_ytd": 25.87,
+      "price": 41.44,
+      "change_percent": 1.17,
+      "chg_5d": 3.01,
+      "chg_20d": -0.58,
+      "chg_ytd": 27.74,
       "market_name": "创业板",
       "researchers": [
         "韭菲特"
@@ -786,11 +789,11 @@
     "信邦控股": {
       "code": "hk01571",
       "name": "信邦控股",
-      "price": 3.7,
-      "change_percent": 0.41,
-      "chg_5d": 0.95,
-      "chg_20d": -2.5,
-      "chg_ytd": -9.09,
+      "price": 3.68,
+      "change_percent": -0.54,
+      "chg_5d": -2.39,
+      "chg_20d": -3.16,
+      "chg_ytd": -9.58,
       "market_name": "港股",
       "researchers": [
         "鲁放",
@@ -801,11 +804,11 @@
     "中国太平": {
       "code": "hk00966",
       "name": "中国太平",
-      "price": 20.76,
-      "change_percent": 0.48,
-      "chg_5d": -2.44,
-      "chg_20d": 1.17,
-      "chg_ytd": -4.16,
+      "price": 20.92,
+      "change_percent": 0.77,
+      "chg_5d": -2.88,
+      "chg_20d": 2.25,
+      "chg_ytd": -4.39,
       "market_name": "港股",
       "researchers": [
         "鲁放"
@@ -815,11 +818,11 @@
     "天坛生物": {
       "code": "sh600161",
       "name": "天坛生物",
-      "price": 12.17,
-      "change_percent": 0.58,
-      "chg_5d": 0.66,
-      "chg_20d": 0.16,
-      "chg_ytd": -23.84,
+      "price": 12.48,
+      "change_percent": 2.55,
+      "chg_5d": 1.3,
+      "chg_20d": 4.52,
+      "chg_ytd": -21.9,
       "market_name": "上海主板",
       "researchers": [
         "飞翔芸"
@@ -829,11 +832,11 @@
     "宏达股份": {
       "code": "sh600331",
       "name": "宏达股份",
-      "price": 11.38,
-      "change_percent": 0.09,
-      "chg_5d": -4.85,
-      "chg_20d": -11.99,
-      "chg_ytd": -34.97,
+      "price": 11.84,
+      "change_percent": 4.04,
+      "chg_5d": 1.28,
+      "chg_20d": -9.27,
+      "chg_ytd": -32.34,
       "market_name": "上海主板",
       "researchers": [
         "飞翔芸"
@@ -843,11 +846,11 @@
     "恒力石化": {
       "code": "sh600346",
       "name": "恒力石化",
-      "price": 16.42,
-      "change_percent": 0.24,
-      "chg_5d": -4.92,
-      "chg_20d": -12.98,
-      "chg_ytd": -27.22,
+      "price": 16.6,
+      "change_percent": 1.1,
+      "chg_5d": -1.48,
+      "chg_20d": -11.51,
+      "chg_ytd": -26.42,
       "market_name": "上海主板",
       "researchers": [
         "飞翔芸"
@@ -857,11 +860,11 @@
     "盐湖股份": {
       "code": "sz000792",
       "name": "盐湖股份",
-      "price": 24.74,
-      "change_percent": -1.0,
-      "chg_5d": -2.79,
-      "chg_20d": -14.13,
-      "chg_ytd": -37.29,
+      "price": 24.96,
+      "change_percent": 0.89,
+      "chg_5d": -0.72,
+      "chg_20d": -12.36,
+      "chg_ytd": -36.73,
       "market_name": "深圳主板",
       "researchers": [
         "飞翔芸",
@@ -873,11 +876,11 @@
     "川恒股份": {
       "code": "sz002895",
       "name": "川恒股份",
-      "price": 30.79,
-      "change_percent": 0.59,
-      "chg_5d": -3.42,
-      "chg_20d": -7.81,
-      "chg_ytd": -24.48,
+      "price": 30.84,
+      "change_percent": 0.16,
+      "chg_5d": -3.08,
+      "chg_20d": -5.72,
+      "chg_ytd": -24.36,
       "market_name": "深圳主板",
       "researchers": [
         "飞翔芸"
@@ -887,11 +890,11 @@
     "兆易创新": {
       "code": "sh603986",
       "name": "兆易创新",
-      "price": 388.18,
-      "change_percent": 4.95,
-      "chg_5d": 4.54,
-      "chg_20d": -5.1,
-      "chg_ytd": 39.01,
+      "price": 391.71,
+      "change_percent": 0.91,
+      "chg_5d": 9.76,
+      "chg_20d": 2.63,
+      "chg_ytd": 40.27,
       "market_name": "上海主板",
       "researchers": [
         "飞翔芸",
@@ -902,11 +905,11 @@
     "ST司特": {
       "code": "sz002538",
       "name": "ST司特",
-      "price": 6.71,
-      "change_percent": 0.15,
-      "chg_5d": -0.15,
-      "chg_20d": -7.7,
-      "chg_ytd": -14.41,
+      "price": 6.73,
+      "change_percent": 0.3,
+      "chg_5d": 1.66,
+      "chg_20d": -7.81,
+      "chg_ytd": -14.16,
       "market_name": "深圳主板",
       "researchers": [
         "飞翔芸"
@@ -916,11 +919,11 @@
     "万华化学": {
       "code": "sh600309",
       "name": "万华化学",
-      "price": 71.15,
-      "change_percent": 1.17,
-      "chg_5d": -4.5,
-      "chg_20d": -2.76,
-      "chg_ytd": -13.27,
+      "price": 70.51,
+      "change_percent": -0.9,
+      "chg_5d": -4.08,
+      "chg_20d": -2.58,
+      "chg_ytd": -14.05,
       "market_name": "上海主板",
       "researchers": [
         "飞翔芸"
@@ -930,11 +933,11 @@
     "中国海洋石油": {
       "code": "hk00883",
       "name": "中国海洋石油",
-      "price": 23.6,
-      "change_percent": -1.17,
-      "chg_5d": -3.2,
-      "chg_20d": -6.27,
-      "chg_ytd": -17.42,
+      "price": 23.94,
+      "change_percent": 1.44,
+      "chg_5d": -2.13,
+      "chg_20d": -5.75,
+      "chg_ytd": -18.85,
       "market_name": "港股",
       "researchers": [
         "挚爱子洲",
@@ -948,11 +951,11 @@
     "青岛港": {
       "code": "sh601298",
       "name": "青岛港",
-      "price": 9.65,
-      "change_percent": -1.03,
-      "chg_5d": 1.47,
-      "chg_20d": 8.79,
-      "chg_ytd": 8.17,
+      "price": 9.79,
+      "change_percent": 1.45,
+      "chg_5d": 2.09,
+      "chg_20d": 8.78,
+      "chg_ytd": 9.74,
       "market_name": "上海主板",
       "researchers": [
         "挚爱子洲"
@@ -962,11 +965,11 @@
     "天山铝业": {
       "code": "sz002532",
       "name": "天山铝业",
-      "price": 12.81,
-      "change_percent": 0.63,
-      "chg_5d": -3.1,
-      "chg_20d": 1.1,
-      "chg_ytd": -29.79,
+      "price": 12.55,
+      "change_percent": -2.03,
+      "chg_5d": -3.68,
+      "chg_20d": -1.18,
+      "chg_ytd": -31.22,
       "market_name": "深圳主板",
       "researchers": [
         "挚爱子洲",
@@ -977,11 +980,11 @@
     "陕西煤业": {
       "code": "sh601225",
       "name": "陕西煤业",
-      "price": 25.2,
-      "change_percent": -0.87,
-      "chg_5d": -3.26,
-      "chg_20d": -2.06,
-      "chg_ytd": -1.14,
+      "price": 25.7,
+      "change_percent": 1.98,
+      "chg_5d": -0.96,
+      "chg_20d": -3.02,
+      "chg_ytd": 0.82,
       "market_name": "上海主板",
       "researchers": [
         "挚爱子洲",
@@ -993,11 +996,11 @@
     "明泰铝业": {
       "code": "sh601677",
       "name": "明泰铝业",
-      "price": 16.91,
-      "change_percent": 1.5,
-      "chg_5d": 2.42,
-      "chg_20d": 1.74,
-      "chg_ytd": 3.27,
+      "price": 16.83,
+      "change_percent": -0.47,
+      "chg_5d": 2.06,
+      "chg_20d": 2.94,
+      "chg_ytd": 2.78,
       "market_name": "上海主板",
       "researchers": [
         "闯关东了吧"
@@ -1007,11 +1010,11 @@
     "焦作万方": {
       "code": "sz000612",
       "name": "焦作万方",
-      "price": 11.4,
-      "change_percent": 0.53,
-      "chg_5d": 7.45,
-      "chg_20d": 2.43,
-      "chg_ytd": -16.76,
+      "price": 11.32,
+      "change_percent": -0.7,
+      "chg_5d": 7.6,
+      "chg_20d": 1.89,
+      "chg_ytd": -17.34,
       "market_name": "深圳主板",
       "researchers": [
         "闯关东了吧",
@@ -1022,11 +1025,11 @@
     "普天通信集团": {
       "code": "hk01720",
       "name": "普天通信集团",
-      "price": 0.285,
-      "change_percent": 1.79,
-      "chg_5d": -9.52,
-      "chg_20d": -14.93,
-      "chg_ytd": -58.09,
+      "price": 0.295,
+      "change_percent": 3.51,
+      "chg_5d": -6.35,
+      "chg_20d": -3.28,
+      "chg_ytd": -56.62,
       "market_name": "港股",
       "researchers": [
         "反向研究"
@@ -1036,11 +1039,11 @@
     "中国三江化工": {
       "code": "hk02198",
       "name": "中国三江化工",
-      "price": 3.98,
-      "change_percent": 3.24,
-      "chg_5d": -4.56,
-      "chg_20d": 4.87,
-      "chg_ytd": -19.43,
+      "price": 3.82,
+      "change_percent": -4.02,
+      "chg_5d": -6.94,
+      "chg_20d": 6.26,
+      "chg_ytd": -16.04,
       "market_name": "港股",
       "researchers": [
         "反向研究"
@@ -1050,11 +1053,11 @@
     "卫星化学": {
       "code": "sz002648",
       "name": "卫星化学",
-      "price": 26.61,
-      "change_percent": 1.03,
-      "chg_5d": -2.24,
-      "chg_20d": -1.44,
-      "chg_ytd": -5.51,
+      "price": 27.23,
+      "change_percent": 2.33,
+      "chg_5d": 1.19,
+      "chg_20d": 2.48,
+      "chg_ytd": -3.31,
       "market_name": "深圳主板",
       "researchers": [
         "反向研究"
@@ -1064,11 +1067,11 @@
     "小米集团": {
       "code": "hk01810",
       "name": "小米集团-W",
-      "price": 26.4,
-      "change_percent": 0.99,
-      "chg_5d": 0.15,
-      "chg_20d": -9.03,
-      "chg_ytd": -20.19,
+      "price": 27.58,
+      "change_percent": 4.47,
+      "chg_5d": 1.55,
+      "chg_20d": -0.86,
+      "chg_ytd": -17.18,
       "market_name": "港股",
       "researchers": [
         "反向研究",
@@ -1079,11 +1082,11 @@
     "长飞光纤": {
       "code": "sh601869",
       "name": "长飞光纤",
-      "price": 454.99,
-      "change_percent": -2.58,
-      "chg_5d": -4.01,
-      "chg_20d": 25.13,
-      "chg_ytd": 88.24,
+      "price": 458.99,
+      "change_percent": 0.88,
+      "chg_5d": -0.15,
+      "chg_20d": 21.04,
+      "chg_ytd": 89.9,
       "market_name": "上海主板",
       "researchers": [
         "反向研究"
@@ -1093,11 +1096,11 @@
     "东方甄选": {
       "code": "hk01797",
       "name": "东方甄选",
-      "price": 25.9,
-      "change_percent": 3.43,
-      "chg_5d": 8.37,
-      "chg_20d": 28.09,
-      "chg_ytd": 0.15,
+      "price": 27.08,
+      "change_percent": 4.56,
+      "chg_5d": 1.8,
+      "chg_20d": 24.33,
+      "chg_ytd": 1.42,
       "market_name": "港股",
       "researchers": [
         "反向研究"
@@ -1107,11 +1110,11 @@
     "中国心连心化肥": {
       "code": "hk01866",
       "name": "中国心连心化肥",
-      "price": 9.955,
-      "change_percent": -2.11,
-      "chg_5d": -7.57,
-      "chg_20d": -3.44,
-      "chg_ytd": -16.06,
+      "price": 9.895,
+      "change_percent": -0.6,
+      "chg_5d": -4.49,
+      "chg_20d": -6.3,
+      "chg_ytd": -18.96,
       "market_name": "港股",
       "researchers": [
         "反向研究"
@@ -1121,11 +1124,11 @@
     "美的集团": {
       "code": "sz000333",
       "name": "美的集团",
-      "price": 84.4,
-      "change_percent": -0.75,
-      "chg_5d": -2.16,
-      "chg_20d": 0.12,
-      "chg_ytd": 15.94,
+      "price": 80.9,
+      "change_percent": -4.15,
+      "chg_5d": -6.8,
+      "chg_20d": -5.92,
+      "chg_ytd": 11.13,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987",
@@ -1137,11 +1140,11 @@
     "众安在线": {
       "code": "hk06060",
       "name": "众安在线",
-      "price": 10.09,
-      "change_percent": 1.92,
-      "chg_5d": -0.69,
-      "chg_20d": -4.09,
-      "chg_ytd": -27.98,
+      "price": 10.32,
+      "change_percent": 2.28,
+      "chg_5d": 2.08,
+      "chg_20d": -3.91,
+      "chg_ytd": -26.81,
       "market_name": "港股",
       "researchers": [
         "夏至1987"
@@ -1151,11 +1154,11 @@
     "药明康德": {
       "code": "sh603259",
       "name": "药明康德",
-      "price": 160.0,
-      "change_percent": -0.31,
-      "chg_5d": 5.79,
-      "chg_20d": -1.45,
-      "chg_ytd": 80.61,
+      "price": 167.96,
+      "change_percent": 4.97,
+      "chg_5d": 5.73,
+      "chg_20d": 8.13,
+      "chg_ytd": 89.59,
       "market_name": "上海主板",
       "researchers": [
         "夏至1987"
@@ -1165,11 +1168,11 @@
     "平安银行": {
       "code": "sz000001",
       "name": "平安银行",
-      "price": 11.7,
-      "change_percent": 0.78,
-      "chg_5d": -0.34,
-      "chg_20d": 2.54,
-      "chg_ytd": 10.69,
+      "price": 11.73,
+      "change_percent": 0.26,
+      "chg_5d": -1.01,
+      "chg_20d": 1.47,
+      "chg_ytd": 10.97,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987",
@@ -1181,9 +1184,9 @@
       "code": "sh688169",
       "name": "石头科技",
       "price": 118.6,
-      "change_percent": -1.62,
-      "chg_5d": -0.85,
-      "chg_20d": 1.84,
+      "change_percent": 0.0,
+      "chg_5d": -1.49,
+      "chg_20d": 5.42,
       "chg_ytd": -8.66,
       "market_name": "上海主板",
       "researchers": [
@@ -1194,11 +1197,11 @@
     "宇树科技": {
       "code": "sh688836",
       "name": "宇树科技-W",
-      "price": 514.98,
-      "change_percent": 2.33,
-      "chg_5d": 7.94,
-      "chg_20d": -23.41,
-      "chg_ytd": -53.18,
+      "price": 494.85,
+      "change_percent": -3.91,
+      "chg_5d": 5.29,
+      "chg_20d": -17.95,
+      "chg_ytd": -55.01,
       "market_name": "科创板",
       "researchers": [
         "夏至1987",
@@ -1209,11 +1212,11 @@
     "泸州老窖": {
       "code": "sz000568",
       "name": "泸州老窖",
-      "price": 71.92,
-      "change_percent": 0.38,
-      "chg_5d": -2.32,
+      "price": 72.2,
+      "change_percent": 0.39,
+      "chg_5d": -1.74,
       "chg_20d": -10.97,
-      "chg_ytd": -30.23,
+      "chg_ytd": -29.96,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987",
@@ -1224,11 +1227,11 @@
     "宁波银行": {
       "code": "sz002142",
       "name": "宁波银行",
-      "price": 34.65,
-      "change_percent": 0.17,
-      "chg_5d": -2.39,
-      "chg_20d": 1.73,
-      "chg_ytd": 15.0,
+      "price": 34.89,
+      "change_percent": 0.69,
+      "chg_5d": -2.43,
+      "chg_20d": 2.92,
+      "chg_ytd": 15.8,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987",
@@ -1239,11 +1242,11 @@
     "青岛银行": {
       "code": "sz002948",
       "name": "青岛银行",
-      "price": 6.05,
-      "change_percent": 0.5,
-      "chg_5d": -3.04,
-      "chg_20d": 1.68,
-      "chg_ytd": 17.02,
+      "price": 6.07,
+      "change_percent": 0.33,
+      "chg_5d": -3.19,
+      "chg_20d": 1.17,
+      "chg_ytd": 17.41,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987",
@@ -1254,11 +1257,11 @@
     "齐鲁银行": {
       "code": "sh601665",
       "name": "齐鲁银行",
-      "price": 6.9,
-      "change_percent": 0.15,
-      "chg_5d": -3.5,
-      "chg_20d": 5.83,
-      "chg_ytd": 21.65,
+      "price": 6.91,
+      "change_percent": 0.14,
+      "chg_5d": -3.36,
+      "chg_20d": 5.34,
+      "chg_ytd": 21.83,
       "market_name": "上海主板",
       "researchers": [
         "夏至1987",
@@ -1269,11 +1272,11 @@
     "青农商行": {
       "code": "sz002958",
       "name": "青农商行",
-      "price": 2.96,
-      "change_percent": 0.0,
-      "chg_5d": -1.33,
-      "chg_20d": 1.72,
-      "chg_ytd": -2.63,
+      "price": 2.94,
+      "change_percent": -0.68,
+      "chg_5d": -3.29,
+      "chg_20d": -0.34,
+      "chg_ytd": -3.29,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987"
@@ -1283,11 +1286,11 @@
     "中山公用": {
       "code": "sz000685",
       "name": "中山公用",
-      "price": 10.91,
-      "change_percent": 1.11,
-      "chg_5d": -2.15,
-      "chg_20d": -0.64,
-      "chg_ytd": -3.83,
+      "price": 10.95,
+      "change_percent": 0.37,
+      "chg_5d": -1.08,
+      "chg_20d": -1.44,
+      "chg_ytd": -3.48,
       "market_name": "深圳主板",
       "researchers": [
         "夏至1987"
@@ -1297,11 +1300,11 @@
     "龙资源": {
       "code": "hk01712",
       "name": "龙资源",
-      "price": 8.81,
-      "change_percent": -0.11,
-      "chg_5d": -2.81,
-      "chg_20d": 6.08,
-      "chg_ytd": 3.04,
+      "price": 8.605,
+      "change_percent": -2.33,
+      "chg_5d": -0.17,
+      "chg_20d": 3.61,
+      "chg_ytd": 0.64,
       "market_name": "港股",
       "researchers": [
         "李药师",
@@ -1312,11 +1315,11 @@
     "亚太资源": {
       "code": "hk01104",
       "name": "亚太资源",
-      "price": 2.125,
-      "change_percent": 2.66,
-      "chg_5d": -1.85,
-      "chg_20d": 13.03,
-      "chg_ytd": -30.33,
+      "price": 2.1,
+      "change_percent": -1.18,
+      "chg_5d": 0.48,
+      "chg_20d": 12.3,
+      "chg_ytd": -29.77,
       "market_name": "港股",
       "researchers": [
         "李药师"
@@ -1326,11 +1329,11 @@
     "耐普矿机": {
       "code": "sz300818",
       "name": "耐普矿机",
-      "price": 17.03,
-      "change_percent": 1.25,
-      "chg_5d": -0.93,
-      "chg_20d": -11.35,
-      "chg_ytd": -44.9,
+      "price": 17.2,
+      "change_percent": 1.0,
+      "chg_5d": -0.29,
+      "chg_20d": -6.98,
+      "chg_ytd": -44.35,
       "market_name": "深圳主板",
       "researchers": [
         "做人要厚道"
@@ -1340,11 +1343,11 @@
     "新城发展": {
       "code": "hk01030",
       "name": "新城发展",
-      "price": 1.485,
-      "change_percent": 5.32,
-      "chg_5d": 9.19,
-      "chg_20d": 5.32,
-      "chg_ytd": -33.41,
+      "price": 1.505,
+      "change_percent": 1.35,
+      "chg_5d": 8.27,
+      "chg_20d": 10.66,
+      "chg_ytd": -31.9,
       "market_name": "港股",
       "researchers": [
         "做人要厚道",
@@ -1356,11 +1359,11 @@
     "龙湖集团": {
       "code": "hk00960",
       "name": "龙湖集团",
-      "price": 5.68,
-      "change_percent": 3.93,
-      "chg_5d": 0.18,
-      "chg_20d": -17.02,
-      "chg_ytd": -38.26,
+      "price": 5.82,
+      "change_percent": 2.46,
+      "chg_5d": 8.28,
+      "chg_20d": -12.22,
+      "chg_ytd": -36.74,
       "market_name": "港股",
       "researchers": [
         "做人要厚道",
@@ -1371,11 +1374,11 @@
     "新城控股": {
       "code": "sh601155",
       "name": "新城控股",
-      "price": 12.24,
-      "change_percent": 9.87,
-      "chg_5d": 5.25,
-      "chg_20d": 11.88,
-      "chg_ytd": -18.13,
+      "price": 12.7,
+      "change_percent": 3.76,
+      "chg_5d": 9.67,
+      "chg_20d": 17.05,
+      "chg_ytd": -15.05,
       "market_name": "上海主板",
       "researchers": [
         "长期理性",
@@ -1386,11 +1389,11 @@
     "中国动力": {
       "code": "sh600482",
       "name": "中国动力",
-      "price": 33.95,
-      "change_percent": 4.14,
-      "chg_5d": -1.02,
-      "chg_20d": 6.33,
-      "chg_ytd": 3.01,
+      "price": 35.55,
+      "change_percent": 4.71,
+      "chg_5d": 4.59,
+      "chg_20d": 12.29,
+      "chg_ytd": 7.87,
       "market_name": "上海主板",
       "researchers": [
         "止疼片"
@@ -1400,11 +1403,11 @@
     "中国船舶": {
       "code": "sh600150",
       "name": "中国船舶",
-      "price": 39.47,
-      "change_percent": 1.31,
-      "chg_5d": -0.7,
-      "chg_20d": 17.19,
-      "chg_ytd": 12.02,
+      "price": 41.02,
+      "change_percent": 3.93,
+      "chg_5d": 5.23,
+      "chg_20d": 21.36,
+      "chg_ytd": 16.42,
       "market_name": "上海主板",
       "researchers": [
         "止疼片"
@@ -1414,11 +1417,11 @@
     "中国平安": {
       "code": "sh601318",
       "name": "中国平安",
-      "price": 53.37,
-      "change_percent": 0.04,
-      "chg_5d": -2.66,
-      "chg_20d": 1.91,
-      "chg_ytd": -8.72,
+      "price": 53.98,
+      "change_percent": 1.14,
+      "chg_5d": -1.37,
+      "chg_20d": 0.07,
+      "chg_ytd": -7.68,
       "market_name": "上海主板",
       "researchers": [
         "止疼片",
@@ -1430,11 +1433,11 @@
     "中船防务": {
       "code": "sh600685",
       "name": "中船防务",
-      "price": 28.78,
-      "change_percent": 0.98,
-      "chg_5d": 0.14,
-      "chg_20d": 12.47,
-      "chg_ytd": -14.71,
+      "price": 30.31,
+      "change_percent": 5.32,
+      "chg_5d": 7.48,
+      "chg_20d": 18.4,
+      "chg_ytd": -10.18,
       "market_name": "上海主板",
       "researchers": [
         "止疼片"
@@ -1444,11 +1447,11 @@
     "心动公司": {
       "code": "hk02400",
       "name": "心动公司",
-      "price": 38.58,
-      "change_percent": 3.49,
-      "chg_5d": -1.53,
-      "chg_20d": -9.44,
-      "chg_ytd": -47.86,
+      "price": 39.36,
+      "change_percent": 2.02,
+      "chg_5d": 3.58,
+      "chg_20d": -5.25,
+      "chg_ytd": -45.52,
       "market_name": "港股",
       "researchers": [
         "逸修1",
@@ -1459,11 +1462,11 @@
     "网易": {
       "code": "hk09999",
       "name": "网易",
-      "price": 183.6,
-      "change_percent": -0.81,
-      "chg_5d": 0.82,
-      "chg_20d": -9.11,
-      "chg_ytd": -0.43,
+      "price": 185.3,
+      "change_percent": 0.93,
+      "chg_5d": 1.76,
+      "chg_20d": -4.93,
+      "chg_ytd": 0.22,
       "market_name": "港股",
       "researchers": [
         "逸修1",
@@ -1490,11 +1493,11 @@
     "哔哩哔哩-W": {
       "code": "hk09626",
       "name": "哔哩哔哩-W",
-      "price": 116.8,
-      "change_percent": 1.92,
-      "chg_5d": -4.18,
-      "chg_20d": -12.44,
-      "chg_ytd": -41.6,
+      "price": 118.0,
+      "change_percent": 1.03,
+      "chg_5d": -3.12,
+      "chg_20d": -8.95,
+      "chg_ytd": -40.4,
       "market_name": "港股",
       "researchers": [
         "逸修1"
@@ -1504,11 +1507,11 @@
     "华润电力": {
       "code": "hk00836",
       "name": "华润电力",
-      "price": 18.89,
-      "change_percent": 0.53,
-      "chg_5d": 0.59,
-      "chg_20d": 3.56,
-      "chg_ytd": -1.87,
+      "price": 18.94,
+      "change_percent": 0.26,
+      "chg_5d": -0.05,
+      "chg_20d": 4.24,
+      "chg_ytd": -2.47,
       "market_name": "港股",
       "researchers": [
         "山行"
@@ -1518,11 +1521,11 @@
     "中国有色矿业": {
       "code": "hk01258",
       "name": "中国有色矿业",
-      "price": 15.99,
-      "change_percent": 3.36,
-      "chg_5d": -3.09,
-      "chg_20d": 4.31,
-      "chg_ytd": 21.88,
+      "price": 15.78,
+      "change_percent": -1.31,
+      "chg_5d": -0.38,
+      "chg_20d": -0.19,
+      "chg_ytd": 21.67,
       "market_name": "港股",
       "researchers": [
         "山行"
@@ -1532,11 +1535,11 @@
     "宁德时代": {
       "code": "sz300750",
       "name": "宁德时代",
-      "price": 301.95,
-      "change_percent": -0.77,
-      "chg_5d": -8.64,
-      "chg_20d": -22.8,
-      "chg_ytd": -23.26,
+      "price": 297.1,
+      "change_percent": -1.61,
+      "chg_5d": -11.87,
+      "chg_20d": -23.41,
+      "chg_ytd": -24.49,
       "market_name": "创业板",
       "researchers": [
         "山行"
@@ -1546,11 +1549,11 @@
     "招商蛇口": {
       "code": "sz001979",
       "name": "招商蛇口",
-      "price": 7.07,
-      "change_percent": 6.0,
-      "chg_5d": 4.59,
-      "chg_20d": -5.23,
-      "chg_ytd": -26.35,
+      "price": 7.38,
+      "change_percent": 4.38,
+      "chg_5d": 9.33,
+      "chg_20d": 1.93,
+      "chg_ytd": -23.12,
       "market_name": "深圳主板",
       "researchers": [
         "修身德真"
@@ -1560,11 +1563,11 @@
     "保利发展": {
       "code": "sh600048",
       "name": "保利发展",
-      "price": 5.32,
-      "change_percent": 5.56,
-      "chg_5d": 5.14,
-      "chg_20d": 2.5,
-      "chg_ytd": -17.71,
+      "price": 5.68,
+      "change_percent": 6.77,
+      "chg_5d": 11.81,
+      "chg_20d": 12.25,
+      "chg_ytd": -12.14,
       "market_name": "上海主板",
       "researchers": [
         "修身德真"
@@ -1574,11 +1577,11 @@
     "越秀地产": {
       "code": "hk00123",
       "name": "越秀地产",
-      "price": 3.195,
-      "change_percent": 4.24,
-      "chg_5d": 2.24,
-      "chg_20d": -15.36,
-      "chg_ytd": -24.65,
+      "price": 3.255,
+      "change_percent": 1.88,
+      "chg_5d": 6.55,
+      "chg_20d": -11.55,
+      "chg_ytd": -21.94,
       "market_name": "港股",
       "researchers": [
         "修身德真"
@@ -1588,11 +1591,11 @@
     "伊泰B股": {
       "code": "sh900948",
       "name": "伊泰Ｂ股",
-      "price": 3.393,
-      "change_percent": -0.03,
-      "chg_5d": 3.01,
-      "chg_20d": 18.35,
-      "chg_ytd": 86.84,
+      "price": 3.43,
+      "change_percent": 1.09,
+      "chg_5d": 1.24,
+      "chg_20d": 16.75,
+      "chg_ytd": 90.45,
       "market_name": "上海主板",
       "researchers": [
         "STH"
@@ -1602,11 +1605,11 @@
     "五粮液": {
       "code": "sz000858",
       "name": "五 粮 液",
-      "price": 70.0,
-      "change_percent": 1.26,
-      "chg_5d": 0.36,
-      "chg_20d": -1.67,
-      "chg_ytd": -30.16,
+      "price": 70.27,
+      "change_percent": 0.39,
+      "chg_5d": 0.6,
+      "chg_20d": -1.69,
+      "chg_ytd": -29.89,
       "market_name": "深圳主板",
       "researchers": [
         "STH"
@@ -1616,11 +1619,11 @@
     "力量发展": {
       "code": "hk01277",
       "name": "力量发展",
-      "price": 1.89,
-      "change_percent": -1.56,
-      "chg_5d": -5.03,
-      "chg_20d": -12.9,
-      "chg_ytd": -20.59,
+      "price": 1.88,
+      "change_percent": -0.53,
+      "chg_5d": -2.08,
+      "chg_20d": -11.94,
+      "chg_ytd": -25.69,
       "market_name": "港股",
       "researchers": [
         "自然而然vieq"
@@ -1630,11 +1633,11 @@
     "盛屯矿业": {
       "code": "sh600711",
       "name": "盛屯矿业",
-      "price": 11.03,
-      "change_percent": 2.32,
-      "chg_5d": -2.39,
-      "chg_20d": -8.84,
-      "chg_ytd": -18.06,
+      "price": 10.94,
+      "change_percent": -0.82,
+      "chg_5d": -0.82,
+      "chg_20d": -7.83,
+      "chg_ytd": -18.73,
       "market_name": "上海主板",
       "researchers": [
         "自然而然vieq"
@@ -1644,11 +1647,11 @@
     "蒙古焦煤": {
       "code": "hk00975",
       "name": "蒙古焦煤",
-      "price": 8.94,
-      "change_percent": -1.22,
-      "chg_5d": -7.41,
-      "chg_20d": -14.86,
-      "chg_ytd": -26.96,
+      "price": 8.795,
+      "change_percent": -1.62,
+      "chg_5d": -5.07,
+      "chg_20d": -15.43,
+      "chg_ytd": -29.53,
       "market_name": "港股",
       "researchers": [
         "自然而然vieq"
@@ -1672,11 +1675,11 @@
     "嘉友国际": {
       "code": "sh603871",
       "name": "嘉友国际",
-      "price": 12.29,
-      "change_percent": -0.89,
-      "chg_5d": -9.23,
-      "chg_20d": -3.38,
-      "chg_ytd": -19.42,
+      "price": 12.28,
+      "change_percent": -0.08,
+      "chg_5d": -8.77,
+      "chg_20d": -3.15,
+      "chg_ytd": -19.48,
       "market_name": "上海主板",
       "researchers": [
         "亲爱的阿兰"
@@ -1686,11 +1689,11 @@
     "科达制造": {
       "code": "sh600499",
       "name": "科达制造",
-      "price": 13.44,
-      "change_percent": -0.22,
-      "chg_5d": -7.12,
-      "chg_20d": -5.49,
-      "chg_ytd": -22.76,
+      "price": 13.39,
+      "change_percent": -0.37,
+      "chg_5d": -7.59,
+      "chg_20d": -4.08,
+      "chg_ytd": -23.05,
       "market_name": "上海主板",
       "researchers": [
         "亲爱的阿兰"
@@ -1700,11 +1703,11 @@
     "华新建材": {
       "code": "sh600801",
       "name": "华新建材",
-      "price": 24.3,
-      "change_percent": 0.41,
-      "chg_5d": -0.9,
-      "chg_20d": 4.83,
-      "chg_ytd": 6.81,
+      "price": 24.41,
+      "change_percent": 0.45,
+      "chg_5d": -2.48,
+      "chg_20d": 3.48,
+      "chg_ytd": 7.3,
       "market_name": "上海主板",
       "researchers": [
         "亲爱的阿兰"
@@ -1728,11 +1731,11 @@
     "中远海能": {
       "code": "hk01138",
       "name": "中远海能",
-      "price": 19.26,
-      "change_percent": -0.16,
-      "chg_5d": 4.62,
-      "chg_20d": 14.85,
-      "chg_ytd": 4.67,
+      "price": 20.56,
+      "change_percent": 6.75,
+      "chg_5d": 12.23,
+      "chg_20d": 23.48,
+      "chg_ytd": 15.7,
       "market_name": "港股",
       "researchers": [
         "润哥"
@@ -1742,11 +1745,11 @@
     "新华保险": {
       "code": "sh601336",
       "name": "新华保险",
-      "price": 58.18,
-      "change_percent": 1.31,
-      "chg_5d": -0.21,
-      "chg_20d": -1.04,
-      "chg_ytd": -15.36,
+      "price": 58.54,
+      "change_percent": 0.62,
+      "chg_5d": 0.22,
+      "chg_20d": -1.5,
+      "chg_ytd": -14.84,
       "market_name": "上海主板",
       "researchers": [
         "润哥"
@@ -1756,11 +1759,11 @@
     "华能国际电力股份": {
       "code": "hk00902",
       "name": "华能国际电力股份",
-      "price": 5.66,
-      "change_percent": 0.35,
-      "chg_5d": -1.14,
-      "chg_20d": 4.52,
-      "chg_ytd": -8.86,
+      "price": 5.645,
+      "change_percent": -0.27,
+      "chg_5d": -1.66,
+      "chg_20d": 4.73,
+      "chg_ytd": -10.82,
       "market_name": "港股",
       "researchers": [
         "超级鹿鼎公"
@@ -1770,11 +1773,11 @@
     "长江电力": {
       "code": "sh600900",
       "name": "长江电力",
-      "price": 28.27,
-      "change_percent": -0.67,
-      "chg_5d": -0.63,
-      "chg_20d": 1.11,
-      "chg_ytd": 6.16,
+      "price": 28.1,
+      "change_percent": -0.6,
+      "chg_5d": -1.85,
+      "chg_20d": -0.18,
+      "chg_ytd": 5.52,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1784,11 +1787,11 @@
     "云铝股份": {
       "code": "sz000807",
       "name": "云铝股份",
-      "price": 27.37,
-      "change_percent": 1.71,
-      "chg_5d": 0.29,
-      "chg_20d": 5.76,
-      "chg_ytd": -20.94,
+      "price": 26.77,
+      "change_percent": -2.19,
+      "chg_5d": -0.93,
+      "chg_20d": 1.83,
+      "chg_ytd": -22.68,
       "market_name": "深圳主板",
       "researchers": [
         "超级鹿鼎公",
@@ -1799,11 +1802,11 @@
     "神火股份": {
       "code": "sz000933",
       "name": "神火股份",
-      "price": 26.81,
-      "change_percent": 1.36,
-      "chg_5d": -1.25,
-      "chg_20d": 4.0,
-      "chg_ytd": -26.78,
+      "price": 26.24,
+      "change_percent": -2.13,
+      "chg_5d": -2.27,
+      "chg_20d": 0.61,
+      "chg_ytd": -28.34,
       "market_name": "深圳主板",
       "researchers": [
         "超级鹿鼎公",
@@ -1814,11 +1817,11 @@
     "宝丰能源": {
       "code": "sh600989",
       "name": "宝丰能源",
-      "price": 23.59,
-      "change_percent": 1.55,
-      "chg_5d": -1.59,
-      "chg_20d": -0.21,
-      "chg_ytd": -30.37,
+      "price": 23.7,
+      "change_percent": 0.47,
+      "chg_5d": -1.13,
+      "chg_20d": 3.95,
+      "chg_ytd": -30.05,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1828,11 +1831,11 @@
     "中孚实业": {
       "code": "sh600595",
       "name": "中孚实业",
-      "price": 6.1,
-      "change_percent": 2.01,
-      "chg_5d": -0.97,
-      "chg_20d": -1.45,
-      "chg_ytd": -27.6,
+      "price": 6.04,
+      "change_percent": -0.98,
+      "chg_5d": -0.66,
+      "chg_20d": -2.42,
+      "chg_ytd": -28.31,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1842,11 +1845,11 @@
     "中国神华": {
       "code": "sh601088",
       "name": "中国神华",
-      "price": 46.23,
-      "change_percent": -0.54,
-      "chg_5d": -2.69,
-      "chg_20d": -0.39,
-      "chg_ytd": -3.85,
+      "price": 46.8,
+      "change_percent": 1.23,
+      "chg_5d": -0.85,
+      "chg_20d": -0.19,
+      "chg_ytd": -2.66,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1856,11 +1859,11 @@
     "山煤国际": {
       "code": "sh600546",
       "name": "山煤国际",
-      "price": 13.39,
-      "change_percent": 1.67,
-      "chg_5d": 0.68,
-      "chg_20d": 1.36,
-      "chg_ytd": 10.25,
+      "price": 13.61,
+      "change_percent": 1.64,
+      "chg_5d": 3.73,
+      "chg_20d": -0.37,
+      "chg_ytd": 12.06,
       "market_name": "上海主板",
       "researchers": [
         "超级鹿鼎公"
@@ -1884,11 +1887,11 @@
     "超盈国际": {
       "code": "hk02111",
       "name": "超盈国际控股",
-      "price": 2.59,
-      "change_percent": -1.71,
-      "chg_5d": -2.45,
-      "chg_20d": 13.6,
-      "chg_ytd": -17.52,
+      "price": 2.6,
+      "change_percent": 0.39,
+      "chg_5d": -4.76,
+      "chg_20d": 14.04,
+      "chg_ytd": -16.13,
       "market_name": "港股",
       "researchers": [
         "達人知命"
@@ -1898,11 +1901,11 @@
     "大行科工": {
       "code": "hk02543",
       "name": "大行科工",
-      "price": 33.26,
-      "change_percent": -1.6,
-      "chg_5d": -3.48,
-      "chg_20d": 11.99,
-      "chg_ytd": 13.67,
+      "price": 33.34,
+      "change_percent": 0.24,
+      "chg_5d": -4.2,
+      "chg_20d": 10.76,
+      "chg_ytd": 14.18,
       "market_name": "港股",
       "researchers": [
         "達人知命"
@@ -1912,11 +1915,11 @@
     "德翔海运": {
       "code": "hk02510",
       "name": "德翔海运",
-      "price": 14.04,
-      "change_percent": 0.0,
-      "chg_5d": 3.01,
-      "chg_20d": 17.29,
-      "chg_ytd": 50.0,
+      "price": 14.68,
+      "change_percent": 4.56,
+      "chg_5d": 6.45,
+      "chg_20d": 22.54,
+      "chg_ytd": 61.67,
       "market_name": "港股",
       "researchers": [
         "達人知命"
@@ -1926,11 +1929,11 @@
     "格力电器": {
       "code": "sz000651",
       "name": "格力电器",
-      "price": 38.56,
-      "change_percent": 1.53,
-      "chg_5d": -0.46,
-      "chg_20d": -1.73,
-      "chg_ytd": 5.64,
+      "price": 38.0,
+      "change_percent": -1.45,
+      "chg_5d": -1.83,
+      "chg_20d": -3.68,
+      "chg_ytd": 4.11,
       "market_name": "深圳主板",
       "researchers": [
         "達人知命",
@@ -1941,11 +1944,11 @@
     "腾讯音乐": {
       "code": "hk01698",
       "name": "腾讯音乐-SW",
-      "price": 31.1,
-      "change_percent": 0.71,
-      "chg_5d": 0.45,
-      "chg_20d": -9.91,
-      "chg_ytd": -40.54,
+      "price": 30.58,
+      "change_percent": -1.67,
+      "chg_5d": -3.78,
+      "chg_20d": -9.47,
+      "chg_ytd": -42.73,
       "market_name": "港股",
       "researchers": [
         "達人知命"
@@ -1955,11 +1958,11 @@
     "宏桥控股": {
       "code": "hk01378",
       "name": "中国宏桥",
-      "price": 22.12,
-      "change_percent": 1.28,
-      "chg_5d": -1.69,
-      "chg_20d": -4.57,
-      "chg_ytd": -43.05,
+      "price": 21.66,
+      "change_percent": -2.08,
+      "chg_5d": -2.43,
+      "chg_20d": -9.37,
+      "chg_ytd": -46.28,
       "market_name": "港股",
       "researchers": [
         "巍巍昆仑侠"
@@ -1969,11 +1972,11 @@
     "中国建筑国际": {
       "code": "hk03311",
       "name": "中国建筑国际",
-      "price": 8.365,
-      "change_percent": 2.51,
-      "chg_5d": 1.52,
-      "chg_20d": -1.18,
-      "chg_ytd": -12.41,
+      "price": 8.355,
+      "change_percent": -0.12,
+      "chg_5d": 1.27,
+      "chg_20d": -1.71,
+      "chg_ytd": -11.12,
       "market_name": "港股",
       "researchers": [
         "巍巍昆仑侠"
@@ -1983,11 +1986,11 @@
     "中国建筑": {
       "code": "sh601668",
       "name": "中国建筑",
-      "price": 4.28,
-      "change_percent": 0.23,
-      "chg_5d": -1.61,
-      "chg_20d": -2.51,
-      "chg_ytd": -12.62,
+      "price": 4.31,
+      "change_percent": 0.7,
+      "chg_5d": -0.46,
+      "chg_20d": -2.49,
+      "chg_ytd": -12.0,
       "market_name": "上海主板",
       "researchers": [
         "巍巍昆仑侠"
@@ -1997,11 +2000,11 @@
     "理士国际": {
       "code": "hk00842",
       "name": "理士国际",
-      "price": 0.85,
-      "change_percent": -0.58,
-      "chg_5d": -2.3,
-      "chg_20d": -6.08,
-      "chg_ytd": 49.12,
+      "price": 0.815,
+      "change_percent": -4.12,
+      "chg_5d": -6.32,
+      "chg_20d": -12.37,
+      "chg_ytd": 42.98,
       "market_name": "港股",
       "researchers": [
         "巍巍昆仑侠"
@@ -2011,11 +2014,11 @@
     "迈瑞医疗": {
       "code": "sz300760",
       "name": "迈瑞医疗",
-      "price": 156.87,
-      "change_percent": 0.04,
-      "chg_5d": -3.6,
-      "chg_20d": 2.45,
-      "chg_ytd": -10.92,
+      "price": 158.05,
+      "change_percent": 0.75,
+      "chg_5d": -1.28,
+      "chg_20d": 0.44,
+      "chg_ytd": -10.25,
       "market_name": "创业板",
       "researchers": [
         "巍巍昆仑侠"
@@ -2025,11 +2028,11 @@
     "贵州茅台": {
       "code": "sh600519",
       "name": "贵州茅台",
-      "price": 1257.12,
-      "change_percent": -0.78,
-      "chg_5d": -1.41,
-      "chg_20d": -1.23,
-      "chg_ytd": -9.69,
+      "price": 1252.57,
+      "change_percent": -0.36,
+      "chg_5d": -1.99,
+      "chg_20d": -3.99,
+      "chg_ytd": -10.01,
       "market_name": "上海主板",
       "researchers": [
         "巍巍昆仑侠",
@@ -2041,11 +2044,11 @@
     "华安证券": {
       "code": "sh600909",
       "name": "华安证券",
-      "price": 7.9,
-      "change_percent": 2.2,
-      "chg_5d": 2.07,
-      "chg_20d": -3.3,
-      "chg_ytd": 31.45,
+      "price": 8.14,
+      "change_percent": 3.04,
+      "chg_5d": 5.99,
+      "chg_20d": -0.61,
+      "chg_ytd": 35.44,
       "market_name": "上海主板",
       "researchers": [
         "静安一朵花"
@@ -2055,11 +2058,11 @@
     "航发控制": {
       "code": "sz000738",
       "name": "航发控制",
-      "price": 19.16,
-      "change_percent": 0.1,
-      "chg_5d": -5.38,
-      "chg_20d": 7.28,
-      "chg_ytd": -18.27,
+      "price": 19.63,
+      "change_percent": 2.45,
+      "chg_5d": -0.86,
+      "chg_20d": 10.16,
+      "chg_ytd": -16.26,
       "market_name": "深圳主板",
       "researchers": [
         "静安一朵花"
@@ -2069,11 +2072,11 @@
     "中创智领": {
       "code": "sh601717",
       "name": "中创智领",
-      "price": 13.9,
-      "change_percent": -0.57,
-      "chg_5d": -1.21,
-      "chg_20d": -6.52,
-      "chg_ytd": -35.71,
+      "price": 13.8,
+      "change_percent": -0.72,
+      "chg_5d": -1.29,
+      "chg_20d": -8.73,
+      "chg_ytd": -36.17,
       "market_name": "上海主板",
       "researchers": [
         "静安一朵花"
@@ -2083,11 +2086,11 @@
     "菜百股份": {
       "code": "sh605599",
       "name": "菜百股份",
-      "price": 14.23,
-      "change_percent": 1.93,
-      "chg_5d": -0.49,
-      "chg_20d": -15.6,
-      "chg_ytd": -38.87,
+      "price": 14.12,
+      "change_percent": -0.77,
+      "chg_5d": -2.08,
+      "chg_20d": -17.43,
+      "chg_ytd": -39.35,
       "market_name": "上海主板",
       "researchers": [
         "静安一朵花"
@@ -2097,11 +2100,11 @@
     "藏格矿业": {
       "code": "sz000408",
       "name": "藏格矿业",
-      "price": 72.16,
-      "change_percent": 1.71,
-      "chg_5d": -0.67,
-      "chg_20d": -6.52,
-      "chg_ytd": -8.67,
+      "price": 72.31,
+      "change_percent": 0.21,
+      "chg_5d": 0.21,
+      "chg_20d": -5.36,
+      "chg_ytd": -8.48,
       "market_name": "深圳主板",
       "researchers": [
         "金哥777",
@@ -2112,11 +2115,11 @@
     "西部矿业": {
       "code": "sh601168",
       "name": "西部矿业",
-      "price": 36.03,
-      "change_percent": 1.64,
-      "chg_5d": -4.15,
-      "chg_20d": -4.81,
-      "chg_ytd": 22.18,
+      "price": 36.23,
+      "change_percent": 0.56,
+      "chg_5d": -1.15,
+      "chg_20d": -1.28,
+      "chg_ytd": 22.86,
       "market_name": "上海主板",
       "researchers": [
         "金哥777"
@@ -2126,11 +2129,11 @@
     "海螺创业": {
       "code": "hk00586",
       "name": "海螺创业",
-      "price": 7.43,
-      "change_percent": -0.13,
-      "chg_5d": -2.43,
-      "chg_20d": -14.0,
-      "chg_ytd": -35.73,
+      "price": 7.535,
+      "change_percent": 1.41,
+      "chg_5d": -1.18,
+      "chg_20d": -10.72,
+      "chg_ytd": -36.89,
       "market_name": "港股",
       "researchers": [
         "狂暴干饭食兔君"
@@ -2140,11 +2143,11 @@
     "快手-W": {
       "code": "hk01024",
       "name": "快手-W",
-      "price": 30.74,
-      "change_percent": 2.67,
-      "chg_5d": -1.66,
-      "chg_20d": -10.69,
-      "chg_ytd": -48.77,
+      "price": 30.82,
+      "change_percent": 0.26,
+      "chg_5d": 0.78,
+      "chg_20d": -6.66,
+      "chg_ytd": -48.25,
       "market_name": "港股",
       "researchers": [
         "狂暴干饭食兔君"
@@ -2154,11 +2157,11 @@
     "神威药业": {
       "code": "hk02877",
       "name": "神威药业",
-      "price": 8.125,
-      "change_percent": -2.11,
-      "chg_5d": 2.2,
-      "chg_20d": 0.81,
-      "chg_ytd": -13.66,
+      "price": 8.11,
+      "change_percent": -0.18,
+      "chg_5d": 0.5,
+      "chg_20d": 1.5,
+      "chg_ytd": -12.89,
       "market_name": "港股",
       "researchers": [
         "狂暴干饭食兔君"
@@ -2168,11 +2171,11 @@
     "江苏银行": {
       "code": "sh600919",
       "name": "江苏银行",
-      "price": 12.17,
-      "change_percent": 1.08,
-      "chg_5d": -3.18,
-      "chg_20d": 1.93,
-      "chg_ytd": 15.61,
+      "price": 12.13,
+      "change_percent": -0.33,
+      "chg_5d": -3.35,
+      "chg_20d": 0.0,
+      "chg_ytd": 15.23,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2182,11 +2185,11 @@
     "杭州银行": {
       "code": "sh600926",
       "name": "杭州银行",
-      "price": 17.14,
-      "change_percent": 0.06,
-      "chg_5d": -2.11,
-      "chg_20d": 3.07,
-      "chg_ytd": 1.6,
+      "price": 17.18,
+      "change_percent": 0.23,
+      "chg_5d": -2.88,
+      "chg_20d": 2.14,
+      "chg_ytd": 1.84,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2195,12 +2198,12 @@
     },
     "成都银行": {
       "code": "sh601838",
-      "name": "XD成都银",
-      "price": 19.14,
-      "change_percent": -0.98,
-      "chg_5d": -2.15,
-      "chg_20d": 5.39,
-      "chg_ytd": 21.6,
+      "name": "成都银行",
+      "price": 19.12,
+      "change_percent": -0.1,
+      "chg_5d": -3.24,
+      "chg_20d": 3.96,
+      "chg_ytd": 21.47,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2210,11 +2213,11 @@
     "南京银行": {
       "code": "sh601009",
       "name": "南京银行",
-      "price": 11.8,
-      "change_percent": 0.25,
-      "chg_5d": -3.59,
-      "chg_20d": 0.17,
-      "chg_ytd": 7.69,
+      "price": 11.82,
+      "change_percent": 0.17,
+      "chg_5d": -3.51,
+      "chg_20d": 0.34,
+      "chg_ytd": 7.88,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2224,11 +2227,11 @@
     "华泰证券": {
       "code": "sh601688",
       "name": "华泰证券",
-      "price": 18.33,
-      "change_percent": 1.1,
-      "chg_5d": -3.17,
-      "chg_20d": -1.45,
-      "chg_ytd": -4.83,
+      "price": 18.47,
+      "change_percent": 0.76,
+      "chg_5d": -1.76,
+      "chg_20d": -0.91,
+      "chg_ytd": -4.1,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2237,12 +2240,12 @@
     },
     "雅戈尔": {
       "code": "sh600177",
-      "name": "XD雅戈尔",
-      "price": 8.14,
-      "change_percent": 0.49,
-      "chg_5d": 0.12,
-      "chg_20d": 5.85,
-      "chg_ytd": 14.78,
+      "name": "雅戈尔",
+      "price": 8.17,
+      "change_percent": 0.37,
+      "chg_5d": -0.85,
+      "chg_20d": 4.48,
+      "chg_ytd": 15.2,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2252,11 +2255,11 @@
     "苏农银行": {
       "code": "sh603323",
       "name": "苏农银行",
-      "price": 4.4,
-      "change_percent": -1.35,
-      "chg_5d": -3.3,
-      "chg_20d": 5.01,
-      "chg_ytd": -1.83,
+      "price": 4.38,
+      "change_percent": -0.45,
+      "chg_5d": -4.78,
+      "chg_20d": 3.06,
+      "chg_ytd": -2.28,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2267,9 +2270,9 @@
       "code": "sh600928",
       "name": "西安银行",
       "price": 3.5,
-      "change_percent": -1.13,
-      "chg_5d": -2.23,
-      "chg_20d": -1.13,
+      "change_percent": 0.0,
+      "chg_5d": -3.05,
+      "chg_20d": -2.23,
       "chg_ytd": -4.37,
       "market_name": "上海主板",
       "researchers": [
@@ -2280,11 +2283,11 @@
     "常熟银行": {
       "code": "sh601128",
       "name": "常熟银行",
-      "price": 6.27,
-      "change_percent": -0.79,
-      "chg_5d": -2.18,
-      "chg_20d": 0.48,
-      "chg_ytd": -2.58,
+      "price": 6.25,
+      "change_percent": -0.32,
+      "chg_5d": -3.25,
+      "chg_20d": -0.95,
+      "chg_ytd": -2.89,
       "market_name": "上海主板",
       "researchers": [
         "摸索fhy"
@@ -2294,11 +2297,11 @@
     "五矿资源": {
       "code": "hk01208",
       "name": "五矿资源",
-      "price": 8.835,
-      "change_percent": 3.09,
-      "chg_5d": -2.59,
-      "chg_20d": -5.25,
-      "chg_ytd": 0.28,
+      "price": 8.81,
+      "change_percent": -0.28,
+      "chg_5d": 2.03,
+      "chg_20d": -5.52,
+      "chg_ytd": 3.16,
       "market_name": "港股",
       "researchers": [
         "愤怒的龙卷风"
@@ -2308,11 +2311,11 @@
     "立讯精密": {
       "code": "sz002475",
       "name": "立讯精密",
-      "price": 54.1,
-      "change_percent": 3.78,
-      "chg_5d": -2.33,
-      "chg_20d": -1.01,
-      "chg_ytd": 10.7,
+      "price": 54.44,
+      "change_percent": 0.63,
+      "chg_5d": 3.15,
+      "chg_20d": 1.34,
+      "chg_ytd": 11.4,
       "market_name": "深圳主板",
       "researchers": [
         "愤怒的龙卷风"
@@ -2322,11 +2325,11 @@
     "中金黄金": {
       "code": "sh600489",
       "name": "中金黄金",
-      "price": 24.05,
-      "change_percent": 0.63,
-      "chg_5d": -1.96,
-      "chg_20d": -11.52,
-      "chg_ytd": -18.59,
+      "price": 23.61,
+      "change_percent": -1.83,
+      "chg_5d": -4.02,
+      "chg_20d": -13.39,
+      "chg_ytd": -20.08,
       "market_name": "上海主板",
       "researchers": [
         "愤怒的龙卷风"
@@ -2336,11 +2339,11 @@
     "江西铜业": {
       "code": "sh600362",
       "name": "江西铜业",
-      "price": 44.03,
-      "change_percent": 1.78,
-      "chg_5d": -3.82,
-      "chg_20d": -3.99,
-      "chg_ytd": -10.69,
+      "price": 44.24,
+      "change_percent": 0.48,
+      "chg_5d": -0.43,
+      "chg_20d": -3.72,
+      "chg_ytd": -10.26,
       "market_name": "上海主板",
       "researchers": [
         "愤怒的龙卷风"
@@ -2350,11 +2353,11 @@
     "中矿资源": {
       "code": "sz002738",
       "name": "中矿资源",
-      "price": 44.04,
-      "change_percent": -0.56,
-      "chg_5d": 0.32,
-      "chg_20d": -18.9,
-      "chg_ytd": -42.43,
+      "price": 45.05,
+      "change_percent": 2.29,
+      "chg_5d": 1.05,
+      "chg_20d": -16.09,
+      "chg_ytd": -41.11,
       "market_name": "深圳主板",
       "researchers": [
         "愤怒的龙卷风"
@@ -2364,11 +2367,11 @@
     "电投能源": {
       "code": "sz002128",
       "name": "电投能源",
-      "price": 27.66,
-      "change_percent": -0.4,
-      "chg_5d": 1.39,
-      "chg_20d": 1.99,
-      "chg_ytd": -15.67,
+      "price": 27.5,
+      "change_percent": -0.58,
+      "chg_5d": 0.92,
+      "chg_20d": -0.29,
+      "chg_ytd": -16.16,
       "market_name": "深圳主板",
       "researchers": [
         "愤怒的龙卷风"
@@ -2378,11 +2381,11 @@
     "招金矿业": {
       "code": "hk01818",
       "name": "招金矿业",
-      "price": 20.16,
-      "change_percent": -1.47,
-      "chg_5d": -5.35,
-      "chg_20d": -21.0,
-      "chg_ytd": -40.0,
+      "price": 19.87,
+      "change_percent": -1.44,
+      "chg_5d": -6.45,
+      "chg_20d": -23.99,
+      "chg_ytd": -38.63,
       "market_name": "港股",
       "researchers": [
         "愤怒的龙卷风"
@@ -2392,11 +2395,11 @@
     "中国石油": {
       "code": "sh601857",
       "name": "中国石油",
-      "price": 10.56,
-      "change_percent": -0.56,
-      "chg_5d": -3.83,
-      "chg_20d": -3.47,
-      "chg_ytd": -8.81,
+      "price": 10.67,
+      "change_percent": 1.04,
+      "chg_5d": -1.02,
+      "chg_20d": -2.2,
+      "chg_ytd": -7.86,
       "market_name": "上海主板",
       "researchers": [
         "愤怒的龙卷风"
@@ -2406,11 +2409,11 @@
     "永新股份": {
       "code": "sz002014",
       "name": "永新股份",
-      "price": 10.97,
-      "change_percent": -0.09,
-      "chg_5d": -0.81,
-      "chg_20d": 3.59,
-      "chg_ytd": -5.43,
+      "price": 11.0,
+      "change_percent": 0.27,
+      "chg_5d": -1.61,
+      "chg_20d": 2.9,
+      "chg_ytd": -5.17,
       "market_name": "深圳主板",
       "researchers": [
         "终身黑白"
@@ -2420,11 +2423,11 @@
     "分众传媒": {
       "code": "sz002027",
       "name": "分众传媒",
-      "price": 4.66,
-      "change_percent": 0.0,
-      "chg_5d": -1.89,
-      "chg_20d": -3.92,
-      "chg_ytd": -29.5,
+      "price": 4.76,
+      "change_percent": 2.15,
+      "chg_5d": 0.42,
+      "chg_20d": -1.45,
+      "chg_ytd": -27.99,
       "market_name": "深圳主板",
       "researchers": [
         "终身黑白"
@@ -2434,11 +2437,11 @@
     "爱迪特": {
       "code": "sz301580",
       "name": "爱迪特",
-      "price": 57.0,
-      "change_percent": 3.43,
-      "chg_5d": 8.61,
-      "chg_20d": 11.02,
-      "chg_ytd": -7.71,
+      "price": 57.2,
+      "change_percent": 0.35,
+      "chg_5d": 8.83,
+      "chg_20d": 16.83,
+      "chg_ytd": -7.39,
       "market_name": "创业板",
       "researchers": [
         "终身黑白"
@@ -2448,11 +2451,11 @@
     "海尔智家": {
       "code": "sh600690",
       "name": "海尔智家",
-      "price": 20.68,
-      "change_percent": -0.1,
-      "chg_5d": -1.57,
-      "chg_20d": -0.86,
-      "chg_ytd": -14.6,
+      "price": 19.89,
+      "change_percent": -3.82,
+      "chg_5d": -5.82,
+      "chg_20d": -5.01,
+      "chg_ytd": -17.86,
       "market_name": "上海主板",
       "researchers": [
         "终身黑白"
@@ -2462,11 +2465,11 @@
     "零跑汽车": {
       "code": "hk09863",
       "name": "零跑汽车",
-      "price": 37.26,
-      "change_percent": 6.64,
-      "chg_5d": 5.55,
-      "chg_20d": -12.82,
-      "chg_ytd": -13.11,
+      "price": 37.2,
+      "change_percent": -0.16,
+      "chg_5d": 0.87,
+      "chg_20d": -13.0,
+      "chg_ytd": -14.13,
       "market_name": "港股",
       "researchers": [
         "郭小松驾道"
@@ -2476,11 +2479,11 @@
     "小鹏汽车": {
       "code": "hk09868",
       "name": "小鹏集团-W",
-      "price": 42.04,
-      "change_percent": 2.09,
-      "chg_5d": 1.69,
-      "chg_20d": -12.6,
-      "chg_ytd": -44.24,
+      "price": 40.5,
+      "change_percent": -3.66,
+      "chg_5d": -3.62,
+      "chg_20d": -15.06,
+      "chg_ytd": -48.37,
       "market_name": "港股",
       "researchers": [
         "郭小松驾道"
@@ -2490,11 +2493,11 @@
     "赛力斯": {
       "code": "sh601127",
       "name": "赛力斯",
-      "price": 47.19,
-      "change_percent": 0.15,
-      "chg_5d": 1.75,
-      "chg_20d": -6.55,
-      "chg_ytd": -53.04,
+      "price": 47.76,
+      "change_percent": 1.21,
+      "chg_5d": -0.29,
+      "chg_20d": -4.0,
+      "chg_ytd": -52.48,
       "market_name": "上海主板",
       "researchers": [
         "郭小松驾道"
@@ -2504,11 +2507,11 @@
     "淮北矿业": {
       "code": "sh600985",
       "name": "淮北矿业",
-      "price": 16.44,
-      "change_percent": -1.32,
-      "chg_5d": -1.62,
-      "chg_20d": -8.82,
-      "chg_ytd": 16.93,
+      "price": 16.71,
+      "change_percent": 1.64,
+      "chg_5d": 0.3,
+      "chg_20d": -7.12,
+      "chg_ytd": 18.85,
       "market_name": "上海主板",
       "researchers": [
         "快乐赌狗"
