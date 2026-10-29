@@ -2079,7 +2079,11 @@ body.mobile-detail-open { overflow: hidden; }
       });
     });
 
-    var html = '<div class="search-results-info">找到 <strong>' + results.length + '</strong> 条相关记录</div>';
+    results.sort(function (a, b) {
+      return (b.record.date || '').localeCompare(a.record.date || '');
+    });
+
+    var html = '<div class="search-results-info">找到 <strong>' + results.length + '</strong> 条相关记录（按日期从晚到早）</div>';
     html += '<div class="researcher-detail">';
 
     results.slice(0, 100).forEach(function (item, idx) {
