@@ -117,6 +117,37 @@ body {
 .filter-bar .filter-select { width: 100%; max-width: 100%; }
 
 .researcher-list { flex: 1; overflow-y: auto; }
+
+/* 业绩预测页 */
+.forecast-container { max-width: 1080px; margin: 0 auto; padding: 20px 16px 60px; }
+.forecast-form-card, .forecast-list-card { background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
+.forecast-title { font-size: 15px; font-weight: 500; margin-bottom: 14px; color: var(--text-primary, #111); }
+.forecast-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+.fc-field { display: flex; flex-direction: column; gap: 4px; }
+.fc-field-full { grid-column: 1 / -1; }
+.fc-field label { font-size: 12px; color: var(--text-secondary, #6b7280); }
+.fc-field select, .fc-field input { padding: 7px 10px; border: 1px solid var(--border-color, #d1d5db); border-radius: 6px; font-size: 14px; background: var(--bg-primary, #fff); color: var(--text-primary, #111); }
+.fc-field select:disabled { background: var(--bg-secondary, #f3f4f6); color: #9ca3af; }
+.fc-years-head { grid-column: 1 / -1; font-size: 12px; font-weight: 500; color: #92400e; border-top: 1px dashed var(--border-color, #e5e7eb); padding-top: 10px; margin-top: 2px; }
+.fc-row { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.fc-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+.fc-save { padding: 8px 22px; background: #b91c1c; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; }
+.fc-save:hover { background: #991b1b; }
+.fc-reset { padding: 8px 16px; background: none; border: 1px solid var(--border-color, #d1d5db); border-radius: 6px; font-size: 13px; color: var(--text-secondary, #6b7280); cursor: pointer; }
+.fc-hint { font-size: 12px; color: #9ca3af; }
+.fc-list-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.fc-table-wrap { overflow-x: auto; }
+.fc-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.fc-table th { text-align: left; font-weight: 500; color: #6b7280; padding: 6px 10px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+.fc-table td { padding: 7px 10px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.fc-table td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fc-table .fc-yoy { display: block; font-size: 11px; color: #9ca3af; }
+.fc-table .fc-up { color: #b91c1c; }
+.fc-table .fc-down { color: #059669; }
+.fc-del { background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 15px; padding: 2px 6px; }
+.fc-del:hover { color: #b91c1c; }
+.fc-empty { text-align: center; color: #9ca3af; padding: 26px 0; font-size: 13px; }
+@media (max-width: 720px) { .forecast-form { grid-template-columns: 1fr; } }
 .researcher-item {
   padding: 10px 16px; cursor: pointer; border-bottom: 1px solid var(--border-light);
   transition: background 0.1s; display: flex; flex-direction: column; gap: 2px;
@@ -1016,6 +1047,7 @@ body.mobile-detail-open { overflow: hidden; }
       <span class="topbar-stats" id="topbar-stats"></span>
       <button class="tab-btn active" data-tab="browse">浏览</button>
       <button class="tab-btn" data-tab="stats">统计</button>
+      <button class="tab-btn" data-tab="forecast">业绩预测</button>
     </div>
   </header>
 
@@ -1063,6 +1095,62 @@ body.mobile-detail-open { overflow: hidden; }
         </div>
       </div>
     </div>
+
+    <!-- 业绩预测模式 -->
+    <div id="tab-forecast" class="tab-panel">
+      <div class="forecast-container">
+        <div class="forecast-form-card">
+          <h3 class="forecast-title">新增 / 更新业绩预测</h3>
+          <div class="forecast-form">
+            <div class="fc-field">
+              <label>研究员</label>
+              <select id="fc-researcher"><option value="">— 选择研究员 —</option></select>
+            </div>
+            <div class="fc-field">
+              <label>跟踪标的</label>
+              <select id="fc-subject" disabled><option value="">— 先选研究员 —</option></select>
+            </div>
+            <div class="fc-field fc-field-full">
+              <label>备注（选填，如预测依据 / 报告来源）</label>
+              <input type="text" id="fc-note" placeholder="例如：Q3点评推算，金价线性外推">
+            </div>
+            <div class="fc-years-head">净利润预测（亿元，选填）</div>
+            <div class="fc-row">
+              <div class="fc-field"><label id="fc-lab-np-y1">净利 Y1</label><input type="number" id="fc-np-y1" step="0.1" placeholder="—"></div>
+              <div class="fc-field"><label id="fc-lab-np-y2">净利 Y2</label><input type="number" id="fc-np-y2" step="0.1" placeholder="—"></div>
+              <div class="fc-field"><label id="fc-lab-np-y3">净利 Y3</label><input type="number" id="fc-np-y3" step="0.1" placeholder="—"></div>
+            </div>
+            <div class="fc-years-head">营收预测（亿元，选填）</div>
+            <div class="fc-row">
+              <div class="fc-field"><label id="fc-lab-rev-y1">营收 Y1</label><input type="number" id="fc-rev-y1" step="0.1" placeholder="—"></div>
+              <div class="fc-field"><label id="fc-lab-rev-y2">营收 Y2</label><input type="number" id="fc-rev-y2" step="0.1" placeholder="—"></div>
+              <div class="fc-field"><label id="fc-lab-rev-y3">营收 Y3</label><input type="number" id="fc-rev-y3" step="0.1" placeholder="—"></div>
+            </div>
+            <div class="fc-actions">
+              <button class="fc-save" id="fc-save">保存预测</button>
+              <button class="fc-reset" id="fc-reset">清空表单</button>
+              <span class="fc-hint" id="fc-hint"></span>
+            </div>
+          </div>
+        </div>
+        <div class="forecast-list-card">
+          <div class="fc-list-head">
+            <h3 class="forecast-title">已保存预测</h3>
+            <span class="fc-hint">数据保存在本机浏览器（localStorage），换设备/清缓存不会自动同步</span>
+          </div>
+          <div class="fc-table-wrap">
+            <table class="fc-table" id="fc-table">
+              <thead>
+                <tr><th>研究员</th><th>标的</th><th id="fc-th-y1">Y1</th><th id="fc-th-y2">Y2</th><th id="fc-th-y3">Y3</th><th>备注</th><th>更新时间</th><th></th></tr>
+              </thead>
+              <tbody id="fc-tbody"></tbody>
+            </table>
+          </div>
+          <div class="fc-empty" id="fc-empty" style="display:none;">暂无预测记录，请在上方表单添加</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1086,6 +1174,7 @@ body.mobile-detail-open { overflow: hidden; }
     // 直接加载同目录 data/index.json（同源静态文件，秒开）
     loadJSON("data/index.json", function (data) {
       DATA = data;
+      window.APP_DATA = data;
       onLoaded();
     }, function () {
       showErrorState();
@@ -1209,6 +1298,7 @@ body.mobile-detail-open { overflow: hidden; }
     document.querySelectorAll(".tab-panel").forEach(function (p) { p.classList.remove("active"); });
     document.getElementById("tab-" + tab).classList.add("active");
     if (tab === "stats") { renderStats(); }
+    if (tab === "forecast") { FCAST.render(); }
   }
 
   // ---------- 数据加载 ----------
@@ -2610,5 +2700,158 @@ body.mobile-detail-open { overflow: hidden; }
 })();
 
 </script>
+<script>
+/**
+ * 业绩预测模块（localStorage 本地存储版）
+ * 手动录入：研究员 + 跟踪标的 + 三年营收/净利预测；年份自动（今年、明年、后年）
+ */
+(function (window) {
+  "use strict";
+  var STORE_KEY = "fc_forecasts_v1";
+  var Y1 = new Date().getFullYear();
+  var Y2 = Y1 + 1, Y3 = Y1 + 2;
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY) || "[]"); } catch (e) { return []; }
+  }
+  function save(list) {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(list)); } catch (e) {}
+  }
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+
+  var inited = false;
+
+  function initData() {
+    if (inited) return;
+    if (typeof window.APP_DATA === "undefined" || !window.APP_DATA) {
+      setTimeout(function () { initData(); }, 500);
+      return;
+    }
+    inited = true;
+    var sel = $("fc-researcher");
+    var names = window.APP_DATA.researchers.map(function (r) { return r.name; }).sort(function (a, b) { return a.localeCompare(b, "zh"); });
+    var opts = '<option value="">— 选择研究员 —</option>';
+    names.forEach(function (n) { opts += '<option value="' + esc(n) + '">' + esc(n) + "</option>"; });
+    sel.innerHTML = opts;
+    sel.onchange = function () {
+      var sub = $("fc-subject");
+      var r = window.APP_DATA.researchers.filter(function (x) { return x.name === sel.value; })[0];
+      if (!r) { sub.innerHTML = '<option value="">— 先选研究员 —</option>'; sub.disabled = true; return; }
+      var subs = Object.keys(r.subjects).sort(function (a, b) { return a.localeCompare(b, "zh"); });
+      var so = '<option value="">— 选择标的 —</option>';
+      subs.forEach(function (s) { so += '<option value="' + esc(s) + '">' + esc(s) + " (" + r.subjects[s].length + ")</option>"; });
+      sub.innerHTML = so;
+      sub.disabled = false;
+      var list = load();
+      var hit = list.filter(function (f) { return f.researcher === sel.value; });
+      if (hit.length === 1) fillForm(hit[0]);
+    };
+    $("fc-subject").onchange = function () {
+      var list = load();
+      var hit = list.filter(function (f) { return f.researcher === $("fc-researcher").value && f.subject === this.value; })[0];
+      if (hit) fillForm(hit); else { $("fc-note").value = ""; }
+    };
+    $("fc-save").onclick = doSave;
+    $("fc-reset").onclick = function () { fillForm(null); $("fc-hint").textContent = ""; };
+    var i;
+    for (i = 1; i <= 3; i++) {
+      $("fc-lab-rev-y" + i).textContent = "营收 " + (Y1 + i - 1);
+      $("fc-lab-np-y" + i).textContent = "净利 " + (Y1 + i - 1);
+      $("fc-th-y" + i).textContent = String(Y1 + i - 1);
+    }
+    renderTable();
+  }
+
+  function fillForm(f) {
+    $("fc-note").value = f ? (f.note || "") : "";
+    var i;
+    for (i = 1; i <= 3; i++) {
+      $("fc-rev-y" + i).value = f && f.rev && f.rev[i - 1] != null ? f.rev[i - 1] : "";
+      $("fc-np-y" + i).value = f && f.np && f.np[i - 1] != null ? f.np[i - 1] : "";
+    }
+  }
+
+  function doSave() {
+    var rn = $("fc-researcher").value, sk = $("fc-subject").value;
+    if (!rn || !sk) { $("fc-hint").textContent = "请先选择研究员和标的"; return; }
+    var i;
+    var rev = [], np_ = [];
+    for (i = 1; i <= 3; i++) {
+      rev.push(num($("fc-rev-y" + i).value));
+      np_.push(num($("fc-np-y" + i).value));
+    }
+    if (rev.every(function (v) { return v === null; }) && np_.every(function (v) { return v === null; })) {
+      $("fc-hint").textContent = "营收和净利至少填一项"; return;
+    }
+    var list = load();
+    var hit = list.filter(function (f) { return f.researcher === rn && f.subject === sk; })[0];
+    var now = new Date();
+    var ts = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+    if (hit) {
+      hit.rev = rev; hit.np = np_; hit.note = $("fc-note").value.trim(); hit.updated = ts;
+      $("fc-hint").textContent = "已更新：" + rn + " / " + sk;
+    } else {
+      list.push({ researcher: rn, subject: sk, rev: rev, np: np_, note: $("fc-note").value.trim(), updated: ts });
+      $("fc-hint").textContent = "已保存：" + rn + " / " + sk;
+    }
+    save(list);
+    renderTable();
+  }
+
+  function npCell(v, prev) {
+    if (v === null || v === undefined) return '<td class="num">—</td>';
+    var h = '<td class="num">' + v;
+    if (prev !== null && prev !== undefined && prev > 0) {
+      var yoy = (v / prev - 1) * 100;
+      var cls = yoy >= 0 ? "fc-up" : "fc-down";
+      h += '<span class="fc-yoy ' + cls + '">' + (yoy >= 0 ? "+" : "") + yoy.toFixed(1) + "%</span>";
+    }
+    return h + "</td>";
+  }
+
+  function renderTable() {
+    var list = load();
+    var tb = $("fc-tbody");
+    if (!tb) return;
+    $("fc-empty").style.display = list.length ? "none" : "block";
+    $("fc-table").style.display = list.length ? "table" : "none";
+    var h = "";
+    list.forEach(function (f, idx) {
+      h += "<tr>";
+      h += '<td style="white-space:nowrap;">' + esc(f.researcher) + "</td>";
+      h += "<td>" + esc(f.subject) + "</td>";
+      h += npCell(f.np && f.np[0], null) + npCell(f.np && f.np[1], f.np && f.np[0]) + npCell(f.np && f.np[2], f.np && f.np[1]);
+      h += '<td style="min-width:140px;">' + esc(f.note || "") + "</td>";
+      h += '<td class="num">' + esc(f.updated || "") + "</td>";
+      h += '<td><button class="fc-del" data-i="' + idx + '" title="删除">&times;</button></td>';
+      h += "</tr>";
+    });
+    tb.innerHTML = h;
+    tb.querySelectorAll(".fc-del").forEach(function (b) {
+      b.onclick = function () {
+        var list2 = load();
+        var i2 = parseInt(this.getAttribute("data-i"), 10);
+        var f = list2[i2];
+        if (f && window.confirm("删除 " + f.researcher + " / " + f.subject + " 的预测？")) {
+          list2.splice(i2, 1);
+          save(list2);
+          renderTable();
+        }
+      };
+    });
+  }
+
+  window.FCAST = {
+    render: function () { initData(); renderTable(); }
+  };
+})(window);
+</script>
+
 </body>
 </html>
