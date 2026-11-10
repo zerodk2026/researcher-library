@@ -2732,6 +2732,62 @@ body.mobile-detail-open { overflow: hidden; }
   }
 
   // ---------- 云端读写 ----------
+
+  // 合并本地与云端列表：按 researcher+subject 去重，冲突取 updated 较新的一方
+  function mergeLists(local, remote) {
+    var map = {};
+    var out = [];
+    function put(f) {
+      var k = f.researcher + "||" + f.subject;
+      if (!map[k]) { map[k] = f; out.push(f); }
+      else if ((f.updated || "") > (map[k].updated || "")) {
+        var i = out.indexOf(map[k]);
+        out[i] = f; map[k] = f;
+      }
+    }
+    (local || []).forEach(put);
+    (remote || []).forEach(put);
+    return out;
+  }
+
+  // 覆盖前备份：把旧云端内容写入 forecasts_backup.json（异步，不阻塞主流程）
+  function backupRemote(oldContent) {
+    try {
+      var api = "https://api.github.com/repos/" + GH_REPO + "/contents/data/forecasts_backup.json";
+      var token = getToken();
+      if (!token) return;
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", api + "?ref=main&t=" + Date.now(), true);
+      xhr.setRequestHeader("Authorization", "Bearer " + token);
+      xhr.setRequestHeader("Accept", "application/vnd.github+json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+        var bsha = null;
+        if (xhr.status === 200) { try { bsha = JSON.parse(xhr.responseText).sha; } catch (e) {} }
+        // 旧内容与备份相同时跳过
+        if (xhr.status === 200) {
+          try {
+            var cur = decodeURIComponent(escape(atob(JSON.parse(xhr.responseText).content.replace(/\s/g, ""))));
+            if (cur === oldContent) return;
+          } catch (e) {}
+        }
+        var payload = {
+          message: "forecasts覆盖前备份 " + new Date().toISOString().slice(0, 16).replace("T", " "),
+          content: btoa(unescape(encodeURIComponent(oldContent))),
+          branch: "main"
+        };
+        if (bsha) payload.sha = bsha;
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open("PUT", api, true);
+        xhr2.setRequestHeader("Authorization", "Bearer " + token);
+        xhr2.setRequestHeader("Accept", "application/vnd.github+json");
+        xhr2.setRequestHeader("Content-Type", "application/json");
+        xhr2.send(JSON.stringify(payload));
+      };
+      xhr.send();
+    } catch (e) {}
+  }
+
   function cloudPull(onDone) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "data/forecasts.json?t=" + Date.now(), true);
@@ -2760,7 +2816,15 @@ body.mobile-detail-open { overflow: hidden; }
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         var sha = null;
-        if (xhr.status === 200) { try { sha = JSON.parse(xhr.responseText).sha; } catch (e) {} }
+        if (xhr.status === 200) {
+          try {
+            var jGet = JSON.parse(xhr.responseText);
+            sha = jGet.sha;
+            if (jGet.content && jGet.content.replace(/\s/g, "").length > 4) {
+              try { backupRemote(decodeURIComponent(escape(atob(jGet.content.replace(/\s/g, ""))))); } catch (e2) {}
+            }
+          } catch (e) {}
+        }
         var payload = {
           message: "业绩预测同步 " + new Date().toISOString().slice(0, 16).replace("T", " "),
           content: btoa(unescape(encodeURIComponent(JSON.stringify(list, null, 2)))),
@@ -2807,10 +2871,10 @@ body.mobile-detail-open { overflow: hidden; }
     cloudPush(list, function (ok, st) {
       cloudState = ok ? "ok" : (st === "no token" ? "no-token" : "fail");
       if (hintEl) {
-        if (ok) hintEl.textContent = baseMsg + "（已云同步）";
-        else if (st === "no token") hintEl.textContent = baseMsg + "（未配置token，仅存本机）";
-        else if (st === "conflict-retry") hintEl.textContent = baseMsg + "（云端有更新，已拉取，请再点一次保存）";
-        else hintEl.textContent = baseMsg + "（云端同步失败：" + st + "，暂存本机）";
+        if (ok) { hintEl.style.color = "#059669"; hintEl.textContent = baseMsg + "（已云同步）"; }
+        else if (st === "no token") { hintEl.style.color = "#b91c1c"; hintEl.textContent = baseMsg + "（⚠未配置token，仅存本机，换设备将丢失！URL加 ?token=github_pat_xxx 可配置）"; }
+        else if (st === "conflict-retry") { hintEl.style.color = "#b91c1c"; hintEl.textContent = baseMsg + "（⚠云端有更新已拉取，请再点一次保存）"; }
+        else { hintEl.style.color = "#b91c1c"; hintEl.textContent = baseMsg + "（⚠云端同步失败：" + st + "，仅存本机，请检查网络后重试）"; }
       }
       renderTable();
     });
@@ -2939,18 +3003,39 @@ body.mobile-detail-open { overflow: hidden; }
   window.FCAST = {
     render: function () {
       initData();
-      // 云端优先：拉最新数据覆盖内存与本地缓存
+      renderTable();
+      // 云端与本地【合并】，绝不单向覆盖：
+      // - 云端有、本地无 → 并入本地
+      // - 本地有、云端无 → 保留本地并自动上推（防云端空文件冲掉本地数据）
       cloudPull(function (remote, err) {
+        var local = localLoad();
         if (remote && Array.isArray(remote)) {
-          memList = remote;
-          localSave(remote);
+          var merged = mergeLists(local, remote);
+          var remoteChanged = JSON.stringify(merged) !== JSON.stringify(remote);
+          memList = merged;
+          localSave(merged);
           cloudState = "ok";
+          if (remoteChanged) {
+            // 本地有而云端没有 → 自动修复上推
+            cloudPush(merged, function (ok, st) {
+              if (!ok) console.warn("forecasts自动上推失败:", st);
+            });
+          }
+        } else if (local.length) {
+          // 云端不可达/404，但本地有数据 → 保持本地并尝试上推
+          memList = local;
+          cloudState = (err === 404) ? "ok" : "fail";
+          if (err === 404) {
+            cloudPush(local, function (ok, st) {
+              if (!ok) console.warn("forecasts首次上推失败:", st);
+            });
+          }
         } else {
-          cloudState = (err === 404) ? "ok" : "fail"; // 404=云端空，等同无数据
+          memList = local;
+          cloudState = (err === 404) ? "ok" : "fail";
         }
         renderTable();
       });
-      renderTable();
     }
   };
 })(window);
