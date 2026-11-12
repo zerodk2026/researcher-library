@@ -118,6 +118,15 @@ body {
 
 .researcher-list { flex: 1; overflow-y: auto; }
 
+.record-summary-card { border-left: 3px solid var(--accent, #b91c1c); }
+.record-summary-body { padding: 10px 16px; }
+.summary-line { font-size: 12px; color: var(--text-secondary, #6b7280); margin-bottom: 8px; }
+.summary-row { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px dashed var(--border-color, #f0f0f0); font-size: 13px; align-items: baseline; }
+.summary-row:last-child { border-bottom: none; }
+.summary-date { flex-shrink: 0; width: 84px; color: var(--text-tertiary, #9ca3af); font-variant-numeric: tabular-nums; }
+.summary-dir { flex-shrink: 0; width: 64px; color: var(--accent-dark, #92400e); font-size: 12px; }
+.summary-text { flex: 1; color: var(--text-primary, #374151); line-height: 1.5; }
+
 /* 业绩预测页 */
 .forecast-container { max-width: 1080px; margin: 0 auto; padding: 20px 16px 60px; }
 .forecast-form-card, .forecast-list-card { background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
@@ -1518,6 +1527,37 @@ body.mobile-detail-open { overflow: hidden; }
     Object.keys(r.subjects).forEach(function (subjectKey) {
       var records = r.subjects[subjectKey];
 
+      // ===== 主记录=动态汇总卡（2026-11-12：随新记录自动更新，替代旧的静态首条标签）=====
+      if (records.length > 1) {
+        var sortedRecs = records.slice().sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); });
+        var mainDateFrom = sortedRecs[sortedRecs.length - 1].date || "—";
+        var mainDateTo = sortedRecs[0].date || "—";
+        var dateRange = (mainDateFrom === mainDateTo) ? mainDateFrom : mainDateFrom + " ~ " + mainDateTo;
+        var sumCardId = r.name + "_" + subjectKey + "_summary";
+        sumCardId = sumCardId.replace(/[^a-zA-Z0-9_\u4e00-\u9fa5]/g, "_");
+        var mHtml = '<div class="record-card record-summary-card" id="card_' + sumCardId + '">';
+        mHtml += '<div class="record-header" onclick="window._toggleCard(\'' + sumCardId + '\')">';
+        mHtml += '<span class="record-type-badge main">主记录 · 汇总</span>';
+        mHtml += '<span class="record-title">' + escapeHtml(subjectKey) + ' 全部跟踪记录汇总（' + records.length + '条）</span>';
+        mHtml += '<span class="record-date">' + escapeHtml(dateRange) + '</span>';
+        mHtml += '<span class="record-toggle">&#9654;</span>';
+        mHtml += '</div>';
+        mHtml += '<div class="record-body record-summary-body">';
+        mHtml += '<div class="summary-line"><b>共 ' + records.length + ' 条记录</b> · 时间跨度 ' + escapeHtml(dateRange) + '</div>';
+        sortedRecs.forEach(function (sr) {
+          var dirTxt = sr.direction ? escapeHtml(sr.direction) : "—";
+          var sumTxt = sr.summary ? escapeHtml(sr.summary) : escapeHtml((sr.title || "").slice(0, 60));
+          if (sumTxt.length > 90) sumTxt = sumTxt.slice(0, 90) + "…";
+          mHtml += '<div class="summary-row">';
+          mHtml += '<span class="summary-date">' + escapeHtml(sr.date || "—") + '</span>';
+          mHtml += '<span class="summary-dir">' + dirTxt + '</span>';
+          mHtml += '<span class="summary-text">' + sumTxt + '</span>';
+          mHtml += '</div>';
+        });
+        mHtml += '</div></div>';
+        html += mHtml;
+      }
+
       // 方向筛选
       if (filterDirection) {
         records = records.filter(function (rec) { return rec.direction === filterDirection; });
@@ -1543,7 +1583,8 @@ body.mobile-detail-open { overflow: hidden; }
 
         html += '<div class="record-card" id="card_' + cardId + '">';
         html += '<div class="record-header" onclick="window._toggleCard(\'' + cardId + '\')">';
-        html += '<span class="record-type-badge ' + (rec.is_main ? "main" : "sub") + '">' + (rec.is_main ? "主记录" : "详情") + '</span>';
+        var badgeIsMain = rec.is_main && records.length === 1;
+        html += '<span class="record-type-badge ' + (badgeIsMain ? "main" : "sub") + '">' + (badgeIsMain ? "主记录" : "详情") + '</span>';
         html += '<span class="record-title">' + highlightText(rec.title) + '</span>';
         if (rec.direction) {
           var dirClass = rec.direction.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, "");
@@ -2183,7 +2224,7 @@ body.mobile-detail-open { overflow: hidden; }
 
       html += '<div class="record-card" id="card_' + cardId + '">';
       html += '<div class="record-header" onclick="window._toggleCard(\'' + cardId + '\')">';
-      html += '<span class="record-type-badge ' + (rec.is_main ? "main" : "sub") + '">' + (rec.is_main ? "主记录" : "详情") + '</span>';
+      html += '<span class="record-type-badge sub">详情</span>';
       html += '<span class="record-title">' + highlightText(rec.title) + '</span>';
       html += '<span style="font-size:11px;color:var(--accent)">[' + highlightText(r.name) + ']</span>';
       if (rec.direction) {
