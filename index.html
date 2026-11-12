@@ -162,6 +162,10 @@ body {
   transition: background 0.1s; display: flex; flex-direction: column; gap: 2px;
 }
 .researcher-item:hover { background: var(--bg-secondary); }
+.researcher-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.researcher-item-main { flex: 1; min-width: 0; }
+.researcher-stars { flex-shrink: 0; font-size: 12px; letter-spacing: 1px; color: var(--amber, #d97706); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.researcher-stars-none { color: var(--text-tertiary, #9ca3af); }
 .researcher-item.active { background: var(--bg-active); border-left: 3px solid var(--accent); }
 .researcher-name { font-weight: 500; font-size: 13px; }
 .researcher-meta { font-size: 11px; color: var(--text-tertiary); display: flex; gap: 8px; }
@@ -1431,19 +1435,42 @@ body.mobile-detail-open { overflow: hidden; }
     var html = "";
     list.forEach(function (r) {
       var isActive = currentResearcher && currentResearcher.name === r.name ? " active" : "";
-      var ratingHtml = r.rating ? '<span class="researcher-rating-mini">' + escapeHtml((typeof r.rating==="string"?r.rating:"").split("")[0]||"") + '</span>' : "";
+      var stars = r.rating && window._ratingLevel(r.rating) > 0
+        ? '<span class="researcher-stars" title="研究员评级：' + escapeHtml(r.rating) + '">' + window._renderStars(r.rating) + '</span>'
+        : '<span class="researcher-stars researcher-stars-none" title="未评级">—</span>';
       html +=
         '<div class="researcher-item' + isActive + '" onclick="window._selectResearcher(\'' + escapeAttr(r.name) + '\')">' +
+        '<div class="researcher-item-main">' +
         '<div class="researcher-name">' + highlightText(r.name) + '</div>' +
         '<div class="researcher-meta">' +
         '<span>' + r.item_count + ' 条记录</span>' +
         '<span>' + Object.keys(r.subjects).length + ' 个标的</span>' +
         '</div>' +
+        '</div>' +
+        stars +
         '</div>';
     });
 
     document.getElementById("researcher-list").innerHTML = html;
   }
+
+  // ---------- 星级渲染（2026-11-12 单列改造）----------
+  // rating 形如 "★★★★☆" 或 "★★★" 或 "待定"：统一渲染为5格星列
+  window._renderStars = function (rating) {
+    var r = typeof rating === "string" ? rating : "";
+    var full = (r.match(/★/g) || []).length;
+    var half = /半/.test(r) || /½/.test(r);
+    var t = "";
+    for (var i = 1; i <= 5; i++) {
+      t += i <= full ? "★" : (i === full + 1 && half ? "⯪" : "☆");
+    }
+    return t;
+  };
+  window._ratingLevel = function (rating) {
+    var r = typeof rating === "string" ? rating : "";
+    var full = (r.match(/★/g) || []).length;
+    return full;
+  };
 
   // ---------- 移动端两级导航 ----------
   function isMobile() {
@@ -1493,7 +1520,7 @@ body.mobile-detail-open { overflow: hidden; }
     var html = '<div class="researcher-detail">';
     html += '<h2>' + escapeHtml(r.name) + '</h2>';
 
-    if (r.rating) { html += '<div class="rating">研究员评级：' + escapeHtml(r.rating) + '</div>'; }
+    if (r.rating) { html += '<div class="rating">研究员评级：<span class="rating-stars">' + window._renderStars(r.rating) + '</span> <span style="font-size:12px;color:var(--text-tertiary)">' + escapeHtml(r.rating) + '（' + window._ratingLevel(r.rating) + '/5）</span></div>'; }
 
     if (r.style) {
       // 从主记录中提取风格
