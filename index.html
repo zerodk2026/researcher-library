@@ -1528,7 +1528,7 @@ body.mobile-detail-open { overflow: hidden; }
       var records = r.subjects[subjectKey];
 
       // ===== 主记录=动态汇总卡（2026-11-12：随新记录自动更新，替代旧的静态首条标签）=====
-      if (records.length > 1) {
+      {
         var sortedRecs = records.slice().sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); });
         var mainDateFrom = sortedRecs[sortedRecs.length - 1].date || "—";
         var mainDateTo = sortedRecs[0].date || "—";
@@ -1583,8 +1583,7 @@ body.mobile-detail-open { overflow: hidden; }
 
         html += '<div class="record-card" id="card_' + cardId + '">';
         html += '<div class="record-header" onclick="window._toggleCard(\'' + cardId + '\')">';
-        var badgeIsMain = rec.is_main && records.length === 1;
-        html += '<span class="record-type-badge ' + (badgeIsMain ? "main" : "sub") + '">' + (badgeIsMain ? "主记录" : "详情") + '</span>';
+        html += '<span class="record-type-badge sub">详情</span>';
         html += '<span class="record-title">' + highlightText(rec.title) + '</span>';
         if (rec.direction) {
           var dirClass = rec.direction.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, "");
