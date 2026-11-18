@@ -6,7 +6,7 @@
   "total_subjects": 248,
   "total_main_records": 570,
   "total_sub_records": 315,
-  "updated_at": "2026-11-17"
+  "updated_at": "2026-11-18"
  },
  "researchers": [
   {
@@ -5221,7 +5221,12 @@
       "date": "2026-11-17",
       "is_main": true,
       "content_preview": "# 长期理性 — 新城控股 研究记录    研究员评级：★★ 建档日期：2026-06-24  ## 研究成果  |||||| |---|---|---|---|---| ||||||  在此下方追加新的研究成果记录",
-      "url": "https://xueqiu.com/u/8932423869"
+      "url": "https://xueqiu.com/u/8932423869",
+      "price": {
+       "date_price": "11.66 元（11/17 收盘）",
+       "current_price": "11.81 元（11/18 收盘）",
+       "change_pct": "+1.29%"
+      }
      }
     ],
     "吉利汽车": [
