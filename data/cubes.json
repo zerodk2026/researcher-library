@@ -1,0 +1,85 @@
+{
+ "cubes": [
+  {
+   "symbol": "ZH111175",
+   "name": "低估值輪動",
+   "owner": "達人知命",
+   "owner_uid": "8632046745",
+   "url": "https://xueqiu.com/P/ZH111175",
+   "note": "十年组合，年化约39%；管理人自称与实盘操作相似；持仓快照diff还原调仓",
+   "snapshots": [
+    {
+     "date": "2026-11-24",
+     "net_value": 35.4368,
+     "monthly_gain": -1.08,
+     "total_gain": 3443.68,
+     "cash": 1.05,
+     "holdings": [
+      {
+       "symbol": "02543",
+       "name": "大行科工",
+       "weight": 19.37,
+       "segment": "家庭电器及用品"
+      },
+      {
+       "symbol": "00148",
+       "name": "建滔集团",
+       "weight": 17.19,
+       "segment": "工业工程"
+      },
+      {
+       "symbol": "00700",
+       "name": "腾讯控股",
+       "weight": 13.9,
+       "segment": "软件服务"
+      },
+      {
+       "symbol": "01571",
+       "name": "信邦控股",
+       "weight": 9.85,
+       "segment": "汽车"
+      },
+      {
+       "symbol": "01378",
+       "name": "中国宏桥",
+       "weight": 9.42,
+       "segment": "一般金属及矿石"
+      },
+      {
+       "symbol": "00883",
+       "name": "中国海洋石油",
+       "weight": 7.56,
+       "segment": "石油及天然气"
+      },
+      {
+       "symbol": "03669",
+       "name": "永达汽车",
+       "weight": 6.69,
+       "segment": "专业零售"
+      },
+      {
+       "symbol": "01126",
+       "name": "德林国际",
+       "weight": 5.09,
+       "segment": "家庭电器及用品"
+      },
+      {
+       "symbol": "02111",
+       "name": "超盈国际控股",
+       "weight": 4.94,
+       "segment": "纺织及服饰"
+      },
+      {
+       "symbol": "01919",
+       "name": "中远海控",
+       "weight": 4.94,
+       "segment": "工用运输"
+      }
+     ]
+    }
+   ],
+   "rebalancings": []
+  }
+ ],
+ "updated_at": "2026-11-24T13:56:30+08:00"
+}
