@@ -2,11 +2,11 @@
  "meta": {
   "knowledge_base_name": "研究员库",
   "total_researchers": 44,
-  "total_records": 909,
+  "total_records": 905,
   "total_subjects": 251,
-  "total_main_records": 584,
+  "total_main_records": 580,
   "total_sub_records": 325,
-  "updated_at": "2026-11-24"
+  "updated_at": "2026-11-23"
  },
  "researchers": [
   {
@@ -1315,7 +1315,12 @@
       "is_main": true,
       "content_preview": "# 陈chensir — 盐湖 研究记录    研究员评级：★★★★☆ 建档日期：2026-06-24  ## 研究成果  |||||| |---|---|---|---|---| ||||||  在此下方追加新的研究成果记录",
       "url": "https://xueqiu.com/u/6262681062",
-      "summary": "｜11/24 补：盐湖利润中枢约 100 亿（锂价 8 万假设）；击球区 15-18、合理区间 3PB；三个前置：刚果布镁试车/钾价下来/锂价三碰头"
+      "summary": "｜11/24 补：盐湖利润中枢约 100 亿（锂价 8 万假设）；击球区 15-18、合理区间 3PB；三个前置：刚果布镁试车/钾价下来/锂价三碰头",
+      "price": {
+       "date_price": "—（原帖 2026-06 框架，未给价格锚）",
+       "current_price": "22.10 元（11/24 收盘，+2.65%）",
+       "change_pct": "—（本条补充为估值问答，非价格判断）"
+      }
      }
     ],
     "华润饮料": [
@@ -2626,7 +2631,12 @@
       "is_main": true,
       "content_preview": "# 鲁放 — 中国宏桥 研究记录    研究员评级：★★ 建档日期：2026-06-24  ## 研究成果  |||||| |---|---|---|---|---| ||||||  在此下方追加新的研究成果记录",
       "url": "https://xueqiu.com/u/1217558415",
-      "summary": "｜11/24 补：宏桥成本七八元、14 元起陆续减持，现余仓为负成本长持"
+      "summary": "｜11/24 补：宏桥成本七八元、14 元起陆续减持，现余仓为负成本长持",
+      "price": {
+       "date_price": "—（原帖 2026-06 持仓自述，未给买入日价格）",
+       "current_price": "16.39 港元（11/24 收盘，-4.88%）",
+       "change_pct": "—（作者成本 7-8 元，现为负成本长持）"
+      }
      }
     ],
     "信邦控股": [
@@ -4458,7 +4468,7 @@
   },
   {
    "name": "夏至1987",
-   "item_count": 32,
+   "item_count": 31,
    "subjects": {
     "小米集团": [
      {
@@ -6548,7 +6558,11 @@
       "subject": "投资体系",
       "is_main": false,
       "url": "https://xueqiu.com/4111857140/411520361",
-      "price": null,
+      "price": {
+       "date_price": "—（方法论类，不适用个股股价）",
+       "current_price": "—（预期收益率框架）",
+       "change_pct": "—"
+      },
       "content": "## 一句话方法论（10/8 14:08）\n\n**\"AI相关最终也要看估值，看盈利、现金流。我说的估值和盈利是指可持续的或者更久的，如果是一年两年或者三五年，那就出现动态PE很低的状况也是极大可能或者合理。\"**\n\n## 解读\n- 对AI行情的估值框架：不看概念叙事，回到盈利与现金流的可持续性\n- **关键区分**：如果盈利只能持续1-2年或3-5年（一次性需求脉冲，如当前的算力资本开支周期），那么看似极低的动态PE（当年利润暴涨拉低PE）是合理现象而非低估——**动态PE低不等于便宜**\n- 这是对\"AI股低PE陷阱\"的警示：资本开支驱动的盈利高点对应的是周期顶部估值而非低估\n\n帖子链接：https://xueqiu.com/4111857140/411520361\n\n---\n\n### 2026-11-24 补充（雪球 418350369）\n\n**从「三年一倍」退到「四年一倍」，再到「10% 就合理」——预期收益率的三级下调**\n\n11/24 13:03 起两帖：\n- 13:03：\"**好久没念四年一倍了，现在可以想一想**\"\n- 14:04：\"从三年一倍到四年一倍，是因为**时势不同**，曾经的**无风险利率、经济增速、各个行业表现和市场估值水平**，都不一样了。在我看来，**当下四年一倍都是很高的奢求，未来投资，10% 的目标是比较合理的**\"\n- 16:27 回应\"为什么不去有鱼的地方钓鱼\"：\"我觉得**这已经是很不错的鱼了**。。惭愧\"\n\n方法论含义：把目标收益率当成**宏观变量的函数**——无风险利率下行、经济增速下台阶、行业普涨消失、估值中枢下移，四项同时变差时，\"三年一倍\"（年化 26%）这类口号已不成立，10% 年化才是可持续的基准。这与 10/8 \"AI 最终也要看估值、动态 PE 低不等于便宜\"、11/22 \"成长股的周期、周期股的成长\" 构成同一套预期管理框架。\n\n同日另有铜金联动观察（11/23 22:19）：\"隔壁桌的小姐姐说，**铜是黄颜色的，黄金嘛，那是同姓，一荣俱荣一损俱损**。我觉得好有道理啊\"——即铜金同涨同跌的相关性，被当作一句玩笑话记录。",
       "summary": "AI估值方法论：盈利持续性决定动态PE含义，1-3年脉冲式盈利下动态PE很低是合理而非低估｜11/24 补：预期收益率三级下调：三年一倍→四年一倍→10% 才合理（无风险利率/增速/估值中枢同时下移）"
      }
@@ -9652,7 +9666,7 @@
      }
     ]
    },
-   "item_count": 33,
+   "item_count": 32,
    "rating": "★★★",
    "style": "深度财报分析型投资者，擅长会计准则与金融工具分类的专业研判",
    "xueqiu_url": "https://xueqiu.com/u/6945136975"
@@ -12741,7 +12755,7 @@
   },
   {
    "name": "郭小松驾道",
-   "item_count": 12,
+   "item_count": 11,
    "subjects": {
     "吉利汽车": [
      {
@@ -13344,7 +13358,7 @@
      }
     ]
    },
-   "item_count": 5,
+   "item_count": 4,
    "rating": "★★★☆☆",
    "style": "周期行业供需格局量化派（船队结构拆解+16年周期框架），文风沉稳"
   }
@@ -13371,12 +13385,12 @@
    "count": 22
   },
   {
-   "subject": "吉利汽车",
+   "subject": "盐湖股份",
    "count": 19
   },
   {
-   "subject": "盐湖股份",
-   "count": 19
+   "subject": "吉利汽车",
+   "count": 18
   },
   {
    "subject": "投资体系",
@@ -13395,11 +13409,11 @@
    "count": 13
   },
   {
-   "subject": "新城发展",
+   "subject": "铜陵有色",
    "count": 13
   },
   {
-   "subject": "铜陵有色",
+   "subject": "新城发展",
    "count": 13
   },
   {
@@ -13415,15 +13429,7 @@
    "count": 11
   },
   {
-   "subject": "杭州银行",
-   "count": 9
-  },
-  {
    "subject": "洛阳钼业",
-   "count": 9
-  },
-  {
-   "subject": "焦煤",
    "count": 9
   },
   {
@@ -13431,11 +13437,15 @@
    "count": 9
   },
   {
-   "subject": "中国宏桥",
-   "count": 8
+   "subject": "焦煤",
+   "count": 9
   },
   {
-   "subject": "中国平安",
+   "subject": "杭州银行",
+   "count": 9
+  },
+  {
+   "subject": "中国宏桥",
    "count": 8
   },
   {
@@ -13447,11 +13457,15 @@
    "count": 8
   },
   {
-   "subject": "招商轮船",
-   "count": 7
+   "subject": "中国平安",
+   "count": 8
   },
   {
    "subject": "新城控股",
+   "count": 7
+  },
+  {
+   "subject": "招商轮船",
    "count": 7
   },
   {
@@ -13459,27 +13473,7 @@
    "count": 6
   },
   {
-   "subject": "华新建材",
-   "count": 6
-  },
-  {
    "subject": "天山铝业",
-   "count": 6
-  },
-  {
-   "subject": "招商蛇口",
-   "count": 6
-  },
-  {
-   "subject": "江苏银行",
-   "count": 6
-  },
-  {
-   "subject": "电解铝",
-   "count": 6
-  },
-  {
-   "subject": "神火股份",
    "count": 6
   },
   {
@@ -13491,39 +13485,27 @@
    "count": 6
   },
   {
+   "subject": "招商蛇口",
+   "count": 6
+  },
+  {
+   "subject": "华新建材",
+   "count": 6
+  },
+  {
+   "subject": "神火股份",
+   "count": 6
+  },
+  {
+   "subject": "江苏银行",
+   "count": 6
+  },
+  {
    "subject": "中芯国际",
    "count": 5
   },
   {
-   "subject": "中远海能",
-   "count": 5
-  },
-  {
-   "subject": "亚太资源",
-   "count": 5
-  },
-  {
-   "subject": "兆易创新",
-   "count": 5
-  },
-  {
-   "subject": "宁波银行",
-   "count": 5
-  },
-  {
-   "subject": "投资收益率计算公式",
-   "count": 5
-  },
-  {
-   "subject": "新氧",
-   "count": 5
-  },
-  {
-   "subject": "油运",
-   "count": 5
-  },
-  {
-   "subject": "特变电工",
+   "subject": "电解铝",
    "count": 5
   },
   {
@@ -13535,7 +13517,23 @@
    "count": 5
   },
   {
+   "subject": "特变电工",
+   "count": 5
+  },
+  {
    "subject": "陕西能源",
+   "count": 5
+  },
+  {
+   "subject": "投资收益率计算公式",
+   "count": 5
+  },
+  {
+   "subject": "新氧",
+   "count": 5
+  },
+  {
+   "subject": "兆易创新",
    "count": 5
   },
   {
@@ -13543,15 +13541,67 @@
    "count": 5
   },
   {
+   "subject": "宁波银行",
+   "count": 5
+  },
+  {
    "subject": "青岛银行",
    "count": 5
   },
   {
-   "subject": "中金黄金",
+   "subject": "亚太资源",
+   "count": 5
+  },
+  {
+   "subject": "油运",
+   "count": 5
+  },
+  {
+   "subject": "波司登",
+   "count": 4
+  },
+  {
+   "subject": "皖能电力",
+   "count": 4
+  },
+  {
+   "subject": "电投能源",
+   "count": 4
+  },
+  {
+   "subject": "明泰铝业",
+   "count": 4
+  },
+  {
+   "subject": "焦作万方",
+   "count": 4
+  },
+  {
+   "subject": "美的集团",
+   "count": 4
+  },
+  {
+   "subject": "银行估值方法论",
+   "count": 4
+  },
+  {
+   "subject": "中远海能",
+   "count": 4
+  },
+  {
+   "subject": "铜",
+   "count": 4
+  },
+  {
+   "subject": "越秀地产",
    "count": 4
   },
   {
    "subject": "云铝股份",
+   "count": 4
+  },
+  {
+   "subject": "山煤国际",
    "count": 4
   },
   {
@@ -13563,35 +13613,7 @@
    "count": 4
   },
   {
-   "subject": "山煤国际",
-   "count": 4
-  },
-  {
-   "subject": "成都银行",
-   "count": 4
-  },
-  {
-   "subject": "明泰铝业",
-   "count": 4
-  },
-  {
-   "subject": "波司登",
-   "count": 4
-  },
-  {
-   "subject": "焦作万方",
-   "count": 4
-  },
-  {
-   "subject": "电投能源",
-   "count": 4
-  },
-  {
-   "subject": "皖能电力",
-   "count": 4
-  },
-  {
-   "subject": "美的集团",
+   "subject": "贵州茅台",
    "count": 4
   },
   {
@@ -13603,47 +13625,23 @@
    "count": 4
   },
   {
-   "subject": "贵州茅台",
+   "subject": "成都银行",
    "count": 4
   },
   {
-   "subject": "越秀地产",
+   "subject": "中金黄金",
    "count": 4
   },
   {
-   "subject": "铜",
-   "count": 4
-  },
-  {
-   "subject": "银行估值方法论",
-   "count": 4
-  },
-  {
-   "subject": "中国石油",
+   "subject": "宁德时代",
    "count": 3
   },
   {
-   "subject": "中孚实业",
+   "subject": "黄金",
    "count": 3
   },
   {
-   "subject": "五矿资源",
-   "count": 3
-  },
-  {
-   "subject": "京东方A",
-   "count": 3
-  },
-  {
-   "subject": "信邦控股",
-   "count": 3
-  },
-  {
-   "subject": "兖矿能源",
-   "count": 3
-  },
-  {
-   "subject": "华能国际",
+   "subject": "福耀玻璃",
    "count": 3
   },
   {
@@ -13651,11 +13649,43 @@
    "count": 3
   },
   {
-   "subject": "南京银行",
+   "subject": "兖矿能源",
    "count": 3
   },
   {
-   "subject": "宁德时代",
+   "subject": "京东方A",
+   "count": 3
+  },
+  {
+   "subject": "王氏港建",
+   "count": 3
+  },
+  {
+   "subject": "华能国际",
+   "count": 3
+  },
+  {
+   "subject": "重庆机电",
+   "count": 3
+  },
+  {
+   "subject": "信邦控股",
+   "count": 3
+  },
+  {
+   "subject": "中孚实业",
+   "count": 3
+  },
+  {
+   "subject": "药明康德",
+   "count": 3
+  },
+  {
+   "subject": "龙湖集团",
+   "count": 3
+  },
+  {
+   "subject": "网易",
    "count": 3
   },
   {
@@ -13671,171 +13701,23 @@
    "count": 3
   },
   {
-   "subject": "王氏港建",
-   "count": 3
-  },
-  {
    "subject": "盛屯矿业",
    "count": 3
   },
   {
-   "subject": "福耀玻璃",
+   "subject": "中国石油",
    "count": 3
   },
   {
-   "subject": "网易",
+   "subject": "南京银行",
    "count": 3
   },
   {
-   "subject": "药明康德",
+   "subject": "五矿资源",
    "count": 3
   },
   {
-   "subject": "重庆机电",
-   "count": 3
-  },
-  {
-   "subject": "黄金",
-   "count": 3
-  },
-  {
-   "subject": "龙湖集团",
-   "count": 3
-  },
-  {
-   "subject": "东方海外国际",
-   "count": 2
-  },
-  {
-   "subject": "中国三江化工",
-   "count": 2
-  },
-  {
-   "subject": "中国心连心化肥",
-   "count": 2
-  },
-  {
-   "subject": "中国神华",
-   "count": 2
-  },
-  {
-   "subject": "中国船舶",
-   "count": 2
-  },
-  {
-   "subject": "中国黄金国际",
-   "count": 2
-  },
-  {
-   "subject": "中矿资源",
-   "count": 2
-  },
-  {
-   "subject": "中远海发",
-   "count": 2
-  },
-  {
-   "subject": "中际旭创",
-   "count": 2
-  },
-  {
-   "subject": "互联网估值框架",
-   "count": 2
-  },
-  {
-   "subject": "伊泰B股",
-   "count": 2
-  },
-  {
-   "subject": "众安在线",
-   "count": 2
-  },
-  {
-   "subject": "兰花科创",
-   "count": 2
-  },
-  {
-   "subject": "兴业银锡",
-   "count": 2
-  },
-  {
-   "subject": "分众传媒",
-   "count": 2
-  },
-  {
-   "subject": "华安证券",
-   "count": 2
-  },
-  {
-   "subject": "华润饮料",
-   "count": 2
-  },
-  {
-   "subject": "华能国际电力股份",
-   "count": 2
-  },
-  {
-   "subject": "卫星化学",
-   "count": 2
-  },
-  {
-   "subject": "厄尔尼诺与能源宏观",
-   "count": 2
-  },
-  {
-   "subject": "国电电力",
-   "count": 2
-  },
-  {
-   "subject": "宇树科技",
-   "count": 2
-  },
-  {
-   "subject": "宏达股份",
-   "count": 2
-  },
-  {
-   "subject": "小米集团",
-   "count": 2
-  },
-  {
-   "subject": "山东黄金",
-   "count": 2
-  },
-  {
-   "subject": "川恒股份",
-   "count": 2
-  },
-  {
-   "subject": "常熟银行",
-   "count": 2
-  },
-  {
-   "subject": "平安银行",
-   "count": 2
-  },
-  {
-   "subject": "康方生物",
-   "count": 2
-  },
-  {
-   "subject": "招商银行",
-   "count": 2
-  },
-  {
-   "subject": "招金矿业",
-   "count": 2
-  },
-  {
-   "subject": "新华保险",
-   "count": 2
-  },
-  {
-   "subject": "昊华能源",
-   "count": 2
-  },
-  {
-   "subject": "泸州老窖",
+   "subject": "海天国际",
    "count": 2
   },
   {
@@ -13843,7 +13725,7 @@
    "count": 2
   },
   {
-   "subject": "海天国际",
+   "subject": "华润饮料",
    "count": 2
   },
   {
@@ -13851,7 +13733,71 @@
    "count": 2
   },
   {
-   "subject": "白酒板块",
+   "subject": "康方生物",
+   "count": 2
+  },
+  {
+   "subject": "中远海发",
+   "count": 2
+  },
+  {
+   "subject": "东方海外国际",
+   "count": 2
+  },
+  {
+   "subject": "国电电力",
+   "count": 2
+  },
+  {
+   "subject": "兴业银锡",
+   "count": 2
+  },
+  {
+   "subject": "宏达股份",
+   "count": 2
+  },
+  {
+   "subject": "川恒股份",
+   "count": 2
+  },
+  {
+   "subject": "中际旭创",
+   "count": 2
+  },
+  {
+   "subject": "招商银行",
+   "count": 2
+  },
+  {
+   "subject": "昊华能源",
+   "count": 2
+  },
+  {
+   "subject": "兰花科创",
+   "count": 2
+  },
+  {
+   "subject": "中国三江化工",
+   "count": 2
+  },
+  {
+   "subject": "卫星化学",
+   "count": 2
+  },
+  {
+   "subject": "小米集团",
+   "count": 2
+  },
+  {
+   "subject": "中国心连心化肥",
+   "count": 2
+  },
+  {
+   "subject": "众安在线",
+   "count": 2
+  },
+  {
+   "subject": "平安银行",
    "count": 2
   },
   {
@@ -13859,7 +13805,27 @@
    "count": 2
   },
   {
-   "subject": "科达制造",
+   "subject": "宇树科技",
+   "count": 2
+  },
+  {
+   "subject": "泸州老窖",
+   "count": 2
+  },
+  {
+   "subject": "中国船舶",
+   "count": 2
+  },
+  {
+   "subject": "互联网估值框架",
+   "count": 2
+  },
+  {
+   "subject": "厄尔尼诺与能源宏观",
+   "count": 2
+  },
+  {
+   "subject": "伊泰B股",
    "count": 2
   },
   {
@@ -13867,7 +13833,23 @@
    "count": 2
   },
   {
-   "subject": "赛力斯",
+   "subject": "科达制造",
+   "count": 2
+  },
+  {
+   "subject": "新华保险",
+   "count": 2
+  },
+  {
+   "subject": "华能国际电力股份",
+   "count": 2
+  },
+  {
+   "subject": "长江电力",
+   "count": 2
+  },
+  {
+   "subject": "中国神华",
    "count": 2
   },
   {
@@ -13879,11 +13861,31 @@
    "count": 2
   },
   {
-   "subject": "长江电力",
+   "subject": "白酒板块",
    "count": 2
   },
   {
-   "subject": "零跑汽车",
+   "subject": "分众传媒",
+   "count": 2
+  },
+  {
+   "subject": "华安证券",
+   "count": 2
+  },
+  {
+   "subject": "常熟银行",
+   "count": 2
+  },
+  {
+   "subject": "中矿资源",
+   "count": 2
+  },
+  {
+   "subject": "招金矿业",
+   "count": 2
+  },
+  {
+   "subject": "中国黄金国际",
    "count": 2
   },
   {
@@ -13891,283 +13893,15 @@
    "count": 2
   },
   {
-   "subject": "AI大模型",
-   "count": 1
+   "subject": "山东黄金",
+   "count": 2
   },
   {
-   "subject": "AI资本开支",
-   "count": 1
+   "subject": "赛力斯",
+   "count": 2
   },
   {
-   "subject": "AMR (Alpha Metallurgical)",
-   "count": 1
-  },
-  {
-   "subject": "FML (Focus Minerals)",
-   "count": 1
-  },
-  {
-   "subject": "HCC (Warrior Met Coal)",
-   "count": 1
-  },
-  {
-   "subject": "Unity",
-   "count": 1
-  },
-  {
-   "subject": "Veeva Systems",
-   "count": 1
-  },
-  {
-   "subject": "万华化学",
-   "count": 1
-  },
-  {
-   "subject": "东方甄选",
-   "count": 1
-  },
-  {
-   "subject": "中创智领",
-   "count": 1
-  },
-  {
-   "subject": "中国中车",
-   "count": 1
-  },
-  {
-   "subject": "中国动力",
-   "count": 1
-  },
-  {
-   "subject": "中国化学",
-   "count": 1
-  },
-  {
-   "subject": "中国太平",
-   "count": 1
-  },
-  {
-   "subject": "中国巨石",
-   "count": 1
-  },
-  {
-   "subject": "中国建筑",
-   "count": 1
-  },
-  {
-   "subject": "中国建筑国际",
-   "count": 1
-  },
-  {
-   "subject": "中国有色矿业",
-   "count": 1
-  },
-  {
-   "subject": "中国海外发展",
-   "count": 1
-  },
-  {
-   "subject": "中国海油",
-   "count": 1
-  },
-  {
-   "subject": "中国科培",
-   "count": 1
-  },
-  {
-   "subject": "中国铝业",
-   "count": 1
-  },
-  {
-   "subject": "中国飞鹤",
-   "count": 1
-  },
-  {
-   "subject": "中国食品",
-   "count": 1
-  },
-  {
-   "subject": "中山公用",
-   "count": 1
-  },
-  {
-   "subject": "中船防务",
-   "count": 1
-  },
-  {
-   "subject": "五粮液",
-   "count": 1
-  },
-  {
-   "subject": "亚钾国际",
-   "count": 1
-  },
-  {
-   "subject": "京能电力",
-   "count": 1
-  },
-  {
-   "subject": "亿联网络",
-   "count": 1
-  },
-  {
-   "subject": "低估值轮動组合（实盘）",
-   "count": 1
-  },
-  {
-   "subject": "保利发展",
-   "count": 1
-  },
-  {
-   "subject": "保险股方法论",
-   "count": 1
-  },
-  {
-   "subject": "先思行",
-   "count": 1
-  },
-  {
-   "subject": "创新药",
-   "count": 1
-  },
-  {
-   "subject": "创维集团",
-   "count": 1
-  },
-  {
-   "subject": "券商估值方法论",
-   "count": 1
-  },
-  {
-   "subject": "券商板块",
-   "count": 1
-  },
-  {
-   "subject": "力量发展",
-   "count": 1
-  },
-  {
-   "subject": "北方矿业",
-   "count": 1
-  },
-  {
-   "subject": "华友钴业",
-   "count": 1
-  },
-  {
-   "subject": "华泰证券",
-   "count": 1
-  },
-  {
-   "subject": "华润电力",
-   "count": 1
-  },
-  {
-   "subject": "华润置地",
-   "count": 1
-  },
-  {
-   "subject": "卡罗特",
-   "count": 1
-  },
-  {
-   "subject": "哔哩哔哩-W",
-   "count": 1
-  },
-  {
-   "subject": "嘉友国际",
-   "count": 1
-  },
-  {
-   "subject": "城商行",
-   "count": 1
-  },
-  {
-   "subject": "壁仞科技",
-   "count": 1
-  },
-  {
-   "subject": "天坛生物",
-   "count": 1
-  },
-  {
-   "subject": "宝丰能源",
-   "count": 1
-  },
-  {
-   "subject": "富途控股",
-   "count": 1
-  },
-  {
-   "subject": "小鹏汽车",
-   "count": 1
-  },
-  {
-   "subject": "工业富联",
-   "count": 1
-  },
-  {
-   "subject": "希迪智驾",
-   "count": 1
-  },
-  {
-   "subject": "建滔集团",
-   "count": 1
-  },
-  {
-   "subject": "建设银行",
-   "count": 1
-  },
-  {
-   "subject": "德翔海运",
-   "count": 1
-  },
-  {
-   "subject": "快手",
-   "count": 1
-  },
-  {
-   "subject": "快手-W",
-   "count": 1
-  },
-  {
-   "subject": "恒力石化",
-   "count": 1
-  },
-  {
-   "subject": "投资收益率计算公式_原始图片.png",
-   "count": 1
-  },
-  {
-   "subject": "招商南油",
-   "count": 1
-  },
-  {
-   "subject": "晋控煤业",
-   "count": 1
-  },
-  {
-   "subject": "普天通信集团",
-   "count": 1
-  },
-  {
-   "subject": "柴油炼化",
-   "count": 1
-  },
-  {
-   "subject": "栢能集团",
-   "count": 1
-  },
-  {
-   "subject": "比亚迪",
-   "count": 1
-  },
-  {
-   "subject": "永新股份",
-   "count": 1
-  },
-  {
-   "subject": "江西铜业",
+   "subject": "沃尔核材",
    "count": 1
   },
   {
@@ -14175,127 +13909,7 @@
    "count": 1
   },
   {
-   "subject": "沃尔核材",
-   "count": 1
-  },
-  {
-   "subject": "油气",
-   "count": 1
-  },
-  {
-   "subject": "浩洋股份",
-   "count": 1
-  },
-  {
-   "subject": "海尔智家",
-   "count": 1
-  },
-  {
-   "subject": "海康威视",
-   "count": 1
-  },
-  {
-   "subject": "海螺创业",
-   "count": 1
-  },
-  {
-   "subject": "润贝航科",
-   "count": 1
-  },
-  {
-   "subject": "淮北矿业",
-   "count": 1
-  },
-  {
-   "subject": "港股打新",
-   "count": 1
-  },
-  {
-   "subject": "煌上煌",
-   "count": 1
-  },
-  {
-   "subject": "煤炭板块",
-   "count": 1
-  },
-  {
-   "subject": "煤炭行业吨毛利",
-   "count": 1
-  },
-  {
-   "subject": "爱柯迪",
-   "count": 1
-  },
-  {
-   "subject": "爱迪特",
-   "count": 1
-  },
-  {
-   "subject": "理士国际",
-   "count": 1
-  },
-  {
-   "subject": "盐湖",
-   "count": 1
-  },
-  {
-   "subject": "破产银行保险股组合",
-   "count": 1
-  },
-  {
-   "subject": "神威药业",
-   "count": 1
-  },
-  {
    "subject": "禾赛科技",
-   "count": 1
-  },
-  {
-   "subject": "立讯精密",
-   "count": 1
-  },
-  {
-   "subject": "粉笔",
-   "count": 1
-  },
-  {
-   "subject": "耐普矿机",
-   "count": 1
-  },
-  {
-   "subject": "能源套利",
-   "count": 1
-  },
-  {
-   "subject": "腾讯音乐",
-   "count": 1
-  },
-  {
-   "subject": "腾讯音乐（TME）",
-   "count": 1
-  },
-  {
-   "subject": "芭田股份",
-   "count": 1
-  },
-  {
-   "subject": "苏农银行",
-   "count": 1
-  },
-  {
-   "subject": "苏州银行",
-   "count": 1
-  },
-  {
-   "subject": "菜百股份",
-   "count": 1
-  },
-  {
-   "subject": "西安银行",
-   "count": 1
-  },
-  {
-   "subject": "西藏铜矿资源税",
    "count": 1
   },
   {
@@ -14303,31 +13917,51 @@
    "count": 1
   },
   {
-   "subject": "金安国纪",
+   "subject": "阜丰集团",
    "count": 1
   },
   {
-   "subject": "金诚信",
+   "subject": "中国食品",
    "count": 1
   },
   {
-   "subject": "金钼股份",
+   "subject": "壁仞科技",
    "count": 1
   },
   {
-   "subject": "铜板块",
+   "subject": "富途控股",
    "count": 1
   },
   {
-   "subject": "银华日利",
+   "subject": "建设银行",
    "count": 1
   },
   {
-   "subject": "银行股方法论",
+   "subject": "AI大模型",
    "count": 1
   },
   {
-   "subject": "银行量化选股系统",
+   "subject": "煤炭板块",
+   "count": 1
+  },
+  {
+   "subject": "能源套利",
+   "count": 1
+  },
+  {
+   "subject": "柴油炼化",
+   "count": 1
+  },
+  {
+   "subject": "盐湖",
+   "count": 1
+  },
+  {
+   "subject": "投资收益率计算公式_原始图片.png",
+   "count": 1
+  },
+  {
+   "subject": "中国飞鹤",
    "count": 1
   },
   {
@@ -14335,15 +13969,83 @@
    "count": 1
   },
   {
+   "subject": "金钼股份",
+   "count": 1
+  },
+  {
+   "subject": "中国化学",
+   "count": 1
+  },
+  {
+   "subject": "先思行",
+   "count": 1
+  },
+  {
+   "subject": "北方矿业",
+   "count": 1
+  },
+  {
+   "subject": "爱柯迪",
+   "count": 1
+  },
+  {
+   "subject": "浩洋股份",
+   "count": 1
+  },
+  {
+   "subject": "卡罗特",
+   "count": 1
+  },
+  {
+   "subject": "粉笔",
+   "count": 1
+  },
+  {
+   "subject": "AI资本开支",
+   "count": 1
+  },
+  {
+   "subject": "京能电力",
+   "count": 1
+  },
+  {
+   "subject": "中国中车",
+   "count": 1
+  },
+  {
+   "subject": "亿联网络",
+   "count": 1
+  },
+  {
+   "subject": "中国太平",
+   "count": 1
+  },
+  {
+   "subject": "天坛生物",
+   "count": 1
+  },
+  {
+   "subject": "恒力石化",
+   "count": 1
+  },
+  {
+   "subject": "万华化学",
+   "count": 1
+  },
+  {
+   "subject": "煤炭行业吨毛利",
+   "count": 1
+  },
+  {
+   "subject": "普天通信集团",
+   "count": 1
+  },
+  {
    "subject": "长飞光纤",
    "count": 1
   },
   {
-   "subject": "阜丰集团",
-   "count": 1
-  },
-  {
-   "subject": "雅戈尔",
+   "subject": "东方甄选",
    "count": 1
   },
   {
@@ -14351,7 +14053,319 @@
    "count": 1
   },
   {
+   "subject": "银行股方法论",
+   "count": 1
+  },
+  {
+   "subject": "券商估值方法论",
+   "count": 1
+  },
+  {
+   "subject": "中山公用",
+   "count": 1
+  },
+  {
+   "subject": "保险股方法论",
+   "count": 1
+  },
+  {
+   "subject": "海康威视",
+   "count": 1
+  },
+  {
+   "subject": "银行量化选股系统",
+   "count": 1
+  },
+  {
+   "subject": "FML (Focus Minerals)",
+   "count": 1
+  },
+  {
+   "subject": "耐普矿机",
+   "count": 1
+  },
+  {
+   "subject": "希迪智驾",
+   "count": 1
+  },
+  {
+   "subject": "中国动力",
+   "count": 1
+  },
+  {
+   "subject": "中船防务",
+   "count": 1
+  },
+  {
+   "subject": "招商南油",
+   "count": 1
+  },
+  {
+   "subject": "哔哩哔哩-W",
+   "count": 1
+  },
+  {
+   "subject": "Unity",
+   "count": 1
+  },
+  {
+   "subject": "华润电力",
+   "count": 1
+  },
+  {
+   "subject": "油气",
+   "count": 1
+  },
+  {
+   "subject": "中国有色矿业",
+   "count": 1
+  },
+  {
+   "subject": "保利发展",
+   "count": 1
+  },
+  {
+   "subject": "中国海外发展",
+   "count": 1
+  },
+  {
+   "subject": "华润置地",
+   "count": 1
+  },
+  {
+   "subject": "五粮液",
+   "count": 1
+  },
+  {
+   "subject": "力量发展",
+   "count": 1
+  },
+  {
+   "subject": "中国科培",
+   "count": 1
+  },
+  {
+   "subject": "HCC (Warrior Met Coal)",
+   "count": 1
+  },
+  {
+   "subject": "AMR (Alpha Metallurgical)",
+   "count": 1
+  },
+  {
+   "subject": "嘉友国际",
+   "count": 1
+  },
+  {
+   "subject": "Veeva Systems",
+   "count": 1
+  },
+  {
+   "subject": "创新药",
+   "count": 1
+  },
+  {
+   "subject": "金诚信",
+   "count": 1
+  },
+  {
+   "subject": "宝丰能源",
+   "count": 1
+  },
+  {
+   "subject": "银华日利",
+   "count": 1
+  },
+  {
+   "subject": "晋控煤业",
+   "count": 1
+  },
+  {
+   "subject": "腾讯音乐（TME）",
+   "count": 1
+  },
+  {
+   "subject": "低估值轮動组合（实盘）",
+   "count": 1
+  },
+  {
+   "subject": "西藏铜矿资源税",
+   "count": 1
+  },
+  {
+   "subject": "德翔海运",
+   "count": 1
+  },
+  {
+   "subject": "腾讯音乐",
+   "count": 1
+  },
+  {
+   "subject": "建滔集团",
+   "count": 1
+  },
+  {
+   "subject": "中国建筑国际",
+   "count": 1
+  },
+  {
+   "subject": "中国建筑",
+   "count": 1
+  },
+  {
+   "subject": "理士国际",
+   "count": 1
+  },
+  {
+   "subject": "中创智领",
+   "count": 1
+  },
+  {
+   "subject": "菜百股份",
+   "count": 1
+  },
+  {
+   "subject": "铜板块",
+   "count": 1
+  },
+  {
+   "subject": "芭田股份",
+   "count": 1
+  },
+  {
+   "subject": "中国海油",
+   "count": 1
+  },
+  {
+   "subject": "海螺创业",
+   "count": 1
+  },
+  {
+   "subject": "快手-W",
+   "count": 1
+  },
+  {
+   "subject": "神威药业",
+   "count": 1
+  },
+  {
+   "subject": "创维集团",
+   "count": 1
+  },
+  {
+   "subject": "栢能集团",
+   "count": 1
+  },
+  {
+   "subject": "华泰证券",
+   "count": 1
+  },
+  {
+   "subject": "雅戈尔",
+   "count": 1
+  },
+  {
+   "subject": "苏农银行",
+   "count": 1
+  },
+  {
+   "subject": "西安银行",
+   "count": 1
+  },
+  {
+   "subject": "券商板块",
+   "count": 1
+  },
+  {
+   "subject": "城商行",
+   "count": 1
+  },
+  {
+   "subject": "苏州银行",
+   "count": 1
+  },
+  {
+   "subject": "立讯精密",
+   "count": 1
+  },
+  {
+   "subject": "江西铜业",
+   "count": 1
+  },
+  {
+   "subject": "中国铝业",
+   "count": 1
+  },
+  {
    "subject": "黄金与铜周期",
+   "count": 1
+  },
+  {
+   "subject": "金安国纪",
+   "count": 1
+  },
+  {
+   "subject": "工业富联",
+   "count": 1
+  },
+  {
+   "subject": "破产银行保险股组合",
+   "count": 1
+  },
+  {
+   "subject": "煌上煌",
+   "count": 1
+  },
+  {
+   "subject": "中国巨石",
+   "count": 1
+  },
+  {
+   "subject": "亚钾国际",
+   "count": 1
+  },
+  {
+   "subject": "华友钴业",
+   "count": 1
+  },
+  {
+   "subject": "永新股份",
+   "count": 1
+  },
+  {
+   "subject": "爱迪特",
+   "count": 1
+  },
+  {
+   "subject": "海尔智家",
+   "count": 1
+  },
+  {
+   "subject": "润贝航科",
+   "count": 1
+  },
+  {
+   "subject": "零跑汽车",
+   "count": 1
+  },
+  {
+   "subject": "小鹏汽车",
+   "count": 1
+  },
+  {
+   "subject": "比亚迪",
+   "count": 1
+  },
+  {
+   "subject": "淮北矿业",
+   "count": 1
+  },
+  {
+   "subject": "快手",
+   "count": 1
+  },
+  {
+   "subject": "港股打新",
    "count": 1
   }
  ],
