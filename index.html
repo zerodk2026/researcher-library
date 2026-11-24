@@ -94,6 +94,17 @@ body {
 .tab-panel { display: none; height: 100%; }
 .tab-panel.active { display: flex; }
 .cubes-container { width: 100%; display: flex; flex-direction: column; }
+.cube-card { background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:16px 18px;margin-bottom:14px;cursor:pointer;transition:box-shadow .15s, border-color .15s; }
+.cube-card:hover { box-shadow:0 3px 12px rgba(0,0,0,0.08); border-color:#c7d2fe; }
+.cube-card-head { display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:10px; }
+.cube-card-name { font-size:16px;font-weight:600; }
+.cube-card-owner { font-size:12px;color:#889; }
+.cube-metrics { display:flex;gap:20px;flex-wrap:wrap; }
+.cube-metric { min-width:70px; }
+.cube-metric .k { font-size:11px;color:#889; }
+.cube-metric .v { font-size:18px;font-weight:600; }
+.cube-back { display:inline-block;cursor:pointer;color:#3b82f6;font-size:13px;margin-bottom:14px;user-select:none; }
+.cube-back:hover { text-decoration:underline; }
 
 /* 浏览模式 */
 #tab-browse { display: none; }
@@ -1166,18 +1177,19 @@ body.mobile-detail-open { overflow: hidden; }
       </div>
     </div>
 
-    <!-- 模拟盘跟踪模式（2026-11-24）-->
+    <!-- 模拟盘跟踪模式（2026-11-24 两页版）-->
     <div id="tab-cubes" class="tab-panel">
       <div class="cubes-container">
-        <div class="panel-header">
-          <h2>研究员模拟盘跟踪</h2>
-          <p style="margin:6px 0 16px;color:#667;font-size:13px;">雪球模拟盘持仓快照（每日更新，调仓由持仓变动还原）· 数据文件 data/cubes.json</p>
+        <!-- ===== 总览页 ===== -->
+        <div id="cubes-overview">
+          <div class="panel-header">
+            <h2>研究员模拟盘跟踪</h2>
+            <p style="margin:6px 0 16px;color:#667;font-size:13px;">雪球模拟盘 · 每日更新净值与持仓 · 点击组合查看详情</p>
+          </div>
+          <div id="cubes-overview-list">加载中…</div>
         </div>
-        <div id="cubes-chart-card" style="display:none;background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;margin-bottom:18px;">
-          <div style="font-size:14px;font-weight:600;margin-bottom:10px;">净值走势</div>
-          <canvas id="cubes-chart" height="90"></canvas>
-        </div>
-        <div id="cubes-container">加载中…</div>
+        <!-- ===== 单组合详情页 ===== -->
+        <div id="cubes-detail" style="display:none;"></div>
       </div>
     </div>
 
@@ -3127,8 +3139,9 @@ body.mobile-detail-open { overflow: hidden; }
 
 
 <script>
-// ===== 模拟盘跟踪模块（2026-11-24）=====
+// ===== 模拟盘跟踪模块（2026-11-24 两页版）=====
 (function () {
+  var CUBES_DATA = null;
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function loadJSON(url, cb) {
     var x = new XMLHttpRequest();
@@ -3141,85 +3154,144 @@ body.mobile-detail-open { overflow: hidden; }
     };
     x.send();
   }
-  function render() {
-    var box = document.getElementById('cubes-container');
-    if (!box) return;
-    loadJSON('data/cubes.json?cb=' + Date.now(), function (err, data) {
-      if (err) { box.innerHTML = '<div style="padding:20px;color:#c00;">数据加载失败：' + esc(err.message) + '</div>'; return; }
-      var htmlOut = '';
-      (data.cubes || []).forEach(function (cube) {
-        var snap = (cube.snapshots || [])[cube.snapshots.length - 1] || {};
-        htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;margin-bottom:18px;">';
-        htmlOut += '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">';
-        htmlOut += '<div><span style="font-size:17px;font-weight:600;">' + esc(cube.name) + '</span>';
-        htmlOut += ' <a href="' + esc(cube.url) + '" target="_blank" style="font-size:12px;color:#3b82f6;text-decoration:none;">' + esc(cube.symbol) + ' ↗</a>';
-        htmlOut += ' <span style="font-size:12px;color:#889;">管理人：' + esc(cube.owner) + '</span></div>';
-        htmlOut += '<div style="font-size:12px;color:#889;">快照 ' + esc(snap.date) + '</div></div>';
-        htmlOut += '<div style="display:flex;gap:22px;margin:12px 0;flex-wrap:wrap;">';
-        htmlOut += '<div><div style="font-size:11px;color:#889;">净值</div><div style="font-size:20px;font-weight:600;">' + esc(snap.net_value) + '</div></div>';
-        var tg = parseFloat(snap.total_gain);
-        var mg = parseFloat(snap.monthly_gain);
-        htmlOut += '<div><div style="font-size:11px;color:#889;">总收益</div><div style="font-size:20px;font-weight:600;color:#c0392b;">+' + tg.toFixed(0) + '%</div></div>';
-        htmlOut += '<div><div style="font-size:11px;color:#889;">月收益</div><div style="font-size:20px;font-weight:600;color:' + (mg >= 0 ? '#c0392b' : '#1e8449') + '">' + (mg >= 0 ? '+' : '') + mg.toFixed(2) + '%</div></div>';
-        htmlOut += '<div><div style="font-size:11px;color:#889;">持仓数</div><div style="font-size:20px;font-weight:600;">' + (snap.holdings || []).length + '</div></div>';
-        htmlOut += '<div><div style="font-size:11px;color:#889;">现金</div><div style="font-size:20px;font-weight:600;">' + parseFloat(snap.cash || 0).toFixed(1) + '%</div></div>';
-        htmlOut += '</div>';
-        htmlOut += '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
-        htmlOut += '<thead><tr style="text-align:left;color:#889;border-bottom:2px solid #e3e6ec;">';
-        htmlOut += '<th style="padding:6px 8px;">股票</th><th style="padding:6px 8px;">代码</th><th style="padding:6px 8px;">行业</th><th style="padding:6px 8px;text-align:right;">权重</th></tr></thead><tbody>';
-        (snap.holdings || []).forEach(function (h) {
-          var pct = parseFloat(h.weight || 0);
-          htmlOut += '<tr style="border-bottom:1px solid #eef1f5;">';
-          htmlOut += '<td style="padding:6px 8px;font-weight:500;">' + esc(h.name) + '</td>';
-          htmlOut += '<td style="padding:6px 8px;color:#667;">' + esc(h.symbol) + '</td>';
-          htmlOut += '<td style="padding:6px 8px;color:#667;">' + esc(h.segment) + '</td>';
-          htmlOut += '<td style="padding:6px 8px;text-align:right;"><span style="font-weight:600;">' + pct.toFixed(2) + '%</span>';
-          htmlOut += '<div style="height:4px;background:#eef1f5;border-radius:2px;margin-top:3px;width:120px;margin-left:auto;"><div style="height:4px;border-radius:2px;background:#3b82f6;width:' + Math.min(100, pct * 4) + '%;"></div></div>';
-          htmlOut += '</td></tr>';
+  function findCube(symbol) {
+    if (!CUBES_DATA) return null;
+    for (var i = 0; i < (CUBES_DATA.cubes || []).length; i++) if (CUBES_DATA.cubes[i].symbol === symbol) return CUBES_DATA.cubes[i];
+    return null;
+  }
+  function lastSnap(cube) { var s = cube.snapshots || []; return s.length ? s[s.length - 1] : {}; }
+
+  // ===== 总览页 =====
+  function renderOverview() {
+    var box = document.getElementById('cubes-overview-list');
+    document.getElementById('cubes-overview').style.display = 'block';
+    document.getElementById('cubes-detail').style.display = 'none';
+    if (!CUBES_DATA) { box.innerHTML = '加载中…'; return; }
+    var htmlOut = '';
+    (CUBES_DATA.cubes || []).forEach(function (cube) {
+      var snap = lastSnap(cube);
+      var nav = cube.nav_history || [];
+      var curNav = nav.length ? nav[nav.length - 1].value : null;
+      var tg = parseFloat(snap.total_gain);
+      var mg = parseFloat(snap.monthly_gain);
+      htmlOut += '<div class="cube-card" onclick="CUBES.showDetail(\'' + esc(cube.symbol) + '\')">';
+      htmlOut += '<div class="cube-card-head"><span class="cube-card-name">' + esc(cube.name) + '</span>';
+      htmlOut += '<span class="cube-card-owner">' + esc(cube.owner) + ' · ' + esc(cube.symbol) + ' · 快照 ' + esc(snap.date || '—') + '</span></div>';
+      htmlOut += '<div class="cube-metrics">';
+      htmlOut += '<div class="cube-metric"><div class="k">净值</div><div class="v">' + esc(curNav != null ? curNav : snap.net_value) + '</div></div>';
+      htmlOut += '<div class="cube-metric"><div class="k">总收益</div><div class="v" style="color:#c0392b;">+' + (tg || 0).toFixed(0) + '%</div></div>';
+      htmlOut += '<div class="cube-metric"><div class="k">月收益</div><div class="v" style="color:' + ((mg >= 0) ? '#c0392b' : '#1e8449') + '">' + (mg >= 0 ? '+' : '') + (mg || 0).toFixed(2) + '%</div></div>';
+      htmlOut += '<div class="cube-metric"><div class="k">持仓</div><div class="v">' + ((snap.holdings || []).length) + ' 只</div></div>';
+      htmlOut += '<div class="cube-metric"><div class="k">成立</div><div class="v" style="font-size:14px;">' + esc((cube.created || '').slice(0, 7)) + '</div></div>';
+      htmlOut += '</div></div>';
+    });
+    if (!htmlOut) htmlOut = '<div style="padding:20px;color:#889;">暂无模拟盘数据</div>';
+    box.innerHTML = htmlOut;
+  }
+
+  // ===== 详情页 =====
+  function renderDetail(symbol) {
+    var cube = findCube(symbol);
+    var box = document.getElementById('cubes-detail');
+    if (!cube || !box) return;
+    document.getElementById('cubes-overview').style.display = 'none';
+    box.style.display = 'block';
+    var snap = lastSnap(cube);
+    var nav = cube.nav_history || [];
+    var htmlOut = '<div class="cube-back" onclick="CUBES.showOverview()">← 返回总览</div>';
+    htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;margin-bottom:16px;">';
+    htmlOut += '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px;">';
+    htmlOut += '<div><span style="font-size:18px;font-weight:600;">' + esc(cube.name) + '</span>';
+    htmlOut += ' <a href="' + esc(cube.url) + '" target="_blank" style="font-size:12px;color:#3b82f6;text-decoration:none;">' + esc(cube.symbol) + ' ↗</a>';
+    htmlOut += ' <span style="font-size:12px;color:#889;">' + esc(cube.owner) + ' · 成立 ' + esc(cube.created || '') + '</span></div>';
+    htmlOut += '</div>';
+    if (cube.description) htmlOut += '<div style="font-size:12px;color:#667;margin-bottom:10px;">' + esc(cube.description) + '</div>';
+    htmlOut += '<div style="display:flex;gap:22px;flex-wrap:wrap;">';
+    var curNav = nav.length ? nav[nav.length - 1].value : snap.net_value;
+    var tg = parseFloat(snap.total_gain); var mg = parseFloat(snap.monthly_gain);
+    htmlOut += '<div><div style="font-size:11px;color:#889;">净值</div><div style="font-size:22px;font-weight:600;">' + esc(curNav != null ? curNav : '—') + '</div></div>';
+    htmlOut += '<div><div style="font-size:11px;color:#889;">总收益</div><div style="font-size:22px;font-weight:600;color:#c0392b;">+' + (tg || 0).toFixed(0) + '%</div></div>';
+    htmlOut += '<div><div style="font-size:11px;color:#889;">月收益</div><div style="font-size:22px;font-weight:600;color:' + ((mg >= 0) ? '#c0392b' : '#1e8449') + '">' + (mg >= 0 ? '+' : '') + (mg || 0).toFixed(2) + '%</div></div>';
+    htmlOut += '<div><div style="font-size:11px;color:#889;">持仓</div><div style="font-size:22px;font-weight:600;">' + ((snap.holdings || []).length) + ' 只</div></div>';
+    htmlOut += '<div><div style="font-size:11px;color:#889;">现金</div><div style="font-size:22px;font-weight:600;">' + parseFloat(snap.cash || 0).toFixed(1) + '%</div></div>';
+    htmlOut += '</div></div>';
+    // 净值曲线
+    htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;margin-bottom:16px;">';
+    htmlOut += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">';
+    htmlOut += '<div style="font-size:14px;font-weight:600;">净值走势</div>';
+    htmlOut += '<div><button class="cube-range" data-r="ALL" onclick="CUBES.setRange(\'' + esc(cube.symbol) + '\',\'ALL\')">全部</button> <button class="cube-range" data-r="1Y" onclick="CUBES.setRange(\'' + esc(cube.symbol) + '\',\'1Y\')">近1年</button> <button class="cube-range" data-r="3Y" onclick="CUBES.setRange(\'' + esc(cube.symbol) + '\',\'3Y\')">近3年</button></div>';
+    htmlOut += '</div>';
+    htmlOut += '<canvas id="cubes-chart" height="100"></canvas></div>';
+    // 持仓
+    htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;margin-bottom:16px;">';
+    htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:8px;">当前持仓（' + esc(snap.date || '') + '）</div>';
+    htmlOut += '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
+    htmlOut += '<thead><tr style="text-align:left;color:#889;border-bottom:2px solid #e3e6ec;"><th style="padding:6px 8px;">股票</th><th style="padding:6px 8px;">代码</th><th style="padding:6px 8px;">行业</th><th style="padding:6px 8px;text-align:right;">权重</th></tr></thead><tbody>';
+    (snap.holdings || []).forEach(function (h) {
+      var pct = parseFloat(h.weight || 0);
+      htmlOut += '<tr style="border-bottom:1px solid #eef1f5;">';
+      htmlOut += '<td style="padding:6px 8px;font-weight:500;">' + esc(h.name) + '</td>';
+      htmlOut += '<td style="padding:6px 8px;color:#667;">' + esc(h.symbol) + '</td>';
+      htmlOut += '<td style="padding:6px 8px;color:#667;">' + esc(h.segment) + '</td>';
+      htmlOut += '<td style="padding:6px 8px;text-align:right;"><span style="font-weight:600;">' + pct.toFixed(2) + '%</span>';
+      htmlOut += '<div style="height:4px;background:#eef1f5;border-radius:2px;margin-top:3px;width:120px;margin-left:auto;"><div style="height:4px;border-radius:2px;background:#3b82f6;width:' + Math.min(100, pct * 4) + '%;"></div></div></td></tr>';
+    });
+    htmlOut += '</tbody></table></div>';
+    // 调仓记录
+    var rbs = cube.rebalancings || [];
+    if (rbs.length) {
+      htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;">';
+      htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:8px;">调仓记录（持仓变动还原）</div>';
+      rbs.slice(-15).reverse().forEach(function (rb) {
+        htmlOut += '<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin-bottom:8px;background:#f8fafc;border-radius:0 6px 6px 0;font-size:13px;">';
+        htmlOut += '<div style="color:#667;font-size:12px;">' + esc(rb.date) + '</div>';
+        (rb.changes || []).forEach(function (c) {
+          var color = c.type === '买入' ? '#c0392b' : (c.type === '卖出' ? '#1e8449' : (c.type === '加仓' ? '#c0392b' : '#889'));
+          htmlOut += '<div style="color:' + color + ';">' + esc(c.type) + ' ' + esc(c.name) + ' (' + esc(c.symbol) + ')：' + (c.prev != null ? c.prev.toFixed(2) : '0') + '% → ' + (c.target != null ? c.target.toFixed(2) : '0') + '%</div>';
         });
-        htmlOut += '</tbody></table>';
-        var rbs = cube.rebalancings || [];
-        if (rbs.length) {
-          htmlOut += '<div style="margin-top:16px;"><div style="font-size:14px;font-weight:600;margin-bottom:8px;">调仓记录（持仓变动还原）</div>';
-          rbs.slice(-12).reverse().forEach(function (rb) {
-            htmlOut += '<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin-bottom:8px;background:#f8fafc;border-radius:0 6px 6px 0;font-size:13px;">';
-            htmlOut += '<div style="color:#667;font-size:12px;">' + esc(rb.date) + '</div>';
-            (rb.changes || []).forEach(function (c) {
-              var color = c.type === '买入' ? '#c0392b' : (c.type === '卖出' ? '#1e8449' : '#889');
-              htmlOut += '<div style="color:' + color + ';">' + esc(c.type) + ' ' + esc(c.name) + ' (' + esc(c.symbol) + ')：' + (c.prev != null ? c.prev.toFixed(2) : '0') + '% → ' + (c.target != null ? c.target.toFixed(2) : '0') + '%</div>';
-            });
-            htmlOut += '</div>';
-          });
-        }
-        if ((cube.snapshots || []).length > 1) {
-          htmlOut += '<div style="font-size:12px;color:#889;margin-top:8px;">累计快照 ' + cube.snapshots.length + ' 份（' + cube.snapshots[0].date + ' ~ ' + snap.date + '），完整历史见 data/cubes.json</div>';
-        }
         htmlOut += '</div>';
       });
-      if (!htmlOut) htmlOut = '<div style="padding:20px;color:#889;">暂无模拟盘数据</div>';
-      box.innerHTML = htmlOut;
-      // 净值走势图
-      var chartCard = document.getElementById('cubes-chart-card');
-      var snaps = (data.cubes && data.cubes[0]) ? data.cubes[0].snapshots : [];
-      if (chartCard && snaps && snaps.length >= 2 && window.Chart) {
-        chartCard.style.display = 'block';
-        var labels = snaps.map(function (s) { return s.date.slice(5); });
-        var navs = snaps.map(function (s) { return s.net_value; });
-        var ctx = document.getElementById('cubes-chart');
-        if (window.__cubesChart) { window.__cubesChart.destroy(); }
-        window.__cubesChart = new Chart(ctx, {
-          type: 'line',
-          data: { labels: labels, datasets: [{ label: '净值', data: navs, borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.08)', fill: true, tension: 0.3, pointRadius: 2 }] },
-          options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { ticks: { font: { size: 11 } } }, x: { ticks: { font: { size: 11 }, maxTicksLimit: 12 } } } }
-        });
-      } else if (chartCard) {
-        chartCard.style.display = 'none';
-      }
+      htmlOut += '</div>';
+    }
+    box.innerHTML = htmlOut;
+    setTimeout(function () { drawChart(cube, '1Y'); }, 60);
+  }
+
+  function drawChart(cube, range) {
+    if (!window.Chart) return;
+    var nav = cube.nav_history || [];
+    if (nav.length < 2) return;
+    var points = nav;
+    if (range === '1Y') points = nav.filter(function (p) { return p.date >= '2025-11-24'; });
+    else if (range === '3Y') points = nav.filter(function (p) { return p.date >= '2023-11-24'; });
+    var ctx = document.getElementById('cubes-chart');
+    if (!ctx) return;
+    if (window.__cubesChart) { window.__cubesChart.destroy(); }
+    window.__cubesChart = new Chart(ctx, {
+      type: 'line',
+      data: { labels: points.map(function (p) { return p.date.slice(0, 7); }), datasets: [{ label: '净值', data: points.map(function (p) { return p.value; }), borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.08)', fill: true, tension: 0.25, pointRadius: 0 }] },
+      options: { responsive: true, interaction: { mode: 'index', intersect: false }, plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return '净值 ' + c.parsed.y.toFixed(2); } } } }, scales: { y: { ticks: { font: { size: 11 } } }, x: { ticks: { font: { size: 10 }, maxTicksLimit: 12, maxRotation: 0 } } } }
     });
   }
-  window.CUBES = { render: render };
+
+  window.CUBES = {
+    render: function () {
+      if (CUBES_DATA) { renderOverview(); return; }
+      loadJSON('data/cubes.json?cb=' + Date.now(), function (err, data) {
+        if (err) { document.getElementById('cubes-overview-list').innerHTML = '<div style="padding:20px;color:#c00;">数据加载失败：' + esc(err.message) + '</div>'; return; }
+        CUBES_DATA = data;
+        renderOverview();
+      });
+    },
+    showOverview: function () { renderOverview(); },
+    showDetail: function (symbol) { renderDetail(symbol); },
+    setRange: function (symbol, range) {
+      var cube = findCube(symbol);
+      if (cube) drawChart(cube, range);
+    }
+  };
 })();
-</script>
+
 
 </body>
 </html>
