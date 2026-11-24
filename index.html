@@ -93,6 +93,7 @@ body {
 .main-content { flex: 1; overflow: hidden; }
 .tab-panel { display: none; height: 100%; }
 .tab-panel.active { display: flex; }
+.cubes-container { width: 100%; display: flex; flex-direction: column; }
 
 /* 浏览模式 */
 #tab-browse { display: none; }
@@ -1166,12 +1167,18 @@ body.mobile-detail-open { overflow: hidden; }
     </div>
 
     <!-- 模拟盘跟踪模式（2026-11-24）-->
-    <div id="tab-cubes" class="tab-panel" style="display:none;">
-      <div class="panel-header">
-        <h2>研究员模拟盘跟踪</h2>
-        <p style="margin:6px 0 16px;color:#667;font-size:13px;">雪球模拟盘持仓快照（每日更新，调仓由持仓变动还原）· 数据文件 data/cubes.json</p>
+    <div id="tab-cubes" class="tab-panel">
+      <div class="cubes-container">
+        <div class="panel-header">
+          <h2>研究员模拟盘跟踪</h2>
+          <p style="margin:6px 0 16px;color:#667;font-size:13px;">雪球模拟盘持仓快照（每日更新，调仓由持仓变动还原）· 数据文件 data/cubes.json</p>
+        </div>
+        <div id="cubes-chart-card" style="display:none;background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;margin-bottom:18px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:10px;">净值走势</div>
+          <canvas id="cubes-chart" height="90"></canvas>
+        </div>
+        <div id="cubes-container">加载中…</div>
       </div>
-      <div id="cubes-container">加载中…</div>
     </div>
 
   </div>
@@ -3191,6 +3198,23 @@ body.mobile-detail-open { overflow: hidden; }
       });
       if (!htmlOut) htmlOut = '<div style="padding:20px;color:#889;">暂无模拟盘数据</div>';
       box.innerHTML = htmlOut;
+      // 净值走势图
+      var chartCard = document.getElementById('cubes-chart-card');
+      var snaps = (data.cubes && data.cubes[0]) ? data.cubes[0].snapshots : [];
+      if (chartCard && snaps && snaps.length >= 2 && window.Chart) {
+        chartCard.style.display = 'block';
+        var labels = snaps.map(function (s) { return s.date.slice(5); });
+        var navs = snaps.map(function (s) { return s.net_value; });
+        var ctx = document.getElementById('cubes-chart');
+        if (window.__cubesChart) { window.__cubesChart.destroy(); }
+        window.__cubesChart = new Chart(ctx, {
+          type: 'line',
+          data: { labels: labels, datasets: [{ label: '净值', data: navs, borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.08)', fill: true, tension: 0.3, pointRadius: 2 }] },
+          options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { ticks: { font: { size: 11 } } }, x: { ticks: { font: { size: 11 }, maxTicksLimit: 12 } } } }
+        });
+      } else if (chartCard) {
+        chartCard.style.display = 'none';
+      }
     });
   }
   window.CUBES = { render: render };
