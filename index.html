@@ -3240,22 +3240,20 @@ body.mobile-detail-open { overflow: hidden; }
     // 调仓记录
     var rbs = cube.rebalancings || [];
     htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;">';
-    htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:4px;">调仓记录</div>';
+    htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:8px;">调仓记录（共 ' + rbs.length + ' 笔，最新在前）</div>';
     if (rbs.length) {
-      htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;">';
-      htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:4px;">调仓记录</div>';
-      rbs.slice(-15).reverse().forEach(function (rb) {
+      rbs.slice().reverse().forEach(function (rb) {
         htmlOut += '<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin-bottom:8px;background:#f8fafc;border-radius:0 6px 6px 0;font-size:13px;">';
         htmlOut += '<div style="color:#667;font-size:12px;">' + esc(rb.date) + '</div>';
         (rb.changes || []).forEach(function (c) {
-          var color = c.type === '买入' ? '#c0392b' : (c.type === '卖出' ? '#1e8449' : (c.type === '加仓' ? '#c0392b' : '#889'));
-          htmlOut += '<div style="color:' + color + ';">' + esc(c.type) + ' ' + esc(c.name) + ' (' + esc(c.symbol) + ')：' + (c.prev != null ? c.prev.toFixed(2) : '0') + '% → ' + (c.target != null ? c.target.toFixed(2) : '0') + '%</div>';
+          var color = (c.type === '买入' || c.type === '加仓') ? '#c0392b' : '#1e8449';
+          var p = (c.price != null && c.price !== '') ? ' @' + esc(c.price) : '';
+          htmlOut += '<div style="color:' + color + ';">' + esc(c.type) + ' ' + esc(c.name) + ' (' + esc(c.symbol) + ')：' + (c.prev != null ? c.prev.toFixed(2) : '0') + '% → ' + (c.target != null ? c.target.toFixed(2) : '0') + '%' + p + '</div>';
         });
         htmlOut += '</div>';
       });
-      htmlOut += '</div>';
     } else {
-      htmlOut += '<div style="color:#889;font-size:13px;padding:4px 0;">暂无调仓记录——每日快照 diff 自 2026-11-24 起自动累积；历史调仓见管理人发帖（雪球历史调仓接口需登录态）。</div>';
+      htmlOut += '<div style="color:#889;font-size:13px;padding:4px 0;">暂无调仓记录</div>';
     }
     htmlOut += '</div>';
     box.innerHTML = htmlOut;
