@@ -93,7 +93,7 @@ body {
 .main-content { flex: 1; overflow: hidden; }
 .tab-panel { display: none; height: 100%; }
 .tab-panel.active { display: flex; }
-.cubes-container { width: 100%; display: flex; flex-direction: column; }
+.cubes-container { width: 100%; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; padding: 20px 16px 40px; box-sizing: border-box; }
 .cube-card { background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:16px 18px;margin-bottom:14px;cursor:pointer;transition:box-shadow .15s, border-color .15s; }
 .cube-card:hover { box-shadow:0 3px 12px rgba(0,0,0,0.08); border-color:#c7d2fe; }
 .cube-card-head { display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:10px; }
@@ -3221,7 +3221,7 @@ body.mobile-detail-open { overflow: hidden; }
     htmlOut += '<div style="font-size:14px;font-weight:600;">净值走势</div>';
     htmlOut += '<div><button class="cube-range" data-r="ALL" onclick="CUBES.setRange(\'' + esc(cube.symbol) + '\',\'ALL\')">全部</button> <button class="cube-range" data-r="1Y" onclick="CUBES.setRange(\'' + esc(cube.symbol) + '\',\'1Y\')">近1年</button> <button class="cube-range" data-r="3Y" onclick="CUBES.setRange(\'' + esc(cube.symbol) + '\',\'3Y\')">近3年</button></div>';
     htmlOut += '</div>';
-    htmlOut += '<canvas id="cubes-chart" height="100"></canvas></div>';
+    htmlOut += '<div style="position:relative;height:300px;width:100%;"><canvas id="cubes-chart"></canvas></div></div>';
     // 持仓
     htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;margin-bottom:16px;">';
     htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:8px;">当前持仓（' + esc(snap.date || '') + '）</div>';
@@ -3239,9 +3239,11 @@ body.mobile-detail-open { overflow: hidden; }
     htmlOut += '</tbody></table></div>';
     // 调仓记录
     var rbs = cube.rebalancings || [];
+    htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;">';
+    htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:4px;">调仓记录</div>';
     if (rbs.length) {
       htmlOut += '<div style="background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:18px;">';
-      htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:8px;">调仓记录（持仓变动还原）</div>';
+      htmlOut += '<div style="font-size:14px;font-weight:600;margin-bottom:4px;">调仓记录</div>';
       rbs.slice(-15).reverse().forEach(function (rb) {
         htmlOut += '<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin-bottom:8px;background:#f8fafc;border-radius:0 6px 6px 0;font-size:13px;">';
         htmlOut += '<div style="color:#667;font-size:12px;">' + esc(rb.date) + '</div>';
@@ -3252,7 +3254,10 @@ body.mobile-detail-open { overflow: hidden; }
         htmlOut += '</div>';
       });
       htmlOut += '</div>';
+    } else {
+      htmlOut += '<div style="color:#889;font-size:13px;padding:4px 0;">暂无调仓记录——每日快照 diff 自 2026-11-24 起自动累积；历史调仓见管理人发帖（雪球历史调仓接口需登录态）。</div>';
     }
+    htmlOut += '</div>';
     box.innerHTML = htmlOut;
     setTimeout(function () { drawChart(cube, '1Y'); }, 60);
   }
@@ -3270,7 +3275,7 @@ body.mobile-detail-open { overflow: hidden; }
     window.__cubesChart = new Chart(ctx, {
       type: 'line',
       data: { labels: points.map(function (p) { return p.date.slice(0, 7); }), datasets: [{ label: '净值', data: points.map(function (p) { return p.value; }), borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.08)', fill: true, tension: 0.25, pointRadius: 0 }] },
-      options: { responsive: true, interaction: { mode: 'index', intersect: false }, plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return '净值 ' + c.parsed.y.toFixed(2); } } } }, scales: { y: { ticks: { font: { size: 11 } } }, x: { ticks: { font: { size: 10 }, maxTicksLimit: 12, maxRotation: 0 } } } }
+      options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return '净值 ' + c.parsed.y.toFixed(2); } } } }, scales: { y: { ticks: { font: { size: 11 } } }, x: { ticks: { font: { size: 10 }, maxTicksLimit: 12, maxRotation: 0 } } } }
     });
   }
 
